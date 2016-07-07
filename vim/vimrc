@@ -40,7 +40,6 @@ Plugin 'scrooloose/syntastic'
 " C++ Syntax highlighting
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
-Plugin 'gilligan/vim-lldb'
 Plugin 'dkprice/vim-easygrep'
 
 " Tasklist Plugin - use \t to get list of all TODO, FIXME, etc..
