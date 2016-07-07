@@ -1,0 +1,18 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+    ~/.vimrc: vim/vimrc
+    ~/.tmux.conf: config/tmux.conf
+    ~/.gitignore_global: git/gitignore_global
+    ~/.zshrc: zsh/zshrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [vim/setup-vim.sh, Setting up Vundle and Vim plugins]
+  - [zsh/setup-zsh.sh, Setting up zsh and oh-my-zsh]
