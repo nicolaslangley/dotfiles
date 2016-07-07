@@ -40,6 +40,7 @@ Plugin 'scrooloose/syntastic'
 " C++ Syntax highlighting
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
+Plugin 'gilligan/vim-lldb'
 Plugin 'dkprice/vim-easygrep'
 
 " Tasklist Plugin - use \t to get list of all TODO, FIXME, etc..
@@ -70,7 +71,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tyok/ack.vim'
 Plugin 'tyok/nerdtree-ack'
 Plugin 'ctrlpvim/ctrlp.vim' " Use :CtrlP to search for a file 
-let g:ctrlp_working_path_mode = 'rwa'
+let g:ctrlp_working_path_mode = 'rwa' 
 let g:NERDTreeShowHidden=1 " Show hidden files by default
 
 " Set colorscheme
