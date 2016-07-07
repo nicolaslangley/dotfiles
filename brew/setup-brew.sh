@@ -10,4 +10,3 @@ brew tap caskroom/versions
 
 # Install brew & brew-cask packages
 . "$DOTFILES_DIR/brew/brew.sh" "core"
-. "$DOTFILES_DIR/brew/brew-cask.sh" "core"
