@@ -14,6 +14,23 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [brew/setup-brew.sh, Setting up Homebrew and core applications]
-  - [vim/setup-vim.sh, Setting up Vundle and Vim plugins]
-  - [zsh/setup-zsh.sh, Setting up zsh and oh-my-zsh]
+  - 
+    command: brew/setup-brew.sh
+    description: Installing brew and cask applications
+    stdout: true
+    stderr: true
+  - 
+    command: themes/setup-themes.sh
+    description: Setting up themes and installing fonts
+    stdout: true
+    stderr: true
+  -
+    command: vim/setup-vim.sh
+    description: Installing Vundle and Vim plugins
+    stdout: true
+    stderr: true
+  - 
+    command: zsh/setup-zsh.sh
+    description: Installing Zsh and oh-my-zsh
+    stdout: true
+    stderr: true

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 BUNDLE_DIR=~/.vim/bundle
 
 # Install/update Vundle

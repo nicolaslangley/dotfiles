@@ -3,10 +3,10 @@ DOTFILES_DIR=$HOME/.dotfiles
 export DOTFILES_DIR
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/nico8506/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Export QT
-export QT_HOME=/Users/nico8506/Development/Qt/
+export QT_HOME=$HOME/Development/Qt/
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
