@@ -8,7 +8,6 @@ call vundle#rc()
 " Keep vundle itself updated
 Plugin 'gmarik/vundle'
 
-" Plugins used by vundle
 " Syntax plugins
 Plugin 'JuliaLang/julia-vim'
 Plugin 'keith/swift.vim'
@@ -19,6 +18,8 @@ Plugin 'keith/swift.vim'
 Plugin 'vim-scripts/a.vim' " Alternate between header files using :A
 Plugin 'jansenm/vim-cmake'
 Plugin 'beyondmarc/hlsl.vim'
+Plugin 'dkprice/vim-easygrep'
+Plugin 'tommcdo/vim-kangaroo'
 
 " Generate ctags for project files
 Plugin 'vim-scripts/DfrankUtil' " Dependency for VimPrj and Indexer
@@ -39,8 +40,7 @@ Plugin 'scrooloose/syntastic'
 
 " C++ Syntax highlighting
 Plugin 'octol/vim-cpp-enhanced-highlight'
-
-Plugin 'dkprice/vim-easygrep'
+Plugin 'kshenoy/vim-signature' " Visualization of marks 
 
 " Tasklist Plugin - use \t to get list of all TODO, FIXME, etc..
 Plugin 'vim-scripts/TaskList.vim'
@@ -59,6 +59,8 @@ Plugin 'mxw/vim-jsx'
 " Git plugin
 Plugin 'tpope/vim-fugitive' " Use :Gedit :Gstatus :Gdiff :Gcommit
 Plugin 'jaxbot/github-issues.vim' " Show issues :Gissues close/open - :co/:cc
+Plugin 'airblade/vim-gitgutter'
+let g:gitgutter_highlight_lines = 1
 
 " Comments
 Plugin 'scrooloose/nerdcommenter' " Use <leader>cc to comment all selected lines and c<space> to toggle
@@ -80,10 +82,11 @@ set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h13 " Font needs to be ins
 set background=dark
 colorscheme solarized
 let macvim_skip_colorscheme=1 " Don't override colorscheme in MacVim
+highlight clear SignColumn
 
 " Search settings 
-:set hlsearch
-:set incsearch
+set hlsearch
+set incsearch
 
 " Shortcuts
 " Ctrl-n opens and closes file tray; Ctrl-f focuses on tray 
