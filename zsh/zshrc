@@ -6,7 +6,7 @@ export DOTFILES_DIR
 export ZSH=$HOME/.oh-my-zsh
 
 # Export QT
-export QT_HOME=$HOME/Development/Qt
+export QT_HOME=/usr/local/opt/qt5
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

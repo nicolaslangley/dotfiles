@@ -47,10 +47,10 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='vim'
 fi
-export EDITOR_NOWAIT="mvim"
-export GIT_GUI="gitup"
+export EDITOR_NOWAIT="vim"
+export GIT_GUI="sourcetree"
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
