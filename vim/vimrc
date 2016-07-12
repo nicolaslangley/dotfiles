@@ -71,9 +71,12 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tyok/ack.vim'
 Plugin 'tyok/nerdtree-ack'
+let g:NERDTreeShowHidden=1 " Show hidden files by default
+
+" CtrlP
 Plugin 'ctrlpvim/ctrlp.vim' " Use :CtrlP to search for a file 
 let g:ctrlp_working_path_mode = 'rwa' 
-let g:NERDTreeShowHidden=1 " Show hidden files by default
+noremap <leader>t :CtrlPTag<cr>
 
 " Set colorscheme
 " Solarized theme and with Meslo LG S DZ Regular for Powerline 13 pt (iTerm2)
@@ -94,7 +97,7 @@ map <silent> <C-f> :NERDTreeFocus<CR>
 map <silent> <C-n> :NERDTreeToggle<CR> 
 
 " Ctrl-o opens TagBar
-nmap <C-o> :TagbarToggle<CR>
+map <silent> <C-o> :TagbarToggle<CR>
 
 " Plugin and indent usage
 filetype plugin indent on
