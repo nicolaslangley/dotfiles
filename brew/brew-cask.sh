@@ -18,7 +18,6 @@ smcfancontrol
 spotify
 sqlitebrowser
 the-unarchiver
-unrarx
 vlc
 1password
 )

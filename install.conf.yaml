@@ -7,16 +7,18 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.vimrc: vim/vimrc
     ~/.config/nvim/autoload: nvim/autoload
-    ~/.config/nvim/plugged: nvim/plugged
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.tmux.conf: config/tmux.conf
     ~/.gitignore_global: git/gitignore_global
     ~/.zshrc: zsh/zshrc
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+  - 
+    command: git submodule update --init --recursive
+    description: Installing submodules
+    stdout: true
+    stderr: true
   - 
     command: brew/setup-brew.sh
     description: Installing brew and cask applications
@@ -27,9 +29,9 @@
     description: Setting up themes and installing fonts
     stdout: true
     stderr: true
-  -
-    command: vim/setup-vim.sh
-    description: Installing Vundle and Vim plugins
+  - 
+    command: nvim +PlugInstall +qall
+    description: Installing nvim plugins
     stdout: true
     stderr: true
   - 
