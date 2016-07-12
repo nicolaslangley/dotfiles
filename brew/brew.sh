@@ -3,18 +3,17 @@ brew update
 brew upgrade
 
 core=(
-# zsh
-# zsh-completions
+zsh
+zsh-completions
 ack
 cmake
 ctags
 dockutil
 git
-macvim
 sqlite
 tmux
 tree
-vim
+neovim/neovim/neovim
 wget
 )
 

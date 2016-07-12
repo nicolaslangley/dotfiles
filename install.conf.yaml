@@ -8,6 +8,9 @@
 - link:
     ~/.dotfiles: ''
     ~/.vimrc: vim/vimrc
+    ~/.config/nvim/autoload: nvim/autoload
+    ~/.config/nvim/plugged: nvim/plugged
+    ~/.config/nvim/init.vim: nvim/init.vim
     ~/.tmux.conf: config/tmux.conf
     ~/.gitignore_global: git/gitignore_global
     ~/.zshrc: zsh/zshrc
