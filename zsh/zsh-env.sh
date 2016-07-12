@@ -68,9 +68,6 @@ alias ohmyzsh="mvim ~/.oh-my-zsh"
 # Custom aliases
 alias School="cd ~/Dropbox/UCLA/\"Fall 2015\"/"
 alias Dev="cd ~/Development"
-alias RTC="cd ~/Development/Quartz"
-alias RTC-code="cd ~/Development/Quartz/runtimecore"
-alias RTC-scripts="cd ~/Development/Quartz/runtimecore_scripts/scripts"
 alias Matlab="/Applications/MATLAB_R2014a.app/Contents/MacOS/StartMATLAB &"
 alias matlabcli="/Applications/MATLAB_R2014a.app/bin/matlab -nodesktop -nosplash"
 
