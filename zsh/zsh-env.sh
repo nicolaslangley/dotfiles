@@ -45,11 +45,11 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
-export EDITOR_NOWAIT="vim"
+export EDITOR_NOWAIT="nvim"
 export GIT_GUI="sourcetree"
 
 # Java
@@ -62,8 +62,8 @@ export MATLAB_JAVA="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/
 ##########
 
 # Zsh
-alias zshconfig="mvim ~/.zshrc"
-alias ohmyzsh="mvim ~/.oh-my-zsh"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 # Custom aliases
 alias School="cd ~/Dropbox/UCLA/\"Fall 2015\"/"
@@ -73,7 +73,7 @@ alias matlabcli="/Applications/MATLAB_R2014a.app/bin/matlab -nodesktop -nosplash
 
 # Shortcuts
 alias g="git"
-alias v="vim"
+alias nv="nvim"
 alias rr="rm -rf"
 
 # List declared aliases and functions

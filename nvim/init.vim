@@ -27,6 +27,10 @@ Plug 'vim-scripts/indexer.tar.gz' " CTags automatic updating
 Plug 'rizzatti/dash.vim'
 Plug 'critiqjo/lldb.nvim'
 Plug 'neomake/neomake'
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 " Syntax plugins
 Plug 'beyondmarc/hlsl.vim' 
@@ -66,6 +70,7 @@ let macvim_skip_colorscheme=1 " Don't override coloscheme in MacVim
 let g:NERDTreeShowHidden=1 " Show hidden files in NERDTree by default
 let g:gitgutter_highlight_lines=1 " Highlight changed lines
 let g:tlTokenList=["FIXME", "TODO", "???", "XXX"]
+let g:deoplete#enable_at_startup=1
 
 " ========
 " Mappings
