@@ -76,7 +76,7 @@ let g:NERDTreeShowHidden=1 " Show hidden files by default
 " CtrlP
 Plugin 'ctrlpvim/ctrlp.vim' " Use :CtrlP to search for a file 
 let g:ctrlp_working_path_mode = 'rwa' 
-noremap <leader>t :CtrlPTag<cr>
+noremap <leader>. :CtrlPTag<cr>
 
 " Set colorscheme
 " Solarized theme and with Meslo LG S DZ Regular for Powerline 13 pt (iTerm2)
