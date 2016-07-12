@@ -79,6 +79,7 @@ noremap <leader>. :CtrlPTag<cr>
 map <silent> <C-f> :NERDTreeFocus<cr>
 map <silent> <C-n> :NERDTreeToggle<cr>
 map <silent> <C-o> :TagbarToggle<cr>
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " ========
 " Autocommands

@@ -35,6 +35,11 @@
     stdout: true
     stderr: true
   - 
+    command: python/setup-python.sh
+    description: Installing python modules
+    stdout: true
+    stderr: true
+  - 
     command: zsh/setup-zsh.sh
     description: Installing Zsh and oh-my-zsh
     stdout: true
