@@ -49,8 +49,9 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='nvim'
 fi
-export EDITOR_NOWAIT="nvim"
-export GIT_GUI="sourcetree"
+export EDITOR_NOWAIT='nvim'
+export GIT_GUI='sourcetree'
+export GIT_EDITOR='nvim'
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
