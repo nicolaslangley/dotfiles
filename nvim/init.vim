@@ -26,6 +26,7 @@ Plug 'vim-scripts/vimprj'
 Plug 'vim-scripts/indexer.tar.gz' " CTags automatic updating
 Plug 'rizzatti/dash.vim'
 Plug 'critiqjo/lldb.nvim'
+Plug 'neomake/neomake'
 
 " Syntax plugins
 Plug 'beyondmarc/hlsl.vim' 

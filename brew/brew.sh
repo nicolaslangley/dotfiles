@@ -15,6 +15,8 @@ tmux
 tree
 neovim/neovim/neovim
 wget
+python
+python3
 )
 
 libs=(
@@ -24,7 +26,6 @@ opencv3
 )
 
 python=(
-python
 numpy
 scipy
 matplotlib
