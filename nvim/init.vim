@@ -72,7 +72,8 @@ let g:gitgutter_highlight_lines=1 " Highlight changed lines
 let g:tlTokenList=["FIXME", "TODO", "???", "XXX"]
 let g:deoplete#enable_at_startup=1
 let g:neomake_cpp_enable_makers=['clang']
-let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall", "-fsanitize=undefined", "-g"]
+let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall", "-g"]
+let g:ctrlp_working_path_mode = 'rwa'
 
 " ========
 " Mappings
@@ -80,7 +81,7 @@ let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall", "-fsanitize=un
 noremap <leader>. :CtrlPTag<cr>
 map <silent> <C-f> :NERDTreeFocus<cr>
 map <silent> <C-n> :NERDTreeToggle<cr>
-map <silent> <C-o> :TagbarToggle<cr>
+map <leader>b :TagbarToggle<cr>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " ========
@@ -88,5 +89,4 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " ========
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif " Close preview window on movement or entering insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-autocmd! BufWritePost * Neomake
 
