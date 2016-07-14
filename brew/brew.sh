@@ -33,6 +33,7 @@ boost-python
 )
 
 cpp=(
+llvm --with-python --with-lldb --with-clang
 gdb
 boost
 )

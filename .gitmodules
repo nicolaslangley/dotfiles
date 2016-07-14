@@ -4,3 +4,6 @@
 [submodule "themes/powerline-fonts"]
 	path = themes/powerline-fonts
 	url = https://github.com/powerline/fonts
+[submodule "lldb/lldbinit-start"]
+	path = lldb/lldbinit-start
+	url = https://github.com/deroko/lldbinit

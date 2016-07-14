@@ -57,6 +57,8 @@ export GIT_EDITOR='nvim'
 export JAVA_HOME=$(/usr/libexec/java_home)
 # Matlab setup
 export MATLAB_JAVA="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+# Python
+export PYTHONSTARTUP=~/.pythonrc.py
 
 ##########
 # Aliases
@@ -75,6 +77,7 @@ alias matlabcli="/Applications/MATLAB_R2014a.app/bin/matlab -nodesktop -nosplash
 # Shortcuts
 alias g="git"
 alias nv="nvim"
+alias vim="nvim"
 alias rr="rm -rf"
 
 # List declared aliases and functions

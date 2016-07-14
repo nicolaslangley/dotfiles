@@ -12,6 +12,8 @@
     ~/.tmux.conf: config/tmux.conf
     ~/.gitignore_global: git/gitignore_global
     ~/.zshrc: zsh/zshrc
+    ~/.pythonrc.py: python/pythonrc.py
+    ~/.lldbinit: lldb/lldbinit
 
 - shell:
   - 
@@ -37,6 +39,11 @@
   - 
     command: python/setup-python.sh
     description: Installing python modules
+    stdout: true
+    stderr: true
+  - 
+    command: lldb/setup-lldb.sh
+    description: Setup LLDB settings
     stdout: true
     stderr: true
   - 

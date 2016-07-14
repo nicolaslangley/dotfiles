@@ -74,6 +74,7 @@ let g:deoplete#enable_at_startup=1
 let g:neomake_cpp_enable_makers=['clang']
 let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall", "-g"]
 let g:ctrlp_working_path_mode = 'rwa'
+let g:python_host_prog = '/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
 
 " ========
 " Mappings
