@@ -68,6 +68,9 @@ export PYTHONSTARTUP=~/.pythonrc.py
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 
+#P4 Merge
+alias p4merge="/Applications/p4merge.app/Contents/MacOS/p4merge"
+
 # Custom aliases
 alias School="cd ~/Dropbox/UCLA/\"Fall 2015\"/"
 alias Dev="cd ~/Development"
