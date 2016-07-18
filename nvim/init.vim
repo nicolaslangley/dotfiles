@@ -68,13 +68,13 @@ set softtabstop=2
 " ========
 let macvim_skip_colorscheme=1 " Don't override coloscheme in MacVim
 let g:NERDTreeShowHidden=1 " Show hidden files in NERDTree by default
-let g:gitgutter_highlight_lines=1 " Highlight changed lines
+let g:gitgutter_highlight_lines=0 " Highlight changed lines
 let g:tlTokenList=["FIXME", "TODO", "???", "XXX"]
 let g:deoplete#enable_at_startup=1
 let g:neomake_cpp_enable_makers=['clang']
 let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall", "-g"]
 let g:ctrlp_working_path_mode = 'rwa'
-let g:python_host_prog = '/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
+let g:python_host_prog = '/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python' " Set python to be system python
 
 " ========
 " Mappings
