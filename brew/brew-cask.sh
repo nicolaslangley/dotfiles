@@ -26,6 +26,7 @@ dev_apps=(
 dash
 gitup
 sourcetree
+p4merge
 )
 
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)

@@ -21,9 +21,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive' 
 Plug 'Chiel92/vim-autoformat'
 Plug 'tyok/ack.vim' | Plug 'tyok/nerdtree-ack'
-Plug 'vim-scripts/DfrankUtil'
-Plug 'vim-scripts/vimprj' 
-Plug 'vim-scripts/indexer.tar.gz' " CTags automatic updating
+Plug 'vim-scripts/DfrankUtil' | Plug 'vim-scripts/vimprj' | Plug 'vim-scripts/indexer.tar.gz' " CTags automatic updating
+Plug 'jiangmiao/auto-pairs'
 Plug 'rizzatti/dash.vim'
 Plug 'critiqjo/lldb.nvim'
 Plug 'neomake/neomake'
