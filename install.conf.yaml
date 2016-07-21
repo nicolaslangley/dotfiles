@@ -9,7 +9,8 @@
     ~/.dotfiles: ''
     ~/.config/nvim/autoload: nvim/autoload
     ~/.config/nvim/init.vim: nvim/init.vim
-    ~/.tmux.conf: config/tmux.conf
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmuxifier: tmux/tmuxifier
     ~/.gitignore_global: git/gitignore_global
     ~/.zshrc: zsh/zshrc
     ~/.pythonrc.py: python/pythonrc.py

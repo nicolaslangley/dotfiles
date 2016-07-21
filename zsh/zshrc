@@ -36,4 +36,6 @@ source $DOTFILES_DIR/zsh/zsh-env.sh
 # Source RTC configuration
 source $DOTFILES_DIR/zsh/rtc-env.sh
 
+# tmux setup
 if [ "$TMUX" = "" ]; then tmux; fi
+eval "$(tmuxifier init -)"

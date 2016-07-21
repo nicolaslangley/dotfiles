@@ -7,3 +7,6 @@
 [submodule "lldb/lldbinit-start"]
 	path = lldb/lldbinit-start
 	url = https://github.com/deroko/lldbinit
+[submodule "tmux/tmuxifier"]
+	path = tmux/tmuxifier
+	url = https://github.com/jimeh/tmuxifier.git
