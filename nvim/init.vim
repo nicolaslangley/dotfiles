@@ -63,6 +63,11 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+" Folding
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+
 " ========
 " Assignments
 " ========

@@ -43,11 +43,6 @@
     stdout: true
     stderr: true
   - 
-    command: lldb/setup-lldb.sh
-    description: Setup LLDB settings
-    stdout: true
-    stderr: true
-  - 
     command: zsh/setup-zsh.sh
     description: Installing Zsh and oh-my-zsh
     stdout: true
