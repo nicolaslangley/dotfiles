@@ -21,7 +21,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive' 
 Plug 'Chiel92/vim-autoformat'
 Plug 'tyok/ack.vim' | Plug 'tyok/nerdtree-ack'
-Plug 'vim-scripts/DfrankUtil' | Plug 'vim-scripts/vimprj' | Plug 'vim-scripts/indexer.tar.gz' " CTags automatic updating
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rizzatti/dash.vim'
 Plug 'critiqjo/lldb.nvim'
@@ -85,6 +85,7 @@ let g:DoxygenToolkit_compactOneLineDoc = "yes"
 let g:DoxygenToolkit_briefTag_pre = "\\brief "
 let g:DoxygenToolkit_paramTag_pre = "\\param "
 let g:DoxygenToolkit_returnTag_pre = "\\return "
+let g:gutentags_project_root = ['runtimecore']
 
 " ========
 " Mappings
