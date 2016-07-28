@@ -7,6 +7,22 @@ file_location = "/Users/nico8506/.lldb/.breakpoints"
 def ls(debugger, command, result, internal_dict):
     print >> result, (commands.getoutput('/bin/ls %s' % command))
 
+"""Pretty printing of QStrings"""
+def utf16string_summary(value, *rest):
+    d = value.GetChildMemberWithName("d")
+    length = d.GetChildMemberWithName("size").GetValueAsSigned()
+    offset = d.GetChildMemberWithName("offset").GetValueAsSigned()
+    address = d.GetValueAsUnsigned() + offset
+
+    if length == 0:
+        return '""'
+    error = lldb.SBError()
+    # UTF-16, so we multiply length by 2
+    bytes = value.GetProcess().ReadMemory(address, length * 2, error)
+    if bytes is None:
+        return '""'
+    return '"%s"' % (bytes.decode('utf-16').encode('utf-8'))
+
 """Save breakpoints for current target"""
 def save_breakpoints(debugger, command, result, internal_dict):
     target = debugger.GetSelectedTarget()
@@ -36,3 +52,7 @@ def __lldb_init_module (debugger, dict):
     debugger.HandleCommand('command script add -f lldb_tools.ls ls')
     debugger.HandleCommand('command script add -f lldb_tools.save_breakpoints save_breakpoints')
     debugger.HandleCommand('command script add -f lldb_tools.load_breakpoints load_breakpoints')
+
+    summary = lldb.SBTypeSummary.CreateWithFunctionName("qstring.utf16string_summary")
+    summary.SetOptions(lldb.eTypeOptionHideChildren)
+    debugger.GetDefaultCategory().AddTypeSummary( lldb.SBTypeNameSpecifier("QString", False), summary )
