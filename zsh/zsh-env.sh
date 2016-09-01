@@ -95,3 +95,8 @@ alias ....="cd ../../.."
 alias -- -="cd -"                  # Go to previous dir with -
 alias cd.='cd $(readlink -f .)'    # Go to real dir (i.e. if current dir is linked)
 
+##########
+# Scripts
+##########
+alias git-status="~/.dotfiles/scripts/git_status.sh"
+
