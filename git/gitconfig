@@ -1,0 +1,24 @@
+[user]
+	email = nlangley@esri.com
+	name = Nicolas Langley
+[core]
+	excludesfile = /Users/nico8506/.gitignore_global
+[difftool "sourcetree"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/nico8506/.stCommitMsg
+[pull]
+	rebase = preserve
+[alias]
+        # Show the commit subject lines with colors options
+        ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" 
+        # Show the log with the files that were impacted with each commit
+        ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --name-status
+        # List the names of commiters by order of most commits.  Useful for finding a repo owner
+        names = shortlog -n -s
+        # Print the log with branches and tags
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit

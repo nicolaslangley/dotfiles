@@ -12,6 +12,7 @@
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmuxifier: tmux/tmuxifier
     ~/.gitignore_global: git/gitignore_global
+    ~/.gitconfig: git/gitconfig
     ~/.zshrc: zsh/zshrc
     ~/.pythonrc.py: python/pythonrc.py
     ~/.lldbinit: lldb/lldbinit
