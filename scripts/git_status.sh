@@ -22,8 +22,8 @@ do
   # Only interested in directories
   [ -d "${f}" ] || continue
 
-  echo -en "\033[0;35m"
-  echo "${f}"
+  echo -en "\033[0;34m"
+  echo -en "${f} - "
   echo -en "\033[0m"
 
   # Check if directory is a git repository
@@ -31,43 +31,15 @@ do
   then
     mod=0
     cd $f
-
-    # Check for modified files
-    if [ $(git status | grep modified -c) -ne 0 ]
-    then
-      mod=1
-      echo -en "\033[0;31m"
-      echo "Modified files"
-      echo -en "\033[0m"
-    fi
-
-    # Check for untracked files
-    if [ $(git status | grep Untracked -c) -ne 0 ]
-    then
-      mod=1
-      echo -en "\033[0;31m"
-      echo "Untracked files"
-      echo -en "\033[0m"
-    fi
-
-    # Check for unpushed changes
-    if [ $(git status | grep 'Your branch is ahead' -c) -ne 0 ]
-    then
-      mod=1
-      echo -en "\033[0;31m"
-      echo "Unpushed commit"
-      echo -en "\033[0m"
-    fi
-
-    # Check if everything is peachy keen
-    if [ $mod -eq 0 ]
-    then
-      echo "Nothing to commit"
-    fi
+    echo -en "\033[0;33m"
+    echo "$(git status)"
+    echo -en "\033[0m"
 
     cd ../
   else
+    echo -en "\033[0;31m"
     echo "Not a git repository"
+    echo -en "\033[0m"
   fi
 
   echo
