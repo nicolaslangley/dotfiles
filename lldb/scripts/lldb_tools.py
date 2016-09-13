@@ -1,5 +1,6 @@
 import lldb
 import commands
+import pygments
 
 file_location = "/Users/nico8506/.lldb/.breakpoints"
 
@@ -48,10 +49,22 @@ def load_breakpoints(debugger, command, result, internal_dict):
     except:
         print "No Breakpoints Available"
 
+"""Add syntax highlighting for C++ code"""
+def frame_cpp(debugger, command, result, internal_dict):
+    frame = debugger.GetSelectedTarget().GetProcess().GetThreadAtIndex(0).GetFrameAtIndex(0)
+    line_entry = frame.GetLineEntry()
+    file_spec = line_entry.GetFileSpec()
+    line = line_entry.GetLine()
+    source_manager = debugger.GetSourceManager()
+    stream = lldb.SBStream()
+    source_manager.DisplaySourceLinesWithLineNumbers(file_spec, line, 10, 10, '=>', stream)
+    print pygments.highlight(stream.GetData(), pygments.lexers.CLexer(), pygments.formatters.TerminalFormatter())
+
 def __lldb_init_module (debugger, dict):
     debugger.HandleCommand('command script add -f lldb_tools.ls ls')
     debugger.HandleCommand('command script add -f lldb_tools.save_breakpoints save_breakpoints')
     debugger.HandleCommand('command script add -f lldb_tools.load_breakpoints load_breakpoints')
+    debugger.HandleCommand('command script add -f lldb_tools.frame_cpp frame_cpp')
 
     summary = lldb.SBTypeSummary.CreateWithFunctionName("qstring.utf16string_summary")
     summary.SetOptions(lldb.eTypeOptionHideChildren)
