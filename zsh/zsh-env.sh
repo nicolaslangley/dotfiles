@@ -78,6 +78,10 @@ alias Dev="cd ~/Development"
 alias Matlab="/Applications/MATLAB_R2014a.app/Contents/MacOS/StartMATLAB &"
 alias matlabcli="/Applications/MATLAB_R2014a.app/bin/matlab -nodesktop -nosplash"
 
+# API trace
+alias apitrace="~/Development/apitrace/apitrace"
+alias qapitrace="~/Development/apitrace/qapitrace"
+
 # Shortcuts
 alias g="git"
 alias nv="nvim"
