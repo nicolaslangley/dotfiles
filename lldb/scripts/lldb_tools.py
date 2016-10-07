@@ -64,7 +64,7 @@ def __lldb_init_module (debugger, dict):
     debugger.HandleCommand('command script add -f lldb_tools.ls ls')
     debugger.HandleCommand('command script add -f lldb_tools.save_breakpoints save_breakpoints')
     debugger.HandleCommand('command script add -f lldb_tools.load_breakpoints load_breakpoints')
-    debugger.HandleCommand('command script add -f lldb_tools.frame_cpp frame_cpp')
+    # debugger.HandleCommand('command script add -f lldb_tools.frame_cpp frame_cpp')
 
     summary = lldb.SBTypeSummary.CreateWithFunctionName("qstring.utf16string_summary")
     summary.SetOptions(lldb.eTypeOptionHideChildren)

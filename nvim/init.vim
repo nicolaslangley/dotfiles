@@ -20,6 +20,7 @@ Plug 'dkprice/vim-easygrep'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive' 
 Plug 'Chiel92/vim-autoformat'
+Plug 'derekwyatt/vim-fswitch'
 Plug 'tyok/ack.vim' | Plug 'tyok/nerdtree-ack'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'jiangmiao/auto-pairs'
@@ -84,8 +85,15 @@ let g:DoxygenToolkit_commentType = "C++"
 let g:DoxygenToolkit_compactOneLineDoc = "yes"
 let g:DoxygenToolkit_briefTag_pre = "\\brief "
 let g:DoxygenToolkit_paramTag_pre = "\\param "
-let g:DoxygenToolkit_returnTag_pre = "\\return "
+let g:DoxygenToolkit_returnTag = "\\return "
 let g:gutentags_project_root = ['runtimecore']
+
+augroup cppfiles " Setting for FSwitch plugin to handle switching between .cpp and .h headers
+  au!
+  au BufEnter *.h let b:fswitchdst = 'cpp'
+  au BufEnter *.h let b:fswitchlocs = 'reg:/include/src/'
+  au BufEnter *.h let b:fsnonewfiles = 'on'
+augroup END
 
 " ========
 " Mappings
