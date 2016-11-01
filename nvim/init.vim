@@ -35,11 +35,13 @@ Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 " Syntax plugins
 Plug 'beyondmarc/hlsl.vim' 
+Plug 'tikhomirov/vim-glsl' 
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'JuliaLang/julia-vim'
 Plug 'keith/swift.vim'
+Plug 'vim-scripts/SyntaxRange'
 
 call plug#end()
 
@@ -109,4 +111,7 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " ========
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif " Close preview window on movement or entering insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" Note that a symlink has to be created with the syntax file from vim-glsl:
+" 'mkdir syntax & ln -s plugged/vim-glsl/syntax/glsl.vim syntax/glsl.vim'
+autocmd BufReadPost * call SyntaxRange#Include('// begin_glsl', '// end_glsl', 'hlsl', 'NonText') " Call SyntaxRange function to set GLSL highlighting within a string
 
