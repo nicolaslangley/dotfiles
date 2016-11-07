@@ -16,7 +16,6 @@ Plug 'altercation/vim-colors-solarized'
 " Tools
 Plug 'jansenm/vim-cmake'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dkprice/vim-easygrep'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive' 
 Plug 'Chiel92/vim-autoformat'
@@ -89,6 +88,7 @@ let g:DoxygenToolkit_briefTag_pre = "\\brief "
 let g:DoxygenToolkit_paramTag_pre = "\\param "
 let g:DoxygenToolkit_returnTag = "\\return "
 let g:gutentags_project_root = ['runtimecore']
+let mapleader = ","
 
 augroup cppfiles " Setting for FSwitch plugin to handle switching between .cpp and .h headers
   au!
@@ -105,6 +105,11 @@ map <silent> <C-f> :NERDTreeFocus<cr>
 map <silent> <C-n> :NERDTreeToggle<cr>
 map <leader>b :TagbarToggle<cr>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+" Opens search results in a window w/ links and highlight the matches - from http://chase-seibert.github.io/blog/2013/09/21/vim-grep-under-cursor.html
+command! -nargs=+ Grep execute 'silent grep! -I -r -n --exclude *.{.tag} . -e <args>' | copen | execute 'silent /<args>'
+" shift-contol-* Greps for the word under the cursor
+nmap <leader>g :Grep <c-r>=expand("<cword>")<cr><cr> 
 
 " ========
 " Autocommands
