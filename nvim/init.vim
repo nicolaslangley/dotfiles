@@ -15,12 +15,13 @@ Plug 'altercation/vim-colors-solarized'
 
 " Tools
 Plug 'jansenm/vim-cmake'
+Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive' 
 Plug 'Chiel92/vim-autoformat'
 Plug 'derekwyatt/vim-fswitch'
-Plug 'tyok/ack.vim' | Plug 'tyok/nerdtree-ack'
+Plug 'tyok/nerdtree-ack'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rizzatti/dash.vim'
@@ -89,6 +90,14 @@ let g:DoxygenToolkit_paramTag_pre = "\\param "
 let g:DoxygenToolkit_returnTag = "\\return "
 let g:gutentags_project_root = ['runtimecore']
 let mapleader = ","
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --smart-case' " Use The Silver Searcher instead of ack for ack.vim
+  cnoreabbrev ag Ack " Change Ack abbreviation to Ag
+  cnoreabbrev aG Ack
+  cnoreabbrev Ag Ack
+  cnoreabbrev AG Ack 
+endif
 
 augroup cppfiles " Setting for FSwitch plugin to handle switching between .cpp and .h headers
   au!

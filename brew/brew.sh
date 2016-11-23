@@ -11,6 +11,7 @@ ctags
 dockutil
 git
 sqlite
+the_silver_searcher
 tmux
 tree
 neovim/neovim/neovim
