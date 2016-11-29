@@ -93,10 +93,13 @@ let mapleader = ","
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case' " Use The Silver Searcher instead of ack for ack.vim
-  cnoreabbrev ag Ack " Change Ack abbreviation to Ag
-  cnoreabbrev aG Ack
-  cnoreabbrev Ag Ack
-  cnoreabbrev AG Ack 
+  cnoreabbrev ag Ack!
+  cnoreabbrev aG Ack!
+  cnoreabbrev Ag Ack!
+  cnoreabbrev AG Ack!
+  nnoremap <Leader>a :Ack!<Space>
+  " Use ack.vim in support mode
+  xnoremap <Leader>av y:Ack! <C-r>=fnameescape(@")<CR><CR> 
 endif
 
 augroup cppfiles " Setting for FSwitch plugin to handle switching between .cpp and .h headers
@@ -115,11 +118,6 @@ map <silent> <C-n> :NERDTreeToggle<cr>
 map <leader>b :TagbarToggle<cr>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" Opens search results in a window w/ links and highlight the matches - from http://chase-seibert.github.io/blog/2013/09/21/vim-grep-under-cursor.html
-command! -nargs=+ Grep execute 'silent grep! -I -r -n --exclude *.{.tag} . -e <args>' | copen | execute 'silent /<args>'
-" shift-contol-* Greps for the word under the cursor
-nmap <leader>g :Grep <c-r>=expand("<cword>")<cr><cr> 
-
 " ========
 " Autocommands
 " ========
@@ -127,5 +125,5 @@ autocmd CursorMovedI * if pumvisible() == 0|pclose|endif " Close preview window 
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " Note that a symlink has to be created with the syntax file from vim-glsl:
 " 'mkdir syntax & ln -s plugged/vim-glsl/syntax/glsl.vim syntax/glsl.vim'
-autocmd BufReadPost * call SyntaxRange#Include('// begin_glsl', '// end_glsl', 'hlsl', 'NonText') " Call SyntaxRange function to set GLSL highlighting within a string
+autocmd BufReadPost * call SyntaxRange#Include('// begin_glsl', '// end_glsl', 'glsl', 'NonText') " Call SyntaxRange function to set GLSL highlighting within a string
 
