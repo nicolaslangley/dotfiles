@@ -43,6 +43,9 @@ Plug 'JuliaLang/julia-vim'
 Plug 'keith/swift.vim'
 Plug 'vim-scripts/SyntaxRange'
 
+" My plugins
+Plug 'nicolaslangley/vim-lldb-breakpoints'
+
 call plug#end()
 
 " ========
