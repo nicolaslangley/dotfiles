@@ -15,7 +15,7 @@
     ~/.gitconfig: git/gitconfig
     ~/.zshrc: zsh/zshrc
     ~/.pythonrc.py: python/pythonrc.py
-    ~/.lldbinit: lldb/lldbinit
+    ~/.lldbinit: lldb-tools/lldbinit
 
 - shell:
   - 

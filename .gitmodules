@@ -7,3 +7,6 @@
 [submodule "tmux/tmuxifier"]
 	path = tmux/tmuxifier
 	url = https://github.com/jimeh/tmuxifier.git
+[submodule "lldb-tools"]
+	path = lldb-tools
+	url = https://github.com/nicolaslangley/lldb-tools
