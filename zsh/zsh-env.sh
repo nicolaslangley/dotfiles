@@ -79,8 +79,8 @@ alias Matlab="/Applications/MATLAB_R2014a.app/Contents/MacOS/StartMATLAB &"
 alias matlabcli="/Applications/MATLAB_R2014a.app/bin/matlab -nodesktop -nosplash"
 
 # API trace
-alias apitrace="~/Development/apitrace/apitrace"
-alias qapitrace="~/Development/apitrace/qapitrace"
+alias apitrace="~/Development/Graphics_tools/apitrace/build/apitrace"
+alias qapitrace="~/Development/Graphics_tools/apitrace/build/qapitrace"
 
 # Shortcuts
 alias g="git"
