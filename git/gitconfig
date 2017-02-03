@@ -15,13 +15,13 @@
 	rebase = preserve
 [alias]
         # Show the commit subject lines with colors options
-        ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" 
+        ls = log --color --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) [%C(blue)%an %Creset>> %C(cyan)%cn%Creset]' --abbrev-commit 
         # Show the log with the files that were impacted with each commit
-        ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --name-status
+        ll = log --pretty=format:"%C(yellow)%h%C(red)%d\\ %Creset%s%C(blue)\\ [%cn]" --decorate --name-status
         # List the names of commiters by order of most commits.  Useful for finding a repo owner
         names = shortlog -n -s
         # Print the log with branches and tags
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        lg = log --color --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) [%C(blue)%an %Creset>> %C(cyan)%cn%Creset]' --abbrev-commit
 [merge]
 	tool = p4mergetool
 [mergetool "p4mergetool"]
