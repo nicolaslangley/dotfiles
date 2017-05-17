@@ -7,12 +7,14 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmuxifier: tmux/tmuxifier
     ~/.gitignore_global: git/gitignore_global
-    ~/.gitconfig: git/gitconfig
-    ~/.zshrc: zsh/zshrc
-    ~/.pythonrc.py: python/pythonrc.py
+    ~/.gitconfig: windows/gitconfig-windows
+    ~/.bash_profile: windows/bash_profile
+    ~/.bashrc: windows/gitbash_solarized/.bashrc
+    ~/.minttyrc: windows/gitbash_solarized/.minttyrc
+    ~/.vimrc: windows/gitbash_solarized/.vimrc
+    ~/.dir_colors: windows/gitbash_solarized/.dir_colors
+    ~/.vim/colors/solarized.vim: windows/gitbash_solarized/solarized.vim
 
 - shell:
   - 
@@ -23,10 +25,5 @@
   - 
     command: themes/setup-themes.sh
     description: Setting up themes and installing fonts
-    stdout: true
-    stderr: true
-  - 
-    command: zsh/setup-zsh.sh
-    description: Installing Zsh and oh-my-zsh
     stdout: true
     stderr: true
