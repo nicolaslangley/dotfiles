@@ -1,5 +1,5 @@
 # Set Agnoster theme for bash
-export THEME=$HOME/.bash/themes/agnoster-bash/agnoster.bash
+export THEME=$HOME/.dotfiles/themes/agnoster-bash/agnoster.bash
 if [[ -f $THEME  ]]; then
   export DEFAULT_USER=`whoami`
   source $THEME
