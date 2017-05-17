@@ -1,0 +1,15 @@
+# Set Agnoster theme for bash
+export THEME=$HOME/.bash/themes/agnoster-bash/agnoster.bash
+if [[ -f $THEME  ]]; then
+  export DEFAULT_USER=`whoami`
+  source $THEME
+fi
+
+# Set directory colors
+eval `dircolors ~/.dir_colors`
+
+# Alias for RTC
+alias RTC-code='cd /c/Development/Quartz/runtimecore'
+alias RTC-scripts='cd /c/Development/Quartz/runtimecore_scripts/scripts'
+alias RTC-output='cd /c/Development/Quartz/output/win_x64_debug/bin'
+alias editrtc='cd /c/Development/Quartz/runtimecore && vim'

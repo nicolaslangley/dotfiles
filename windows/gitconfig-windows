@@ -1,0 +1,28 @@
+[user]
+	name = Nicolas Langley
+	email = nlangley@esri.com
+[core]
+        autocrlf = true
+[merge]
+        tool = smartsynchronize
+[difftool "smartsynchronize"]
+	cmd = 'C:/Program Files (x86)/SmartSynchronize/bin/smartsynchronize.exe' \"$LOCAL\" \"$REMOTE\"
+[mergetool "smartsynchronize"]
+	cmd = 'C:/Program Files (x86)/SmartSynchronize/bin/smartsynchronize.exe' \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	trustExitCode = true
+[pull]
+	rebase = preserve
+[alias]
+	ls = log --color --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) [%C(blue)%an%Creset >> %C(cyan)%cn%Creset]' --abbrev-commit
+	names = shortlog -n -s
+	lg = log --color --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) [%C(blue)%an%Creset >> %C(cyan)%cn%Creset]' --abbrev-commit
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[gui]
+	recentrepo = C:/Development/Quartz/runtimecore/map_renderer_3d
+[gc]
+	autoDetach = false

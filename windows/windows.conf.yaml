@@ -1,0 +1,32 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmuxifier: tmux/tmuxifier
+    ~/.gitignore_global: git/gitignore_global
+    ~/.gitconfig: git/gitconfig
+    ~/.zshrc: zsh/zshrc
+    ~/.pythonrc.py: python/pythonrc.py
+
+- shell:
+  - 
+    command: git submodule update --init --recursive
+    description: Installing submodules
+    stdout: true
+    stderr: true
+  - 
+    command: themes/setup-themes.sh
+    description: Setting up themes and installing fonts
+    stdout: true
+    stderr: true
+  - 
+    command: zsh/setup-zsh.sh
+    description: Installing Zsh and oh-my-zsh
+    stdout: true
+    stderr: true
