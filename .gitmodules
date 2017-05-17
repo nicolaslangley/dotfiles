@@ -10,3 +10,9 @@
 [submodule "lldb-tools"]
 	path = lldb-tools
 	url = https://github.com/nicolaslangley/lldb-tools
+[submodule "themes/agnoster-bash"]
+	path = themes/agnoster-bash
+	url = https://github.com/speedenator/agnoster-bash
+[submodule "windows/gitbash_solarized"]
+	path = windows/gitbash_solarized
+	url = https://github.com/speedpacer/gitbash_solarized
