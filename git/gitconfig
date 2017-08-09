@@ -3,12 +3,13 @@
 	name = Nicolas Langley
 [core]
 	excludesfile = /Users/nico8506/.gitignore_global
-[difftool "sourcetree"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-	trustExitCode = true
+[merge]
+        tool = smartsynchronize
+[difftool "smartsynchronize"]
+        cmd = '/Applications/SmartSynchronize.app/Contents/MacOS/SmartSynchronize' \"$LOCAL\" \"$REMOTE\"
+[mergetool "smartsynchronize"]
+        cmd = '/Applications/SmartSynchronize.app/Contents/MacOS/SmartSynchronize' \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+        trustExitCode = true
 [commit]
 	template = /Users/nico8506/.stCommitMsg
 [pull]
@@ -22,14 +23,3 @@
         names = shortlog -n -s
         # Print the log with branches and tags
         lg = log --color --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) [%C(blue)%an %Creset>> %C(cyan)%cn%Creset]' --abbrev-commit
-[merge]
-	tool = p4mergetool
-[mergetool "p4mergetool"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
-	trustExitCode = false
-[mergetool]
-	keepBackup = false
-[diff]
-	tool = p4mergetool
-[difftool "p4mergetool"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
