@@ -24,11 +24,6 @@
     stdout: true
     stderr: true
   - 
-    command: brew/setup-brew.sh
-    description: Installing brew and cask applications
-    stdout: true
-    stderr: true
-  - 
     command: themes/setup-themes.sh
     description: Setting up themes and installing fonts
     stdout: true
