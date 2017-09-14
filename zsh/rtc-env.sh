@@ -24,13 +24,6 @@ export ANDROIDGLES3_X86=${ANDROID_TOOLCHAIN_ROOT}/android-21_x86-4.9/bin
 export ANDROIDGLES3_X64=${ANDROID_TOOLCHAIN_ROOT}/android-21_x86_64-4.9/bin
 export PATH=${PATH}:${ANDROIDGLES3_ARMV7}:${ANDROIDGLES3_ARMV8}:${ANDROIDGLES3_X86}:${ANDROIDGLES3_X64}
 
-alias qmake-ios="~/Development/Qt/5.6/ios/bin/qmake"
-alias qmake-qml-ios-3d-app="~/Development/Qt/5.6/ios/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml_3d/runtimecore_test_qml_3d.pro -r CONFIG+=iphoneos CONFIG+=qml_debug"
-alias qmake-qml-android-3d-app="~/Development/Qt/5.6/android_armv7/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml_3d/runtimecore_test_qml_3d.pro -r -spec android-g++ CONFIG+=debug CONFIG+=qml_debug"
-alias androiddeployqt="~/Development/Qt/5.6/android_armv7/bin/androiddeployqt"
-alias android-qml-deploy="make install INSTALL_ROOT=\"Debug-android\" && ~/Development/Qt/5.6/android_armv7/bin/androiddeployqt --output ./Debug-android/ --deployment bundled --android-platform android-23 --gradle"
-
-
 # Qt
 alias qmake-ios="~/Development/Qt/5.6/ios/bin/qmake"
 alias qmake-android="~/Development/Qt/5.6/android_armv7/bin/qmake"
@@ -38,7 +31,8 @@ alias qmake-mac-qml-app="qmake ~/Development/Quartz/runtimecore/test/runtimecore
 alias qmake-qml-ios-3d-app="~/Development/Qt/5.6/ios/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml_3d/runtimecore_test_qml_3d.pro -r CONFIG+=iphoneos CONFIG+=qml_debug"
 alias qmake-qml-android-3d-app="~/Development/Qt/5.6/android_armv7/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml_3d/runtimecore_test_qml_3d.pro -r -spec android-g++ CONFIG+=debug CONFIG+=qml_debug"
 alias androiddeployqt="~/Development/Qt/5.6/android_armv7/bin/androiddeployqt"
-alias android-qml-deploy="make install INSTALL_ROOT=\"Debug-android\" && ~/Development/Qt/5.6/android_armv7/bin/androiddeployqt --output ./Debug-android/ --deployment bundled --android-platform android-23 --gradle"
+output_dir=android-qml3d-build
+alias android-qml-deploy="make install INSTALL_ROOT=\"$output_dir\" && ~/Development/Qt/5.6/android_armv7/bin/androiddeployqt --output ./$output_dir/ --deployment bundled --android-platform android-23 --gradle"
 
 # RTC-script aliases
 alias rtc_repos_status="cd ~/Development/Quartz/runtimecore_scripts/scripts && ./get_repos_status.sh -g repos_runtimecore && popd"
