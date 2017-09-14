@@ -38,3 +38,7 @@ alias android-qml-deploy="make install INSTALL_ROOT=\"$output_dir\" && ~/Develop
 alias rtc_repos_status="cd ~/Development/Quartz/runtimecore_scripts/scripts && ./get_repos_status.sh -g repos_runtimecore && popd"
 alias rtc_create_build="cd ~/Development/Quartz/runtimecore_scripts/scripts && ./create_build.sh && popd"
 alias rtc_build_runtimecoretest="cd ~/Development/Quartz/runtimecore_scripts/scripts && ./build.sh -s runtimecore_test && popd"
+
+# Switch between clang command line tools OS X
+alias clang-command-line="sudo xcode-select --switch /Library/Developer/CommandLineTools/"
+alias clang-xcode="sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer/"
