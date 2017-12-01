@@ -27,3 +27,5 @@
         lg = log --color --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) [%C(blue)%an %Creset>> %C(cyan)%cn%Creset]' --abbrev-commit
         # Partial commit with stash
         pcommit = !git stash save -q --keep-index "current wd" && git commit -s && git stash apply -q --index stash@{0}
+[rebase]
+	autosquash = true
