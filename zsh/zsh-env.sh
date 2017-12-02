@@ -51,7 +51,7 @@ else
   export EDITOR='nvim'
 fi
 export EDITOR_NOWAIT='nvim'
-export GIT_GUI='sourcetree'
+export GIT_GUI='smartgit'
 export GIT_EDITOR='nvim'
 
 if [ "$(uname -s)" = "Darwin" ]; then
@@ -76,7 +76,6 @@ alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 # Custom aliases
-alias School="cd ~/Dropbox/UCLA/\"Fall 2015\"/"
 alias Dev="cd ~/Development"
 
 # API trace
