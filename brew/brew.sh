@@ -18,6 +18,7 @@ neovim/neovim/neovim
 wget
 python
 python3
+tig
 )
 
 libs=(

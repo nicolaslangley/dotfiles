@@ -6,27 +6,18 @@ core_apps=(
 alfred
 appcleaner
 bettertouchtool
-cyberduck
 dropbox
 flux
 google-chrome
-google-drive
 iterm2
 karabiner
-notational-velocity
 smcfancontrol
-spotify
-sqlitebrowser
 the-unarchiver
-vlc
 1password
 )
 
 dev_apps=(
 dash
-gitup
-sourcetree
-p4merge
 visual-studio-code
 )
 
