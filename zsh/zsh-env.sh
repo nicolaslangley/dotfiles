@@ -54,10 +54,16 @@ export EDITOR_NOWAIT='nvim'
 export GIT_GUI='sourcetree'
 export GIT_EDITOR='nvim'
 
-# Java
-export JAVA_HOME=$(/usr/libexec/java_home)
-# Matlab setup
-export MATLAB_JAVA="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+if [ "$(uname -s)" = "Darwin" ]; then
+    # Java
+    export JAVA_HOME=$(/usr/libexec/java_home)
+    # Matlab setup
+    export MATLAB_JAVA="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+    alias Matlab="/Applications/MATLAB_R2014a.app/Contents/MacOS/StartMATLAB &"
+    alias matlabcli="/Applications/MATLAB_R2014a.app/bin/matlab -nodesktop -nosplash"
+else
+    # Assume Linux platforms if not MacOS
+fi
 # Python
 export PYTHONSTARTUP=~/.pythonrc.py
 
@@ -69,14 +75,9 @@ export PYTHONSTARTUP=~/.pythonrc.py
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 
-#P4 Merge
-alias p4merge="/Applications/p4merge.app/Contents/MacOS/p4merge"
-
 # Custom aliases
 alias School="cd ~/Dropbox/UCLA/\"Fall 2015\"/"
 alias Dev="cd ~/Development"
-alias Matlab="/Applications/MATLAB_R2014a.app/Contents/MacOS/StartMATLAB &"
-alias matlabcli="/Applications/MATLAB_R2014a.app/bin/matlab -nodesktop -nosplash"
 
 # API trace
 alias apitrace="~/Development/Graphics_tools/apitrace/build/apitrace"

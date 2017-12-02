@@ -8,7 +8,8 @@ alias RTC-mr3d-pipeline="cd ~/Development/Quartz/runtimecore/map_renderer_3d/src
 alias RTC-mr3d-low-level="cd ~/Development/Quartz/runtimecore/map_renderer_3d/src/graphics_pipeline3d/low_level_renderer"
 alias RTC-scripts="cd ~/Development/Quartz/runtimecore_scripts/scripts"
 alias editrtc="pushd ~/Development/Quartz/runtimecore && nvim && popd"
-alias git_clean_rtc="~/.dotfiles/scripts/git_clean_branches_rtc.sh"
+alias qmake="/usr/local/qt/5.9.2/clang_64/bin/qmake"
+alias git-clean-rtc="~/.dotfiles/scripts/git_clean_branches_rtc.sh"
 
 # RTC-script aliases
 alias rtc_repos_status="cd ~/Development/Quartz/runtimecore_scripts/scripts && ./get_repos_status.sh -g repos_runtimecore && popd"
@@ -46,7 +47,6 @@ if [ "$(uname -s)" = "Darwin" ]; then
 else
   # These aliases are for Linux systems
   alias RTC-output="cd ~/Development/Quartz/output/linux_x64_debug/bin"
+  alias nvidia-graphics-debugger="/usr/local/Tegra-Graphics-Debugger/nvidia-gfx-debugger&"
+  alias nvidia-set-preload="export LD_PRELOAD="~/.tgd/libs/libNvidia_gfx_debugger.so""
 fi
-
-
-
