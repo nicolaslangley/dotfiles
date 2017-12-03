@@ -8,7 +8,6 @@ alias RTC-mr3d-pipeline="cd ~/Development/Quartz/runtimecore/map_renderer_3d/src
 alias RTC-mr3d-low-level="cd ~/Development/Quartz/runtimecore/map_renderer_3d/src/graphics_pipeline3d/low_level_renderer"
 alias RTC-scripts="cd ~/Development/Quartz/runtimecore_scripts/scripts"
 alias editrtc="pushd ~/Development/Quartz/runtimecore && nvim && popd"
-alias qmake="/usr/local/qt/5.9.2/clang_64/bin/qmake"
 alias git-clean-rtc="~/.dotfiles/scripts/git_clean_branches_rtc.sh"
 
 # RTC-script aliases
@@ -21,8 +20,9 @@ if [ "$(uname -s)" = "Darwin" ]; then
   # These aliases are for MacOS systems
   alias RTC-output="cd ~/Development/Quartz/output/macos_x64_debug/bin"
   # Qt
+  alias qmake-mac="~/Development/Qt/5.9.2/clang_64/bin/qmake"
+  alias qmake-mac-qml-3d-app="~/Development/Qt/5.9.2/clang_64/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml_3d/runtimecore_test_qml_3d.pro -r CONFIG+=debug"
   alias qmake-ios="~/Development/Qt/5.9.2/ios/bin/qmake"
-  alias qmake-mac-qml-app="qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=debug"
   alias qmake-qml-ios-3d-app="~/Development/Qt/5.9.2/ios/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml_3d/runtimecore_test_qml_3d.pro -r CONFIG+=iphoneos CONFIG+=qml_debug"
   alias qmake-android="~/Development/Qt/5.9.2/android_armv7/bin/qmake"
   alias qmake-qml-android-3d-app="~/Development/Qt/5.9.2/android_armv7/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml_3d/runtimecore_test_qml_3d.pro -r -spec android-g++ CONFIG+=debug CONFIG+=qml_debug"
@@ -47,6 +47,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
 else
   # These aliases are for Linux systems
   alias RTC-output="cd ~/Development/Quartz/output/linux_x64_debug/bin"
+  alias qmake-linux="/usr/local/qt/5.9.2/clang_64/bin/qmake"
   alias nvidia-graphics-debugger="/usr/local/Tegra-Graphics-Debugger/nvidia-gfx-debugger&"
   alias nvidia-set-preload="export LD_PRELOAD="~/.tgd/libs/libNvidia_gfx_debugger.so""
 fi
