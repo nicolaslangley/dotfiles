@@ -16,6 +16,7 @@
     ~/.zshrc: zsh/zshrc
     ~/.pythonrc.py: python/pythonrc.py
     ~/.lldbinit: lldb-tools/lldbinit
+    ~/.tigrc: tig/tigrc
 
 - shell:
   - 

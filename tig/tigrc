@@ -1,0 +1,5 @@
+# Set git commit to always use the --signed-off option 
+bind status C !git commit -s
+
+# User-defined external command to amend the last commit
+bind status + !git commit --amend
