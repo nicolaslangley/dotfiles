@@ -4,3 +4,5 @@
 *.log
 *.swp
 tags
+.vscode/
+c_cpp_properties.json
