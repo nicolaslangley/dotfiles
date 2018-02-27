@@ -39,6 +39,13 @@ prepend-path "$HOME/.tmuxifier/bin"
 # Remove duplicates (preserving prepended items)
 # Source: http://unix.stackexchange.com/a/40755
 PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
+    
+# Vulkan setup
+export VULKAN_SDK=/Users/nico8506/Development/Graphics_tools/vulkansdk/macOS
+export VK_ICD_FILENAMES=$VULKAN_SDK/etc/vulkan/icd.d/MoltenVK_icd.json
+export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layers.d
+export DYLD_LIBRARY_PATH=$VULKAN_SDK/lib:$DYLD_LIBRARY_PATH
+PATH=$VULKAN_SDK/bin:$PATH
 export PATH
 
 # ssh

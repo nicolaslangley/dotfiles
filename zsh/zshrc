@@ -24,6 +24,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
     OS="OSX"
     export QT_HOME=~/Development/Qt/5.9.2
     export QT_PLUGIN_PATH=~/Development/Qt/5.9.2/clang_64/plugins
+    export PATH="/usr/local/opt/llvm/bin:$PATH"
 else
     # Assume Linux platforms if not MacOS
     OS=$(uname -s)
