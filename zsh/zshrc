@@ -48,6 +48,9 @@ if [ "$(uname -s)" = "Darwin" ]; then
   export QT_PLUGIN_PATH=~/Development/Qt/5.9.2/clang_64/plugins
   prepend-path "/usr/local/opt/llvm/bin"
 
+  # Set thread limit
+  ulimit -n 4096
+
   # Java
   export JAVA_HOME=$(/usr/libexec/java_home)
   # Matlab setup
@@ -60,11 +63,11 @@ if [ "$(uname -s)" = "Darwin" ]; then
 
   # Qt aliases
   alias qmake-mac="~/Development/Qt/5.9.2/clang_64/bin/qmake"
-  alias qmake-mac-qml-3d-app="~/Development/Qt/5.9.2/clang_64/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml_3d/runtimecore_test_qml_3d.pro -r CONFIG+=debug"
+  alias qmake-mac-qml-3d-app="~/Development/Qt/5.9.2/clang_64/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=debug"
   alias qmake-ios="~/Development/Qt/5.9.2/ios/bin/qmake"
-  alias qmake-qml-ios-3d-app="~/Development/Qt/5.9.2/ios/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml_3d/runtimecore_test_qml_3d.pro -r CONFIG+=iphoneos CONFIG+=qml_debug"
+  alias qmake-qml-ios-3d-app="~/Development/Qt/5.9.2/ios/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=iphoneos CONFIG+=qml_debug"
   alias qmake-android="~/Development/Qt/5.9.2/android_armv7/bin/qmake"
-  alias qmake-qml-android-3d-app="~/Development/Qt/5.9.2/android_armv7/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml_3d/runtimecore_test_qml_3d.pro -r -spec android-g++ CONFIG+=debug CONFIG+=qml_debug"
+  alias qmake-qml-android-3d-app="~/Development/Qt/5.9.2/android_armv7/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r -spec android-g++ CONFIG+=debug CONFIG+=qml_debug"
   alias androiddeployqt="~/Development/Qt/5.9.2/android_armv7/bin/androiddeployqt"
   output_dir=android-qml3d-build
   alias android-qml-deploy="make install INSTALL_ROOT=\"$output_dir\" && ~/Development/Qt/5.9.2/android_armv7/bin/androiddeployqt --output ./$output_dir/ --deployment bundled --android-platform android-26 --jdk /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home --gradle"
