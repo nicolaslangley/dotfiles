@@ -3,3 +3,6 @@ bind status C !git commit -s
 
 # User-defined external command to amend the last commit
 bind status + !git commit --amend
+
+# Copy commit ID to clipboard
+bind generic 9 !@sh -c "echo %(commit) | pbcopy"
