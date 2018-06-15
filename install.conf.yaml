@@ -10,7 +10,7 @@
     ~/.config/nvim/autoload: nvim/autoload
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmuxifier: tmux/tmuxifier
+    ~/.config/tmuxinator/rtc-debug.yml: tmux/tmuxinator/rtc-debug.yml
     ~/.gitignore_global: git/gitignore_global
     ~/.gitconfig: git/gitconfig
     ~/.zshrc: zsh/zshrc
@@ -32,11 +32,6 @@
   - 
     command: nvim +PlugInstall +qall
     description: Installing nvim plugins
-    stdout: true
-    stderr: true
-  - 
-    command: python/setup-python.sh
-    description: Installing python modules
     stdout: true
     stderr: true
   - 

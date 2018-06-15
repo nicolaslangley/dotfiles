@@ -52,7 +52,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
   ulimit -n 4096
 
   # Java
-  export JAVA_HOME=$(/usr/libexec/java_home)
+  # export JAVA_HOME=$(/usr/libexec/java_home)
   # Matlab setup
   export MATLAB_JAVA="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
   alias Matlab="/Applications/MATLAB_R2014a.app/Contents/MacOS/StartMATLAB &"
@@ -73,7 +73,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
   alias android-qml-deploy="make install INSTALL_ROOT=\"$output_dir\" && ~/Development/Qt/5.9.2/android_armv7/bin/androiddeployqt --output ./$output_dir/ --deployment bundled --android-platform android-26 --jdk /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home --gradle"
 
   # Vulkan for MacOS
-  export VULKAN_SDK=/Users/nico8506/Development/Graphics_tools/vulkansdk/macOS
+  export VULKAN_SDK=/Users/nico8506/Development/Tools/vulkansdk/macOS
   export VK_ICD_FILENAMES=$VULKAN_SDK/etc/vulkan/icd.d/MoltenVK_icd.json
   export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layers.d
   export DYLD_LIBRARY_PATH=$VULKAN_SDK/lib:$DYLD_LIBRARY_PATH
@@ -131,6 +131,7 @@ export PATH
 
 # tmux setup
 if [ "$TMUX" = "" ]; then tmux; fi
+alias mux="tmuxinator"
 
 ########################
 # RTC specific aliases
@@ -165,8 +166,8 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias Dev="cd ~/Development"
 
 # API trace
-alias apitrace="~/Development/Graphics_tools/apitrace/build/apitrace"
-alias qapitrace="~/Development/Graphics_tools/apitrace/build/qapitrace"
+alias apitrace="~/Development/Tools/apitrace/build/apitrace"
+alias qapitrace="~/Development/Tools/apitrace/build/qapitrace"
 
 # Shortcuts
 alias g="git"
@@ -189,4 +190,7 @@ alias cd.='cd $(readlink -f .)'    # Go to real dir (i.e. if current dir is link
 # Scripts
 ##########
 alias git-status="~/.dotfiles/scripts/git_status.sh"
+
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

@@ -12,20 +12,20 @@
 [mergetool "smartsynchronize"]
         cmd = '/Applications/SmartSynchronize.app/Contents/MacOS/SmartSynchronize' \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
         trustExitCode = true
-[commit]
-	template = /Users/nico8506/.stCommitMsg
 [pull]
 	rebase = preserve
 [alias]
         # Show the commit subject lines with colors options
-        ls = log --color --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) [%C(blue)%an %Creset>> %C(cyan)%cn%Creset]' --abbrev-commit 
+        ls = log --color --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) [%C(blue)%an %Creset>> %C(cyan)%cn%Creset]' --abbrev-commit
         # Show the log with the files that were impacted with each commit
-        ll = log --pretty=format:"%C(yellow)%h%C(red)%d\\ %Creset%s%C(blue)\\ [%cn]" --decorate --name-status
+        ll = log --pretty=format:%C(yellow)%h%C(red)%d\\ %Creset%s%C(blue)\\ [%cn] --decorate --name-status
         # List the names of commiters by order of most commits.  Useful for finding a repo owner
         names = shortlog -n -s
         # Print the log with branches and tags
         lg = log --color --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) [%C(blue)%an %Creset>> %C(cyan)%cn%Creset]' --abbrev-commit
         # Partial commit with stash
-        pcommit = !git stash save -q --keep-index "current wd" && git commit -s && git stash apply -q --index stash@{0}
+        pcommit = !git stash save -q --keep-index current wd && git commit -s && git stash apply -q --index stash@{0}
 [rebase]
 	autosquash = true
+[gc]
+	autoDetach = false
