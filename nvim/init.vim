@@ -10,11 +10,12 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-scripts/TaskList.vim'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'vim-scripts/TaskList.vim'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'tomasiser/vim-code-dark'
 
 " Tools
-Plug 'jansenm/vim-cmake'
+" Plug 'jansenm/vim-cmake'
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -24,10 +25,10 @@ Plug 'derekwyatt/vim-fswitch'
 Plug 'tyok/nerdtree-ack'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'jiangmiao/auto-pairs'
-Plug 'rizzatti/dash.vim'
-Plug 'critiqjo/lldb.nvim'
+" Plug 'rizzatti/dash.vim'
+" Plug 'critiqjo/lldb.nvim'
 Plug 'neomake/neomake'
-Plug 'vim-scripts/DoxygenToolkit.vim'
+" Plug 'vim-scripts/DoxygenToolkit.vim'
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
@@ -37,14 +38,14 @@ Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'beyondmarc/hlsl.vim' 
 Plug 'tikhomirov/vim-glsl' 
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'JuliaLang/julia-vim'
-Plug 'keith/swift.vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Plug 'JuliaLang/julia-vim'
+" Plug 'keith/swift.vim'
 Plug 'vim-scripts/SyntaxRange'
 
 " My plugins
-Plug 'nicolaslangley/vim-lldb-breakpoints'
+" Plug 'nicolaslangley/vim-lldb-breakpoints'
 
 call plug#end()
 
@@ -53,10 +54,11 @@ call plug#end()
 " ========
 
 " UI
-colorscheme solarized
+colorscheme codedark
+let g:airline_theme = 'codedark'
 highlight clear SignColumn
 set guifont=Meslo\ LG\ S\ DZ\ REgular\ for\ Powerline:h12 " Font needs to be installed
-set background=dark
+" set background=dark
 set number
 
 " Search
