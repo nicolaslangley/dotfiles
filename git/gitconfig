@@ -1,16 +1,21 @@
 [user]
 	email = nlangley@esri.com
-	name = Nicolas Langley
+        name = Nicolas Langley
 [core]
 	excludesfile = /Users/nico8506/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [merge]
-        tool = smartsynchronize
+	tool = vscode
 [diff]
-	tool = smartsynchronize
-[difftool "smartsynchronize"]
-        cmd = '/Applications/SmartSynchronize.app/Contents/MacOS/SmartSynchronize' \"$LOCAL\" \"$REMOTE\"
+	tool = vscode
+[difftool "vscode"]
+        cmd = 'code' \"$LOCAL\" \"$REMOTE\" --diff --wait
+        trustExitCode = false
+[mergetool "vscode"]
+	cmd = 'code' \"$MERGED\" --wait
+        trustExitCode = true
 [mergetool "smartsynchronize"]
-        cmd = '/Applications/SmartSynchronize.app/Contents/MacOS/SmartSynchronize' \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+        cmd = '/Applications/SmartSynchronize.app/Contents/MacOS/SmartSynchronize' \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
         trustExitCode = true
 [pull]
 	rebase = preserve
@@ -25,7 +30,32 @@
         lg = log --color --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) [%C(blue)%an %Creset>> %C(cyan)%cn%Creset]' --abbrev-commit
         # Partial commit with stash
         pcommit = !git stash save -q --keep-index current wd && git commit -s && git stash apply -q --index stash@{0}
+        # Show status for all branches
+        status-all = for-each-ref --format="%(refname:short) %(upstream:track)" refs/heads
+        # Show commit with difftool
+        showtool = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
+        # Easier git commit --fixup use
+        fixup = "!f() { git commit -m\"fixup! $(git log -1 --pretty=%s $1)\"; }; f"
 [rebase]
 	autosquash = true
 [gc]
 	autoDetach = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
