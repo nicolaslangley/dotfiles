@@ -61,6 +61,13 @@ if [ "$(uname -s)" = "Darwin" ]; then
   # RTC aliases
   alias RTC-output="cd ~/Development/Quartz/output/macos_x64_debug/bin"
 
+  # Clang aliases
+  alias setup-coverage="source ~/.dotfiles/scripts/setup-coverage.sh"
+  alias process-coverage="~/.dotfiles/scripts/process-coverage.sh"
+  alias export-coverage="~/.dotfiles/scripts/export-coverage.sh"
+  alias show-coverage="~/.dotfiles/scripts/show-coverage.sh"
+  alias llvm-cov="xcrun llvm-cov"
+
   # Qt aliases
   alias qmake-mac="~/Development/Qt/5.9.2/clang_64/bin/qmake"
   alias qmake-mac-qml-3d-app="~/Development/Qt/5.9.2/clang_64/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=debug"
@@ -78,6 +85,8 @@ if [ "$(uname -s)" = "Darwin" ]; then
   export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layers.d
   export DYLD_LIBRARY_PATH=$VULKAN_SDK/lib:$DYLD_LIBRARY_PATH
   prepend-path "$VULKAN_SDK/bin"
+
+  PATH="/usr/local/share/git-core/contrib/diff-highlight/diff-highlight:$PATH"
 
   # Switch between clang command line tools OS X
   alias clang-command-line="sudo xcode-select --switch /Library/Developer/CommandLineTools/"
@@ -148,11 +157,15 @@ alias RTC-wikis="cd ~/Development/Quartz/wikis"
 alias RTC-tools="cd ~/Development/Quartz/runtimecore/runtimecore_scripts/tools"
 alias editrtc="pushd ~/Development/Quartz/runtimecore && nvim && popd"
 alias git-clean-rtc="~/.dotfiles/scripts/git_clean_branches_rtc.sh"
+alias clang-tidy="~/Development/Quartz/runtimecore/runtimecore_scripts/tools/clang-tidy.sh"
 
 # RTC-script aliases
 alias rtc_repos_status="cd ~/Development/Quartz/runtimecore_scripts/scripts && ./get_repos_status.sh -g repos_runtimecore && popd"
 alias rtc_create_build="cd ~/Development/Quartz/runtimecore_scripts/scripts && ./create_build.sh && popd"
 alias rtc_build_runtimecoretest="cd ~/Development/Quartz/runtimecore_scripts/scripts && ./build.sh -s runtimecore_test && popd"
+
+# RTC Environment script
+source ~/Development/Quartz/runtimecore/runtimecore_scripts/rtc-env.sh
 
 ##########
 # Aliases
