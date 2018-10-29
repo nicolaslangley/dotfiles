@@ -117,8 +117,10 @@ else
   # These aliases are for Linux systems
   alias RTC-output="cd ~/Development/Quartz/output/linux_x64_debug/bin"
   alias qmake-linux="/usr/local/qt/5.9.2/clang_64/bin/qmake"
-  alias nvidia-graphics-debugger="/usr/local/Tegra-Graphics-Debugger/nvidia-gfx-debugger&"
+  alias qmake-linux-qml-3d-app="/usr/local/qt/5.9.2/clang_64/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=debug"
+  alias nvidia-graphics-debugger="~/Development/Graphics_tools/Linux-Graphics-Debugger-2.3/nvidia-gfx-debugger&"
   alias nvidia-set-preload="export LD_PRELOAD="~/.tgd/libs/libNvidia_gfx_debugger.so""
+  alias renderdoc="~/Development/Graphics_tools/renderdoc_1.0/bin/qrenderdoc"
 fi
 export OS
 
