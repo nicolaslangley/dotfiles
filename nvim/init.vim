@@ -10,25 +10,16 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
-" Plug 'vim-scripts/TaskList.vim'
-" Plug 'altercation/vim-colors-solarized'
 Plug 'tomasiser/vim-code-dark'
 
 " Tools
-" Plug 'jansenm/vim-cmake'
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-fugitive' 
-Plug 'Chiel92/vim-autoformat'
+Plug 'nixprime/cpsm'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'tyok/nerdtree-ack'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'rizzatti/dash.vim'
-" Plug 'critiqjo/lldb.nvim'
-Plug 'neomake/neomake'
-" Plug 'vim-scripts/DoxygenToolkit.vim'
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
@@ -38,10 +29,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'beyondmarc/hlsl.vim' 
 Plug 'tikhomirov/vim-glsl' 
 Plug 'octol/vim-cpp-enhanced-highlight'
-" Plug 'pangloss/vim-javascript'
-" Plug 'mxw/vim-jsx'
-" Plug 'JuliaLang/julia-vim'
-" Plug 'keith/swift.vim'
 Plug 'vim-scripts/SyntaxRange'
 
 " My plugins
@@ -75,6 +62,7 @@ set softtabstop=2
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
+set cursorline
 
 " ========
 " Assignments
@@ -88,6 +76,9 @@ let g:neomake_cpp_enable_makers=['clang']
 let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall", "-g"]
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_working_path_mode = 'rwa'
+let g:ctrlp_user_command = 'fd --type f --color=never "" %s'
+" let g:ctrlp_use_caching = 0
+let g:ctrlp_match_func = { 'match': 'cpsm#CtrlPMatch' }
 let g:python_host_prog = '/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python' " Set python to be system python
 let g:DoxygenToolkit_commentType = "C++"
 let g:DoxygenToolkit_compactOneLineDoc = "yes"
@@ -132,4 +123,3 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " Note that a symlink has to be created with the syntax file from vim-glsl:
 " 'mkdir syntax & ln -s plugged/vim-glsl/syntax/glsl.vim syntax/glsl.vim'
 autocmd BufReadPost * call SyntaxRange#Include('// begin_glsl', '// end_glsl', 'glsl', 'NonText') " Call SyntaxRange function to set GLSL highlighting within a string
-
