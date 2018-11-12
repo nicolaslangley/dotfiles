@@ -95,15 +95,11 @@ if [ "$(uname -s)" = "Darwin" ]; then
   # MacOS Android NDK and Toolchains
   alias adb="~/Development/Android/sdk/platform-tools/adb" 
   export ANDROID_SDK_ROOT=/Users/nico8506/Development/Android/sdk
-  export ANDROID_NDK_ROOT=/Users/nico8506/Development/Android/android-ndk-r12b
-  export ANDROID_TOOLCHAIN_ROOT=/Users/nico8506/Development/Android/android-ndk-r10e/toolchains
-  export ANDROID_ARMV7=${ANDROID_TOOLCHAIN_ROOT}/android-14_arm-linux-androideabi-4.9/bin
-  export ANDROID_X86=${ANDROID_TOOLCHAIN_ROOT}/android-14_x86-4.9/bin
-  export ANDROIDGLES3_ARMV7=${ANDROID_TOOLCHAIN_ROOT}/android-21_arm-linux-androideabi-4.9/bin
-  export ANDROIDGLES3_ARMV8=${ANDROID_TOOLCHAIN_ROOT}/android-21_aarch64-linux-android-4.9/bin
-  export ANDROIDGLES3_X86=${ANDROID_TOOLCHAIN_ROOT}/android-21_x86-4.9/bin
-  export ANDROIDGLES3_X64=${ANDROID_TOOLCHAIN_ROOT}/android-21_x86_64-4.9/bin
-  prepend-path "${ANDROIDGLES3_ARMV7}"
+  export ANDROID_NDK_ROOT=/Users/nico8506/Development/Android/android-ndk-r15b
+  export ANDROID_TOOLCHAIN_ROOT=/Users/nico8506/Development/Android/toolchains
+  export ANDROID_ARMV7=${ANDROID_TOOLCHAIN_ROOT}/android-16_arm_gnustl/bin
+  export ANDROID_X86=${ANDROID_TOOLCHAIN_ROOT}/android-16_x86_gnustl/bin
+  export ANDROIDGLES3_ARMV8=${ANDROID_TOOLCHAIN_ROOT}/android-21_21_arm64_gnustl/bin
   prepend-path "${ANDROIDGLES3_ARMV8}"
   prepend-path "${ANDROIDGLES3_X86}"
   prepend-path "${ANDROIDGLES3_X64}"
@@ -167,6 +163,8 @@ alias rtc_create_build="cd ~/Development/Quartz/runtimecore_scripts/scripts && .
 alias rtc_build_runtimecoretest="cd ~/Development/Quartz/runtimecore_scripts/scripts && ./build.sh -s runtimecore_test && popd"
 
 # RTC Environment script
+autoload bashcompinit
+bashcompinit
 source ~/Development/Quartz/runtimecore/runtimecore_scripts/rtc-env.sh
 
 ##########
