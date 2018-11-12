@@ -14,6 +14,7 @@ Plug 'tomasiser/vim-code-dark'
 
 " Tools
 Plug 'mileszs/ack.vim'
+Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nixprime/cpsm'
 Plug 'derekwyatt/vim-fswitch'
@@ -30,6 +31,8 @@ Plug 'beyondmarc/hlsl.vim'
 Plug 'tikhomirov/vim-glsl' 
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-scripts/SyntaxRange'
+Plug 'rhysd/vim-clang-format'
+Plug 'b4winckler/vim-objc'
 
 " My plugins
 " Plug 'nicolaslangley/vim-lldb-breakpoints'
@@ -64,6 +67,8 @@ set foldnestmax=10
 set nofoldenable
 set cursorline
 
+set hidden
+
 " ========
 " Assignments
 " ========
@@ -74,10 +79,10 @@ let g:tlTokenList=["FIXME", "TODO", "???", "XXX"]
 let g:deoplete#enable_at_startup=1
 let g:neomake_cpp_enable_makers=['clang']
 let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall", "-g"]
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_map = ''
 let g:ctrlp_working_path_mode = 'rwa'
 let g:ctrlp_user_command = 'fd --type f --color=never "" %s'
-" let g:ctrlp_use_caching = 0
+let g:ctrlp_use_caching = 0
 let g:ctrlp_match_func = { 'match': 'cpsm#CtrlPMatch' }
 let g:python_host_prog = '/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python' " Set python to be system python
 let g:DoxygenToolkit_commentType = "C++"
@@ -87,6 +92,8 @@ let g:DoxygenToolkit_paramTag_pre = "\\param "
 let g:DoxygenToolkit_returnTag = "\\return "
 let g:gutentags_project_root = ['runtimecore']
 let mapleader = ","
+let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format = 1
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case' " Use The Silver Searcher instead of ack for ack.vim
@@ -110,10 +117,13 @@ augroup END
 " Mappings
 " ========
 noremap <leader>. :CtrlPTag<cr>
+map <silent> <C-n> :NERDTreeFind<cr>
 map <silent> <C-f> :NERDTreeFocus<cr>
-map <silent> <C-n> :NERDTreeToggle<cr>
+map <silent> <C-m> :NERDTreeToggle<cr>
 map <leader>b :TagbarToggle<cr>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+nnoremap <silent> <C-l> :let g:cpsm_match_empty_query = 0<CR>:CtrlPMRU<CR>
+nnoremap <silent> <C-p> :let g:cpsm_match_empty_query = 1<CR>:CtrlP<CR>
 
 " ========
 " Autocommands
