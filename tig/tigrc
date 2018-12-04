@@ -8,8 +8,8 @@ bind status + !git commit --amend
 bind generic 9 !@sh -c "echo %(commit) | pbcopy"
 
 # Invoke interactive rebase
-bind main R !git rebase -i %(commit)^
-bind diff R !git rebase -i %(commit)^
+bind main B !git rebase -i %(commit)^
+bind diff B !git rebase -i %(commit)^
 
 # Easy use of commit fixup
 bind main = !git fixup %(commit)

@@ -21,6 +21,9 @@ Plug 'derekwyatt/vim-fswitch'
 Plug 'tyok/nerdtree-ack'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'jiangmiao/auto-pairs'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'neomake/neomake'
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
@@ -32,7 +35,7 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-scripts/SyntaxRange'
 Plug 'rhysd/vim-clang-format'
-Plug 'b4winckler/vim-objc'
+Plug 'SolaWing/vim-objc-syntax'
 
 " My plugins
 " Plug 'nicolaslangley/vim-lldb-breakpoints'
@@ -50,6 +53,7 @@ highlight clear SignColumn
 set guifont=Meslo\ LG\ S\ DZ\ REgular\ for\ Powerline:h12 " Font needs to be installed
 " set background=dark
 set number
+set relativenumber
 
 " Search
 set hlsearch
@@ -93,7 +97,6 @@ let g:DoxygenToolkit_returnTag = "\\return "
 let g:gutentags_project_root = ['runtimecore']
 let mapleader = ","
 let g:clang_format#detect_style_file = 1
-let g:clang_format#auto_format = 1
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case' " Use The Silver Searcher instead of ack for ack.vim
@@ -104,6 +107,14 @@ if executable('ag')
   nnoremap <Leader>a :Ack!<Space>
   " Use ack.vim in support mode
   xnoremap <Leader>av y:Ack! <C-r>=fnameescape(@")<CR><CR> 
+endif
+
+if executable('clangd')
+  au User lsp_setup call lsp#register_server({
+      \ 'name': 'clangd',
+      \ 'cmd': {server_info->['clangd']},
+      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+      \ })
 endif
 
 augroup cppfiles " Setting for FSwitch plugin to handle switching between .cpp and .h headers
@@ -117,9 +128,9 @@ augroup END
 " Mappings
 " ========
 noremap <leader>. :CtrlPTag<cr>
-map <silent> <C-n> :NERDTreeFind<cr>
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 map <silent> <C-f> :NERDTreeFocus<cr>
-map <silent> <C-m> :NERDTreeToggle<cr>
+map <silent> <C-n> :NERDTreeToggle<cr>
 map <leader>b :TagbarToggle<cr>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 nnoremap <silent> <C-l> :let g:cpsm_match_empty_query = 0<CR>:CtrlPMRU<CR>
@@ -128,8 +139,10 @@ nnoremap <silent> <C-p> :let g:cpsm_match_empty_query = 1<CR>:CtrlP<CR>
 " ========
 " Autocommands
 " ========
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif " Close preview window on movement or entering insert mode
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" autocmd CursorMovedI * if pumvisible() == 0|pclose|endif " Close preview window on movement or entering insert mode
+" autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " Note that a symlink has to be created with the syntax file from vim-glsl:
 " 'mkdir syntax & ln -s plugged/vim-glsl/syntax/glsl.vim syntax/glsl.vim'
 autocmd BufReadPost * call SyntaxRange#Include('// begin_glsl', '// end_glsl', 'glsl', 'NonText') " Call SyntaxRange function to set GLSL highlighting within a string
+au BufRead,BufNewFile *.mm,*.m set filetype=objc
+autocmd FileType c,cpp,objc ClangFormatAutoEnable

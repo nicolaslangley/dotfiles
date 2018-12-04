@@ -11,6 +11,8 @@
 [difftool "vscode"]
         cmd = 'code' \"$LOCAL\" \"$REMOTE\" --diff --wait
         trustExitCode = false
+[mergetool]
+	keepBackup = false
 [mergetool "vscode"]
 	cmd = 'code' \"$MERGED\" --wait
         trustExitCode = true

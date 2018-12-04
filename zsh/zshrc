@@ -88,6 +88,14 @@ if [ "$(uname -s)" = "Darwin" ]; then
 
   PATH="/usr/local/share/git-core/contrib/diff-highlight/diff-highlight:$PATH"
 
+  export CXX="/usr/bin/clang++"
+  export CC="/usr/bin/clang"
+
+  # GLSL tools
+  PATH="/Users/nico8506/Development/Tools/glslang/build/StandAlone/glslangValidator:$PATH"
+  PATH="/Users/nico8506/Development/Tools/SPIRV-Cross/spirv-cross:$PATH"
+  
+
   # Switch between clang command line tools OS X
   alias clang-command-line="sudo xcode-select --switch /Library/Developer/CommandLineTools/"
   alias clang-xcode="sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer/"
