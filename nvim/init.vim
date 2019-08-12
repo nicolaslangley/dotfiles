@@ -6,28 +6,31 @@ call plug#begin()
 
 " UI
 Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'kshenoy/vim-signature'
-Plug 'airblade/vim-gitgutter'
-Plug 'tomasiser/vim-code-dark'
+" Plug 'airblade/vim-gitgutter'
+" Plug 'tomasiser/vim-code-dark'
+Plug 'ayu-theme/ayu-vim'
+Plug 'vim-airline/vim-airline-themes'
+" Plug 'mhartington/oceanic-next'
 
 " Tools
-Plug 'mileszs/ack.vim'
+" Plug 'mileszs/ack.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nixprime/cpsm'
 Plug 'derekwyatt/vim-fswitch'
-Plug 'tyok/nerdtree-ack'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'jiangmiao/auto-pairs'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'neomake/neomake'
+" Plug 'tyok/nerdtree-ack'
+" Plug 'ludovicchabant/vim-gutentags'
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'neomake/neomake'
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+" Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 " Syntax plugins
 Plug 'beyondmarc/hlsl.vim' 
@@ -47,10 +50,15 @@ call plug#end()
 " ========
 
 " UI
-colorscheme codedark
-let g:airline_theme = 'codedark'
+set termguicolors     " enable true colors support
+let ayucolor="mirage" " for mirage version of theme
+colorscheme ayu
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+" colorscheme OceanicNext
+let g:airline_theme = 'simple'
 highlight clear SignColumn
-set guifont=Meslo\ LG\ S\ DZ\ REgular\ for\ Powerline:h12 " Font needs to be installed
+" set guifont=Meslo\ LG\ S\ DZ\ REgular\ for\ Powerline:h12 " Font needs to be installed
 " set background=dark
 set number
 set relativenumber
@@ -96,6 +104,8 @@ let g:DoxygenToolkit_paramTag_pre = "\\param "
 let g:DoxygenToolkit_returnTag = "\\return "
 let g:gutentags_project_root = ['runtimecore']
 let mapleader = ","
+let g:clang_format#command = '~/Development/Quartz/runtimecore/runtimecore_scripts/tools/clang-format/clang-formatOSX'
+let g:clang_format#enable_fallback_style = 0
 let g:clang_format#detect_style_file = 1
 
 if executable('ag')
@@ -145,4 +155,11 @@ nnoremap <silent> <C-p> :let g:cpsm_match_empty_query = 1<CR>:CtrlP<CR>
 " 'mkdir syntax & ln -s plugged/vim-glsl/syntax/glsl.vim syntax/glsl.vim'
 autocmd BufReadPost * call SyntaxRange#Include('// begin_glsl', '// end_glsl', 'glsl', 'NonText') " Call SyntaxRange function to set GLSL highlighting within a string
 au BufRead,BufNewFile *.mm,*.m set filetype=objc
+au BufRead,BufNewFile *.metal set filetype=cpp
 autocmd FileType c,cpp,objc ClangFormatAutoEnable
+if has('nvim')
+  aug fzf_setup
+    au!
+    au TermOpen term://*FZF tnoremap <silent> <buffer><nowait> <esc> <c-c>
+  aug END
+end

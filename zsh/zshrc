@@ -44,8 +44,8 @@ export PYTHONSTARTUP=~/.pythonrc.py
 if [ "$(uname -s)" = "Darwin" ]; then
   # These aliases are for MacOS systems
   OS="OSX"
-  export QT_HOME=~/Development/Qt/5.9.2
-  export QT_PLUGIN_PATH=~/Development/Qt/5.9.2/clang_64/plugins
+  export QT_HOME=~/Development/Qt5.12.0/5.12.0
+  export QT_PLUGIN_PATH=~/Development/Qt5.12.0/5.12.0/clang_64/plugins
   prepend-path "/usr/local/opt/llvm/bin"
 
   # Set thread limit
@@ -69,15 +69,15 @@ if [ "$(uname -s)" = "Darwin" ]; then
   alias llvm-cov="xcrun llvm-cov"
 
   # Qt aliases
-  alias qmake-mac="~/Development/Qt/5.9.2/clang_64/bin/qmake"
-  alias qmake-mac-qml-3d-app="~/Development/Qt/5.9.2/clang_64/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=debug"
-  alias qmake-ios="~/Development/Qt/5.9.2/ios/bin/qmake"
-  alias qmake-qml-ios-3d-app="~/Development/Qt/5.9.2/ios/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=iphoneos CONFIG+=qml_debug"
-  alias qmake-android="~/Development/Qt/5.9.2/android_armv7/bin/qmake"
-  alias qmake-qml-android-3d-app="~/Development/Qt/5.9.2/android_armv7/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r -spec android-g++ CONFIG+=debug CONFIG+=qml_debug"
-  alias androiddeployqt="~/Development/Qt/5.9.2/android_armv7/bin/androiddeployqt"
+  alias qmake-mac="~/Development/Qt5.12.0/5.12.0/clang_64/bin/qmake"
+  alias qmake-mac-qml-3d-app="~/Development/Qt5.12.0/5.12.0/clang_64/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=debug"
+  alias qmake-ios="~/Development/Qt5.12.0/5.12.0/ios/bin/qmake"
+  alias qmake-qml-ios-3d-app="~/Development/Qt5.12.0/5.12.0/ios/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=iphoneos CONFIG+=qml_debug"
+  alias qmake-android="~/Development/Qt5.12.0/5.12.0/android_armv7/bin/qmake"
+  alias qmake-qml-android-3d-app="~/Development/Qt5.12.0/5.12.0/android_armv7/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r -spec android-g++ CONFIG+=debug CONFIG+=qml_debug"
+  alias androiddeployqt="~/Development/Qt5.12.0/5.12.0/android_armv7/bin/androiddeployqt"
   output_dir=android-qml3d-build
-  alias android-qml-deploy="make install INSTALL_ROOT=\"$output_dir\" && ~/Development/Qt/5.9.2/android_armv7/bin/androiddeployqt --output ./$output_dir/ --deployment bundled --android-platform android-26 --jdk /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home --gradle"
+  alias android-qml-deploy="make install INSTALL_ROOT=\"$output_dir\" && ~/Development/Qt5.12.0/5.12.0/android_armv7/bin/androiddeployqt --output ./$output_dir/ --deployment bundled --android-platform android-26 --jdk /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home --gradle"
 
   # Vulkan for MacOS
   export VULKAN_SDK=/Users/nico8506/Development/Tools/vulkansdk/macOS
@@ -92,9 +92,13 @@ if [ "$(uname -s)" = "Darwin" ]; then
   export CC="/usr/bin/clang"
 
   # GLSL tools
-  PATH="/Users/nico8506/Development/Tools/glslang/build/StandAlone/glslangValidator:$PATH"
-  PATH="/Users/nico8506/Development/Tools/SPIRV-Cross/spirv-cross:$PATH"
+  PATH="/Users/nico8506/Development/Tools/glslang/build/StandAlone/:$PATH"
+  PATH="/Users/nico8506/Development/Tools/shaderc/build/glslc/:$PATH"
+  PATH="/Users/nico8506/Development/Tools/SPIRV-Cross/:$PATH"
+
   
+  # Add Python3 to path'
+  PATH="/Users/nico8506/Library/Python/3.7/bin:$PATH"
 
   # Switch between clang command line tools OS X
   alias clang-command-line="sudo xcode-select --switch /Library/Developer/CommandLineTools/"

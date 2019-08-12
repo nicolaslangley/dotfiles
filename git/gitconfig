@@ -1,14 +1,15 @@
 [user]
 	email = nlangley@esri.com
-        name = Nicolas Langley
+	name = Nicolas Langley
 [core]
 	excludesfile = /Users/nico8506/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	trustctime = false
 [merge]
 	tool = vscode
 [diff]
 	tool = vscode
-[difftool "vscode"]
+[difftool "smerge"]
         cmd = 'code' \"$LOCAL\" \"$REMOTE\" --diff --wait
         trustExitCode = false
 [mergetool]
@@ -32,6 +33,8 @@
         lg = log --color --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) [%C(blue)%an %Creset>> %C(cyan)%cn%Creset]' --abbrev-commit
         # Partial commit with stash
         pcommit = !git stash save -q --keep-index current wd && git commit -s && git stash apply -q --index stash@{0}
+        # Show only local branches
+        local-branches-only = !git branch -vv | grep -v origin
         # Show status for all branches
         status-all = for-each-ref --format="%(refname:short) %(upstream:track)" refs/heads
         # Show commit with difftool

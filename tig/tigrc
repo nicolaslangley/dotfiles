@@ -11,8 +11,11 @@ bind generic 9 !@sh -c "echo %(commit) | pbcopy"
 bind main B !git rebase -i %(commit)^
 bind diff B !git rebase -i %(commit)^
 
-# Easy use of commit fixup
-bind main = !git fixup %(commit)
+# Easy use of git revise
+bind main = !git revise %(commit)
+
+# Open external Sublime Merge to view commit
+bind main M >smerge search commit:%(commit)
 
 # Enable diff-highlight
 set diff-highlight = true
