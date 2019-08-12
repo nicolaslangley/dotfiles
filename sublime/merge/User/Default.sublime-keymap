@@ -1,0 +1,7 @@
+[
+   { "keys": ["k"], "command": "move", "args": {"by": "lines", "forward": false},
+   "context": [ { "key": "control", "operand": "commit_table" } ]
+ },
+   { "keys": ["j"], "command": "move", "args": {"by": "lines", "forward": true},
+   "context": [ { "key": "control", "operand": "commit_table" } ]},
+]

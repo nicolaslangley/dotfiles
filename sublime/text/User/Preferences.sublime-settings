@@ -1,0 +1,50 @@
+{
+	"always_show_minimap_viewport": true,
+	"auto_complete": false,
+	"bold_folder_labels": true,
+	"caret_style": "smooth",
+	"color_scheme": "Packages/ayu/ayu-mirage.sublime-color-scheme",
+	"file_exclude_patterns":
+	[
+		"tags",
+		"compile_commands.json"
+	],
+	"find_selected_text": true,
+	"folder_exclude_patterns":
+	[
+		"*.xcworkspace",
+		".vscode",
+		".git"
+	],
+	"font_face": "Fira Code Retina",
+	"font_options":
+	[
+		"gray_antialias",
+		"subpixel_antialias"
+	],
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Colorcoder",
+		"EasyClangComplete",
+		"Six",
+		"Vintage",
+		"Vintageous"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"neovintageous_build_version": 11100,
+	"original_color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+	"overlay_scroll_bars": "enabled",
+	"save_on_focus_lost": true,
+	"tab_size": 2,
+	"theme": "ayu-mirage.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"ui_separator": true,
+	"vintageous_use_ctrl_keys": true,
+	"vintageous_use_super_keys": null,
+	"vintageous_use_sys_clipboard": false
+}

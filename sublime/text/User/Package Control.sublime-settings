@@ -1,0 +1,29 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"All Autocomplete",
+		"ayu",
+		"Base16 Color Schemes",
+		"BetterFindBuffer",
+		"Clang Format",
+		"Colorcoder",
+		"DashDoc",
+		"DoxyDoxygen",
+		"EasyClangComplete",
+		"FindKeyConflicts",
+		"NeoVintageous",
+		"Origami",
+		"Package Control",
+		"PackageResourceViewer",
+		"Search in Project",
+		"Shader Syntax (GLSL HLSL Cg)",
+		"Switch File Deluxe",
+		"SyncedSideBar",
+		"TabNine"
+	]
+}

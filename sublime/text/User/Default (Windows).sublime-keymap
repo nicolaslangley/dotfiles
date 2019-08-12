@@ -1,0 +1,45 @@
+[
+	{ "keys": ["ctrl+["], "command": "single_selection", "context":
+		[
+			{ "key": "num_selections", "operator": "not_equal", "operand": 1 }
+		]
+	},
+	{ "keys": ["ctrl+["], "command": "clear_fields", "context":
+		[
+			{ "key": "has_next_field", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["ctrl+["], "command": "clear_fields", "context":
+		[
+			{ "key": "has_prev_field", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["ctrl+["], "command": "hide_panel", "args": {"cancel": true},
+		"context":
+		[
+			{ "key": "panel_visible", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["ctrl+["], "command": "hide_overlay", "context":
+		[
+			{ "key": "overlay_visible", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["ctrl+["], "command": "hide_popup", "context":
+		[
+			{ "key": "popup_visible", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["ctrl+["], "command": "hide_auto_complete", "context":
+		[
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": true }
+		]
+	},
+    { "keys": ["alt+o"], "command": "switch_file_deluxe", "args": {
+        "extensions": [".cpp", ".cxx", ".cc", ".c", ".hpp", ".hxx", ".h", "_p.h", "_p_p.h", ".ipp", ".inl", ".m", ".mm"],
+        "paths": ["../impl", "../include"]
+    } },
+ { "keys": ["ctrl+["], "command": "_enter_normal_mode", "args": {"mode": "mode_insert"}, "context": [{"key": "vi_insert_mode_aware"}] },
+ { "keys": ["ctrl+]"], "command": "_nv_feed_key", "args": {"key": "<C-]>"}, "context": [{"key": "vi_command_mode_aware"}]},
+ { "keys": ["ctrl+o"], "command": "_nv_feed_key", "args": {"key": "<C-o>"}, "context": [{"key": "vi_command_mode_aware"}]},
+]
