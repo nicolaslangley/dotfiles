@@ -119,7 +119,7 @@ else
   # Assume Linux platforms if not MacOS
   OS=$(uname -s)
   # Export QT (for linux)
-  export QT_HOME=/opt/qt/Qt5.9.2/5.9.2
+  export QT_HOME=/opt/qt/Qt5.12.0/5.12.0
   # Set dircolors drive
   eval `dircolors ~/.dir_colors/`
   # These aliases are for Linux systems
@@ -129,6 +129,11 @@ else
   alias nvidia-graphics-debugger="~/Development/Graphics_tools/Linux-Graphics-Debugger-2.3/nvidia-gfx-debugger&"
   alias nvidia-set-preload="export LD_PRELOAD="~/.tgd/libs/libNvidia_gfx_debugger.so""
   alias renderdoc="~/Development/Graphics_tools/renderdoc_1.0/bin/qrenderdoc"
+  
+  # Swap left alt and windows key
+  setxkbmap -option altwin:swap_lalt_lwin
+  # Make caps_lock behave like ctrl
+  dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:ctrl_modifier']"
 fi
 export OS
 

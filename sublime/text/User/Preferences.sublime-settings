@@ -37,7 +37,6 @@
 		"draw_active"
 	],
 	"neovintageous_build_version": 11100,
-	"original_color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
 	"overlay_scroll_bars": "enabled",
 	"save_on_focus_lost": true,
 	"tab_size": 2,
