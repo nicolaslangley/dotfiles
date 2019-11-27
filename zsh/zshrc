@@ -69,6 +69,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
   alias llvm-cov="xcrun llvm-cov"
 
   # Qt aliases
+  alias qmake="~/Development/Qt5.12.0/5.12.0/clang_64/bin/qmake"
   alias qmake-mac="~/Development/Qt5.12.0/5.12.0/clang_64/bin/qmake"
   alias qmake-mac-qml-3d-app="~/Development/Qt5.12.0/5.12.0/clang_64/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=debug"
   alias qmake-ios="~/Development/Qt5.12.0/5.12.0/ios/bin/qmake"
@@ -99,6 +100,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
   
   # Add Python3 to path'
   PATH="/Users/nico8506/Library/Python/3.7/bin:$PATH"
+  PATH="/Users/nico8506/Development/Qt5.12.0/5.12.0/clang_64/bin/:$PATH"
 
   # Switch between clang command line tools OS X
   alias clang-command-line="sudo xcode-select --switch /Library/Developer/CommandLineTools/"
@@ -196,8 +198,8 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias Dev="cd ~/Development"
 
 # API trace
-alias apitrace="~/Development/Tools/apitrace/build/apitrace"
-alias qapitrace="~/Development/Tools/apitrace/build/qapitrace"
+alias apitrace="~/Development/Tools/apitrace-trace/build/apitrace"
+alias qapitrace="~/Development/Tools/apitrace-replay/build/qapitrace"
 
 # Shortcuts
 alias g="git"
