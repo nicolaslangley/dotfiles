@@ -50,7 +50,7 @@ call plug#end()
 " ========
 
 " UI
-set termguicolors     " enable true colors support
+" set termguicolors     " enable true colors support
 let ayucolor="mirage" " for mirage version of theme
 colorscheme ayu
 " let g:oceanic_next_terminal_bold = 1
