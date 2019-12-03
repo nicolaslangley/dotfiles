@@ -2,136 +2,22 @@
 DOTFILES_DIR=$HOME/.dotfiles
 export DOTFILES_DIR
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# Antigen plugin manager config
+source $DOTFILES_DIR/zsh/antigen_config.sh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew osx colored-man zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
-
-# Function for adding to path
-function prepend-path() { [ -d $1 ] && PATH="$1:$PATH" }
-
-##########
-# Environment
-##########
-
-# ssh
-export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
-fi
-export EDITOR_NOWAIT='nvim'
-export GIT_GUI='smartgit'
-export GIT_EDITOR='nvim'
-# Python
-export PYTHONSTARTUP=~/.pythonrc.py
-
+# Platform specific misc setup
 if [ "$(uname -s)" = "Darwin" ]; then
-  # These aliases are for MacOS systems
+  # MacOS platform setup
   OS="OSX"
-  export QT_HOME=~/Development/Qt5.12.0/5.12.0
-  export QT_PLUGIN_PATH=~/Development/Qt5.12.0/5.12.0/clang_64/plugins
-  prepend-path "/usr/local/opt/llvm/bin"
-
   # Set thread limit
   ulimit -n 4096
-
-  # Java
-  # export JAVA_HOME=$(/usr/libexec/java_home)
-  # Matlab setup
-  export MATLAB_JAVA="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
-  alias Matlab="/Applications/MATLAB_R2014a.app/Contents/MacOS/StartMATLAB &"
-  alias matlabcli="/Applications/MATLAB_R2014a.app/bin/matlab -nodesktop -nosplash"
-
-  # RTC aliases
-  alias RTC-output="cd ~/Development/Quartz/output/macos_x64_debug/bin"
-
-  # Clang aliases
-  alias setup-coverage="source ~/.dotfiles/scripts/setup-coverage.sh"
-  alias process-coverage="~/.dotfiles/scripts/process-coverage.sh"
-  alias export-coverage="~/.dotfiles/scripts/export-coverage.sh"
-  alias show-coverage="~/.dotfiles/scripts/show-coverage.sh"
-  alias llvm-cov="xcrun llvm-cov"
-
-  # Qt aliases
-  alias qmake="~/Development/Qt5.12.0/5.12.0/clang_64/bin/qmake"
-  alias qmake-mac="~/Development/Qt5.12.0/5.12.0/clang_64/bin/qmake"
-  alias qmake-mac-qml-3d-app="~/Development/Qt5.12.0/5.12.0/clang_64/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=debug"
-  alias qmake-ios="~/Development/Qt5.12.0/5.12.0/ios/bin/qmake"
-  alias qmake-qml-ios-3d-app="~/Development/Qt5.12.0/5.12.0/ios/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=iphoneos CONFIG+=qml_debug"
-  alias qmake-android="~/Development/Qt5.12.0/5.12.0/android_armv7/bin/qmake"
-  alias qmake-qml-android-3d-app="~/Development/Qt5.12.0/5.12.0/android_armv7/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r -spec android-g++ CONFIG+=debug CONFIG+=qml_debug"
-  alias androiddeployqt="~/Development/Qt5.12.0/5.12.0/android_armv7/bin/androiddeployqt"
-  output_dir=android-qml3d-build
-  alias android-qml-deploy="make install INSTALL_ROOT=\"$output_dir\" && ~/Development/Qt5.12.0/5.12.0/android_armv7/bin/androiddeployqt --output ./$output_dir/ --deployment bundled --android-platform android-26 --jdk /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home --gradle"
-
-  # Vulkan for MacOS
-  export VULKAN_SDK=/Users/nico8506/Development/Tools/vulkansdk/macOS
-  export VK_ICD_FILENAMES=$VULKAN_SDK/etc/vulkan/icd.d/MoltenVK_icd.json
-  export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layers.d
-  export DYLD_LIBRARY_PATH=$VULKAN_SDK/lib:$DYLD_LIBRARY_PATH
-  prepend-path "$VULKAN_SDK/bin"
-
-  PATH="/usr/local/share/git-core/contrib/diff-highlight/diff-highlight:$PATH"
-
-  export CXX="/usr/bin/clang++"
-  export CC="/usr/bin/clang"
-
-  # GLSL tools
-  PATH="/Users/nico8506/Development/Tools/glslang/build/StandAlone/:$PATH"
-  PATH="/Users/nico8506/Development/Tools/shaderc/build/glslc/:$PATH"
-  PATH="/Users/nico8506/Development/Tools/SPIRV-Cross/:$PATH"
-
-  
-  # Add Python3 to path'
-  PATH="/Users/nico8506/Library/Python/3.7/bin:$PATH"
-  PATH="/Users/nico8506/Development/Qt5.12.0/5.12.0/clang_64/bin/:$PATH"
-
-  # Switch between clang command line tools OS X
-  alias clang-command-line="sudo xcode-select --switch /Library/Developer/CommandLineTools/"
-  alias clang-xcode="sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer/"
-
-  # MacOS Android NDK and Toolchains
-  alias adb="~/Development/Android/sdk/platform-tools/adb" 
-  export ANDROID_SDK_ROOT=/Users/nico8506/Development/Android/sdk
-  export ANDROID_NDK_ROOT=/Users/nico8506/Development/Android/android-ndk-r15b
-  export ANDROID_TOOLCHAIN_ROOT=/Users/nico8506/Development/Android/toolchains
-  export ANDROID_ARMV7=${ANDROID_TOOLCHAIN_ROOT}/android-16_arm_gnustl/bin
-  export ANDROID_X86=${ANDROID_TOOLCHAIN_ROOT}/android-16_x86_gnustl/bin
-  export ANDROIDGLES3_ARMV8=${ANDROID_TOOLCHAIN_ROOT}/android-21_21_arm64_gnustl/bin
-  prepend-path "${ANDROIDGLES3_ARMV8}"
-  prepend-path "${ANDROIDGLES3_X86}"
-  prepend-path "${ANDROIDGLES3_X64}"
+  # Enable iTerm2 shell integration on MacOS
+  test -e "$HOME/.iterm2_shell_integration.zsh" && source "$HOME/.iterm2_shell_integration.zsh"
 else
   # Assume Linux platforms if not MacOS
   OS=$(uname -s)
-  # Export QT (for linux)
-  export QT_HOME=/opt/qt/Qt5.12.0/5.12.0
   # Set dircolors drive
   eval `dircolors ~/.dir_colors/`
-  # These aliases are for Linux systems
-  alias RTC-output="cd ~/Development/Quartz/output/linux_x64_debug/bin"
-  alias qmake-linux="/usr/local/qt/5.9.2/clang_64/bin/qmake"
-  alias qmake-linux-qml-3d-app="/usr/local/qt/5.9.2/clang_64/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=debug"
-  alias nvidia-graphics-debugger="~/Development/Graphics_tools/Linux-Graphics-Debugger-2.3/nvidia-gfx-debugger&"
-  alias nvidia-set-preload="export LD_PRELOAD="~/.tgd/libs/libNvidia_gfx_debugger.so""
-  alias renderdoc="~/Development/Graphics_tools/renderdoc_1.0/bin/qrenderdoc"
-  
   # Swap left alt and windows key
   setxkbmap -option altwin:swap_lalt_lwin
   # Make caps_lock behave like ctrl
@@ -139,90 +25,18 @@ else
 fi
 export OS
 
-########################
-# Path setup
-########################
-prepend-path "/bin"
-prepend-path "/usr/bin"
-prepend-path "/usr/local/bin"
-prepend-path "/sbin"
-prepend-path "/usr/sbin"
-prepend-path "/usr/local/sbin"
-prepend-path "$HOME/bin"
-prepend-path "$DOTFILES_DIR/bin"
-# Remove duplicates (preserving prepended items)
-# Source: http://unix.stackexchange.com/a/40755
-PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
-export PATH
+# Import runtimecore config
+source $DOTFILES_DIR/zsh/esri_rtc_config.sh
 
-# tmux setup
+# Import aliases config
+source $DOTFILES_DIR/zsh/aliases.sh
+
+# Import path config
+source $DOTFILES_DIR/zsh/path.sh
+
+# Import environment config
+source $DOTFILES_DIR/zsh/environment.sh
+
+# Start tmux on startup
 if [ "$TMUX" = "" ]; then tmux; fi
-alias mux="tmuxinator"
-
-########################
-# RTC specific aliases
-########################
-
-# Directory aliases
-alias RTC="cd ~/Development/Quartz"
-alias RTC-code="cd ~/Development/Quartz/runtimecore"
-alias RTC-mr3d-dir="cd ~/Development/Quartz/runtimecore/map_renderer_3d"
-alias RTC-mr3d-pipeline="cd ~/Development/Quartz/runtimecore/map_renderer_3d/src/graphics_pipeline3d"
-alias RTC-mr3d-low-level="cd ~/Development/Quartz/runtimecore/map_renderer_3d/src/graphics_pipeline3d/low_level_renderer"
-alias RTC-scripts="cd ~/Development/Quartz/runtimecore/runtimecore_scripts/scripts"
-alias RTC-wikis="cd ~/Development/Quartz/wikis"
-alias RTC-tools="cd ~/Development/Quartz/runtimecore/runtimecore_scripts/tools"
-alias editrtc="pushd ~/Development/Quartz/runtimecore && nvim && popd"
-alias git-clean-rtc="~/.dotfiles/scripts/git_clean_branches_rtc.sh"
-alias clang-tidy="~/Development/Quartz/runtimecore/runtimecore_scripts/tools/clang-tidy.sh"
-
-# RTC-script aliases
-alias rtc_repos_status="cd ~/Development/Quartz/runtimecore_scripts/scripts && ./get_repos_status.sh -g repos_runtimecore && popd"
-alias rtc_create_build="cd ~/Development/Quartz/runtimecore_scripts/scripts && ./create_build.sh && popd"
-alias rtc_build_runtimecoretest="cd ~/Development/Quartz/runtimecore_scripts/scripts && ./build.sh -s runtimecore_test && popd"
-
-# RTC Environment script
-autoload bashcompinit
-bashcompinit
-source ~/Development/Quartz/runtimecore/runtimecore_scripts/rtc-env.sh
-
-##########
-# Aliases
-##########
-
-# Zsh
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
-
-# Custom aliases
-alias Dev="cd ~/Development"
-
-# API trace
-alias apitrace="~/Development/Tools/apitrace-trace/build/apitrace"
-alias qapitrace="~/Development/Tools/apitrace-replay/build/qapitrace"
-
-# Shortcuts
-alias g="git"
-alias nv="nvim"
-alias vim="nvim"
-alias rr="rm -rf"
-
-# List declared aliases and functions
-alias listaliases="alias | sed 's/=.*//'"
-alias listfunctions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'" # show non _prefixed functions
-
-# cd 
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias -- -="cd -"                  # Go to previous dir with -
-alias cd.='cd $(readlink -f .)'    # Go to real dir (i.e. if current dir is linked)
-
-##########
-# Scripts
-##########
-alias git-status="~/.dotfiles/scripts/git_status.sh"
-
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
