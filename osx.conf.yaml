@@ -10,6 +10,7 @@
     ~/.config/nvim/autoload: nvim/autoload
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.tmux.conf: tmux/tmux.conf
+    ~/.config/tmuxinator/rtc-debug.yml: tmux/tmuxinator/rtc-debug.yml
     ~/.gitignore_global: git/gitignore_global
     ~/.gitconfig: git/gitconfig
     ~/.zshrc: zsh/zshrc
@@ -31,5 +32,10 @@
   - 
     command: nvim +PlugInstall +qall
     description: Installing nvim plugins
+    stdout: true
+    stderr: true
+  - 
+    command: brew/setup-brew.sh
+    description: Setting up brew and installing packages 
     stdout: true
     stderr: true
