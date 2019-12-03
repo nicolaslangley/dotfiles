@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-# Install brew & brew cask
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew tap caskroom/cask
-brew tap homebrew/versions
-brew tap caskroom/versions
+# Check if brew is already installed
+if [[ $(command -v brew) == "" ]]; then
+  # Install brew if not found
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew tap homebrew/versions
+fi
 
-# Install brew & brew cask packages
-# . "$DOTFILES_DIR/brew/brew.sh" "core"
-# . "$DOTFILES_DIR/brew/brew-cask.sh" "core"
+# Install core brew packages
+$DOTFILES_DIR/brew/brew.sh core
