@@ -26,8 +26,7 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Colorcoder",
-		"EasyClangComplete",
+		"LSP",
 		"Six",
 		"Vintage",
 		"Vintageous"
