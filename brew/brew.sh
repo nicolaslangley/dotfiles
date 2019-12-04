@@ -3,7 +3,6 @@ brew update
 brew upgrade
 
 core=(
-antigen
 cmake
 ctags
 git

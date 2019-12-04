@@ -1,5 +1,5 @@
 # Antigen config
-source /usr/local/share/antigen/antigen.zsh
+source $DOTFILES_DIR/zsh/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
