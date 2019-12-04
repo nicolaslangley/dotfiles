@@ -5,16 +5,16 @@
 
 - clean: ['~']
 
+- create:
+  - ~/.bash/themes/agnoster-bash
+
 - link:
     ~/.dotfiles: ''
     ~/.gitignore_global: git/gitignore_global
-    ~/.gitconfig: windows/gitconfig-windows
-    ~/.bash_profile: windows/bash_profile
-    ~/.bashrc: windows/gitbash_solarized/.bashrc
-    ~/.minttyrc: windows/gitbash_solarized/.minttyrc
-    ~/.vimrc: windows/gitbash_solarized/.vimrc
-    ~/.dir_colors: windows/gitbash_solarized/.dir_colors
-    ~/.vim/colors/solarized.vim: windows/gitbash_solarized/solarized.vim
+    ~/.gitconfig: windows/gitconfig_windows
+    ~/.bash_profile: windows/bash_profile_windows
+    ~/.dir_colors: windows/dir_colors_solarized
+    ~/.bash/themes/agnoster-bash: windows/themes/agnoster-bash
 
 - shell:
   - 
