@@ -9,7 +9,7 @@ ctags
 git
 neovim
 reattach-to-user-namespace
-the_silver_searcher
+ripgrep
 tig
 tmux
 )
