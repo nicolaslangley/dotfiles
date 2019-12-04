@@ -72,5 +72,7 @@ alias rtc_build_runtimecoretest="cd ~/Development/Quartz/runtimecore_scripts/scr
 # RTC Environment script
 autoload bashcompinit
 bashcompinit
-source ~/Development/Quartz/runtimecore/runtimecore_scripts/rtc-env.sh
+if test -f "~/Development/Quartz/runtimecore/runtimecore_scripts/rtc-env.sh"; then
+  source ~/Development/Quartz/runtimecore/runtimecore_scripts/rtc-env.sh
+fi
 
