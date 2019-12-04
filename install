@@ -3,9 +3,11 @@
 set -e
 
 if [ "$(uname -s)" = "Darwin" ]; then
-CONFIG="osx.conf.yaml"
+  CONFIG="install_configs/osx.conf.yaml"
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
+  CONFIG="install_configs/windows.conf.yaml"
 else
-CONFIG="install.conf.yaml"
+  CONFIG="install_configs/generic.conf.yaml"
 fi
 
 DOTBOT_DIR="dotbot"
