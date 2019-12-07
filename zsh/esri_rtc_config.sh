@@ -5,36 +5,30 @@
 
 if [ "$(uname -s)" = "Darwin" ]; then
   # QT environment variables
-  export QT_HOME=~/Development/Qt5.12.0/5.12.0
-  export QT_PLUGIN_PATH=~/Development/Qt5.12.0/5.12.0/clang_64/plugins
+  export QT_HOME=~/Development/Qt5.12.6/5.12.6
+  export QT_PLUGIN_PATH=~/Development/Qt5.12.6/5.12.6/clang_64/plugins
 
   # RTC aliases
   alias RTC-output="cd ~/Development/Quartz/output/macos_x64_debug/bin"
 
   # Qt aliases
-  alias qmake="~/Development/Qt5.12.0/5.12.0/clang_64/bin/qmake"
-  alias qmake-mac="~/Development/Qt5.12.0/5.12.0/clang_64/bin/qmake"
-  alias qmake-mac-qml-3d-app="~/Development/Qt5.12.0/5.12.0/clang_64/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=debug"
-  alias qmake-ios="~/Development/Qt5.12.0/5.12.0/ios/bin/qmake"
-  alias qmake-qml-ios-3d-app="~/Development/Qt5.12.0/5.12.0/ios/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=iphoneos CONFIG+=qml_debug"
-  alias qmake-android="~/Development/Qt5.12.0/5.12.0/android_armv7/bin/qmake"
-  alias qmake-qml-android-3d-app="~/Development/Qt5.12.0/5.12.0/android_armv7/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r -spec android-g++ CONFIG+=debug CONFIG+=qml_debug"
-  alias androiddeployqt="~/Development/Qt5.12.0/5.12.0/android_armv7/bin/androiddeployqt"
+  alias qmake="~/Development/Qt5.12.6/5.12.6/clang_64/bin/qmake"
+  alias qmake-mac="~/Development/Qt5.12.6/5.12.6/clang_64/bin/qmake"
+  alias qmake-mac-qml-3d-app="~/Development/Qt5.12.6/5.12.6/clang_64/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=debug"
+  alias qmake-ios="~/Development/Qt5.12.6/5.12.6/ios/bin/qmake"
+  alias qmake-qml-ios-3d-app="~/Development/Qt5.12.6/5.12.6/ios/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r CONFIG+=iphoneos CONFIG+=qml_debug"
+  alias qmake-android="~/Development/Qt5.12.6/5.12.6/android_armv7/bin/qmake"
+  alias qmake-qml-android-3d-app="~/Development/Qt5.12.6/5.12.6/android_armv7/bin/qmake ~/Development/Quartz/runtimecore/test/runtimecore_test_qml/runtimecore_test_qml.pro -r -spec android-g++ CONFIG+=debug CONFIG+=qml_debug"
+  alias androiddeployqt="~/Development/Qt5.12.6/5.12.6/android_armv7/bin/androiddeployqt"
   output_dir=android-qml3d-build
-  alias android-qml-deploy="make install INSTALL_ROOT=\"$output_dir\" && ~/Development/Qt5.12.0/5.12.0/android_armv7/bin/androiddeployqt --output ./$output_dir/ --deployment bundled --android-platform android-26 --jdk /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home --gradle"
-  PATH="/Users/nico8506/Development/Qt5.12.0/5.12.0/clang_64/bin/:$PATH"
+  alias android-qml-deploy="make install INSTALL_ROOT=\"$output_dir\" && ~/Development/Qt5.12.6/5.12.6/android_armv7/bin/androiddeployqt --output ./$output_dir/ --deployment bundled --android-platform android-26 --jdk /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home --gradle"
+  PATH="/Users/nico8506/Development/Qt5.12.6/5.12.6/clang_64/bin/:$PATH"
 
   # MacOS Android NDK and Toolchains
   alias adb="~/Development/Android/sdk/platform-tools/adb" 
-  export ANDROID_SDK_ROOT=/Users/nico8506/Development/Android/sdk
-  export ANDROID_NDK_ROOT=/Users/nico8506/Development/Android/android-ndk-r15b
-  export ANDROID_TOOLCHAIN_ROOT=/Users/nico8506/Development/Android/toolchains
-  export ANDROID_ARMV7=${ANDROID_TOOLCHAIN_ROOT}/android-16_arm_gnustl/bin
-  export ANDROID_X86=${ANDROID_TOOLCHAIN_ROOT}/android-16_x86_gnustl/bin
-  export ANDROIDGLES3_ARMV8=${ANDROID_TOOLCHAIN_ROOT}/android-21_21_arm64_gnustl/bin
-  PATH="${ANDROIDGLES3_ARMV8}:$PATH"
-  PATH="${ANDROIDGLES3_X86}:$PATH"
-  PATH="${ANDROIDGLES3_X64}:$PATH"
+  export NDK_HOME=$HOME/Development/Android/android-ndk-r20
+  export NDK_BIN=${NDK_HOME}/toolchains/llvm/prebuilt/darwin-x86_64/bin
+  export PATH=${PATH}:${NDK_HOME}:${NDK_BIN}
 else # Assume Linux platforms if not MacOS
   # Export QT (for linux)
   export QT_HOME=/opt/qt/Qt5.12.0/5.12.0

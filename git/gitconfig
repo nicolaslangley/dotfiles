@@ -5,21 +5,6 @@
 	excludesfile = /Users/nico8506/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	trustctime = false
-[merge]
-	tool = vscode
-[diff]
-	tool = vscode
-[difftool "smerge"]
-        cmd = 'code' \"$LOCAL\" \"$REMOTE\" --diff --wait
-        trustExitCode = false
-[mergetool]
-	keepBackup = false
-[mergetool "vscode"]
-	cmd = 'code' \"$MERGED\" --wait
-        trustExitCode = true
-[mergetool "smartsynchronize"]
-        cmd = '/Applications/SmartSynchronize.app/Contents/MacOS/SmartSynchronize' \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-        trustExitCode = true
 [pull]
 	rebase = preserve
 [alias]
@@ -64,3 +49,12 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[difftool "smerge"]
+	cmd = smerge \"$BASE\" \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = smerge
+[mergetool "smerge"]
+	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
+[merge]
+	tool = smerge
