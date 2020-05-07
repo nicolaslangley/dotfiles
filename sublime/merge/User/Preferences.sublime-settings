@@ -8,5 +8,6 @@
 	"git_binary": "system",
 	"tab_size": 2,
 	"theme": "Merge Dark.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+	"side_bar_layout": "locations_as_column",
 }

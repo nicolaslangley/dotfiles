@@ -1,6 +1,6 @@
 {
 	"always_show_minimap_viewport": true,
-	"auto_complete": false,
+	"auto_complete": true,
 	"bold_folder_labels": true,
 	"caret_style": "smooth",
 	"color_scheme": "Packages/ayu/ayu-mirage.sublime-color-scheme",
@@ -26,11 +26,11 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"LSP",
+		"EasyClangComplete",
 		"Six",
+		"TabNine",
 		"Vintage",
 		"Vintageous",
-		"zzz A File Icon zzz"
 	],
 	"indent_guide_options":
 	[
@@ -46,5 +46,5 @@
 	"ui_separator": true,
 	"vintageous_use_ctrl_keys": true,
 	"vintageous_use_super_keys": null,
-	"vintageous_use_sys_clipboard": false
+	"vintageous_use_sys_clipboard": false,
 }

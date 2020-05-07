@@ -13,8 +13,8 @@
 		"Clang Format",
 		"DashDoc",
 		"DoxyDoxygen",
+		"EasyClangComplete",
 		"FindKeyConflicts",
-		"LSP",
 		"MarkdownPreview",
 		"NeoVintageous",
 		"OpenGL Shading Language (GLSL)",
@@ -22,10 +22,12 @@
 		"Package Control",
 		"PackageResourceViewer",
 		"Pretty YAML",
+		"QML",
 		"Shader Syntax (GLSL HLSL Cg)",
 		"Sourcetrail",
+		"Swift",
 		"Switch File Deluxe",
 		"SyncedSideBar",
-		"TabNine"
-	]
+		"TabNine",
+	],
 }
