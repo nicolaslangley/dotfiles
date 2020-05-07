@@ -8,6 +8,8 @@ if [ "$(uname -s)" = "Darwin" ]; then
   export QT_HOME=~/Development/Qt5.12.6/5.12.6
   export QT_PLUGIN_PATH=~/Development/Qt5.12.6/5.12.6/clang_64/plugins
 
+  export JAVADOC_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/javadoc
+
   # RTC aliases
   alias RTC-output="cd ~/Development/Quartz/output/macos_x64_debug/bin"
 
@@ -52,6 +54,7 @@ alias RTC-mr3d-dir="cd ~/Development/Quartz/runtimecore/map_renderer_3d"
 alias RTC-mr3d-pipeline="cd ~/Development/Quartz/runtimecore/map_renderer_3d/src/graphics_pipeline3d"
 alias RTC-mr3d-low-level="cd ~/Development/Quartz/runtimecore/map_renderer_3d/src/graphics_pipeline3d/low_level_renderer"
 alias RTC-scripts="cd ~/Development/Quartz/runtimecore/runtimecore_scripts/scripts"
+alias tracy="~/Development/Quartz/tools/tracy/bin/Tracy"
 alias RTC-wikis="cd ~/Development/Quartz/wikis"
 alias RTC-tools="cd ~/Development/Quartz/runtimecore/runtimecore_scripts/tools"
 alias editrtc="pushd ~/Development/Quartz/runtimecore && nvim && popd"

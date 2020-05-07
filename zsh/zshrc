@@ -40,3 +40,5 @@ source $DOTFILES_DIR/zsh/environment.sh
 # Start tmux on startup
 if [ "$TMUX" = "" ]; then tmux; fi
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

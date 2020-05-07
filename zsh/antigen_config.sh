@@ -9,6 +9,7 @@ antigen bundle git
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
+antigen bundle fzf
 
 # Add shortcuts for opening in sublime text: 'st', 'stt'
 antigen bundle valentinocossar/sublime

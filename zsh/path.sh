@@ -7,15 +7,14 @@ function prepend-path() { [ -d $1 ] && PATH="$1:$PATH" }
 
 if [ "$(uname -s)" = "Darwin" ]; then
   prepend-path "/usr/local/opt/llvm/bin"
-  prepend-path "$VULKAN_SDK/bin"
   prepend-path "$HOME/Library/Python/2.7/lib/python/site-packages"
   prepend-path "/usr/local/share/git-core/contrib/diff-highlight/diff-highlight"
-  # GLSL tools
-  prepend-path "$HOME/Development/Tools/glslang/build/StandAlone/"
-  prepend-path "$HOME/Development/Tools/shaderc/build/glslc/"
-  prepend-path "$HOME/Development/Tools/SPIRV-Cross/"
   # Add Python3 to path'
   prepend-path "$HOME/Library/Python/3.7/bin"
+  # Add Vulkan SDK to path
+  prepend-path "$VULKAN_SDK/bin"
+  # GLSL tools
+  prepend-path "$HOME/Development/Tools/spirv_cross_rtc/bin"
 fi
 
 ########################
