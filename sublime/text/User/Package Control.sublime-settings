@@ -5,7 +5,6 @@
 	],
 	"installed_packages":
 	[
-		"A File Icon",
 		"All Autocomplete",
 		"ayu",
 		"Base16 Color Schemes",
@@ -13,7 +12,7 @@
 		"Clang Format",
 		"DashDoc",
 		"DoxyDoxygen",
-		"EasyClangComplete",
+		"FileIcons",
 		"FindKeyConflicts",
 		"MarkdownPreview",
 		"NeoVintageous",
@@ -28,6 +27,5 @@
 		"Swift",
 		"Switch File Deluxe",
 		"SyncedSideBar",
-		"TabNine",
 	],
 }

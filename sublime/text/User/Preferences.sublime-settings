@@ -26,9 +26,7 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"EasyClangComplete",
 		"Six",
-		"TabNine",
 		"Vintage",
 		"Vintageous",
 	],
