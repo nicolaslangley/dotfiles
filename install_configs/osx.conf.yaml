@@ -7,7 +7,7 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+    ~/.config/alacritty/alacritty.yml: alacritty/alacritty_osx.yml
     ~/.config/nvim/autoload: nvim/autoload
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.tmux.conf: tmux/tmux.conf
