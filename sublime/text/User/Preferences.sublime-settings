@@ -27,6 +27,7 @@
 	"ignored_packages":
 	[
 		"Six",
+		"SyncedSideBar",
 		"Vintage",
 		"Vintageous",
 	],
@@ -45,4 +46,5 @@
 	"vintageous_use_ctrl_keys": true,
 	"vintageous_use_super_keys": null,
 	"vintageous_use_sys_clipboard": false,
+	"hardware_acceleration": "opengl",
 }

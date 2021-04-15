@@ -9,9 +9,13 @@ if [ "$(uname -s)" = "Darwin" ]; then
   export QT_PLUGIN_PATH=~/Development/Qt5.12.6/5.12.6/clang_64/plugins
 
   export JAVADOC_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/javadoc
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
 
   # RTC aliases
   alias RTC-output="cd ~/Development/Quartz/output/macos_x64_debug/bin"
+
+  # Export runtimecore dir
+  export path_to_runtimecore="/Users/nico8506/Development/Quartz/runtimecore/"
 
   # Qt aliases
   alias qmake="~/Development/Qt5.12.6/5.12.6/clang_64/bin/qmake"
@@ -31,6 +35,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
   export NDK_HOME=$HOME/Development/Android/android-ndk-r20
   export NDK_BIN=${NDK_HOME}/toolchains/llvm/prebuilt/darwin-x86_64/bin
   export PATH=${PATH}:${NDK_HOME}:${NDK_BIN}
+  export PATH=~/Development/Android/sdk/21.3.6528147:$PATH
 else # Assume Linux platforms if not MacOS
   # Export QT (for linux)
   export QT_HOME=/opt/qt/Qt5.12.0/5.12.0

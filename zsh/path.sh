@@ -15,6 +15,8 @@ if [ "$(uname -s)" = "Darwin" ]; then
   prepend-path "$VULKAN_SDK/bin"
   # GLSL tools
   prepend-path "$HOME/Development/Tools/spirv_cross_rtc/bin"
+  # Intel ISPC compiler
+  prepend-path "$HOME/Development/Tools/ispc-v1.13.0-macOS/bin"
 fi
 
 ########################

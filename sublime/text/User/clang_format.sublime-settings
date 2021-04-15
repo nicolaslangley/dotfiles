@@ -1,5 +1,5 @@
 {
 	"binary": "/Users/nico8506/Development/Quartz/tools/llvm/9.0.0/bin/clang-format",
-	"format_on_save": true,
-	"style": "File"
+	"format_on_save": false,
+	"style": "File",
 }

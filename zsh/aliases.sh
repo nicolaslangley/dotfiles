@@ -13,6 +13,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
   # Switch between clang command line tools OS X
   alias clang-command-line="sudo xcode-select --switch /Library/Developer/CommandLineTools/"
   alias clang-xcode="sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer/"
+  alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 fi
 
 ########################
