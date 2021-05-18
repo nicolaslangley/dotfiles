@@ -1,8 +1,8 @@
 [user]
-	email = nlangley@esri.com
+	email = nicolas.langley@unity3d.com
 	name = Nicolas Langley
 [core]
-	excludesfile = /Users/nico8506/.gitignore_global
+	excludesfile = /Users/nicolaslangley/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	trustctime = false
 [pull]
