@@ -9,6 +9,7 @@ python
 reattach-to-user-namespace
 ripgrep
 tig
+git-revise
 tmux
 )
 

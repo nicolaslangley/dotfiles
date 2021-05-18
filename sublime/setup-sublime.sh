@@ -9,7 +9,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
   cd ~/Library/Application\ Support/Sublime\ Merge/Packages/
   rm -r User
   ln -sfhv ~/.dotfiles/sublime/merge/User
-  ln -s /Applications/Sublime\ Merge.app/Contents/SharedSupport/bin/smerge /usr/local/bin/smerge
+  ln -sfv /Applications/Sublime\ Merge.app/Contents/SharedSupport/bin/smerge /usr/local/bin/smerge
 else
   # Assume Linux platforms if not MacOS
   # Copy settings for Sublime Text
