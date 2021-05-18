@@ -1,6 +1,8 @@
 # Autoload Zsh completion
 autoload -Uz compinit && compinit
 
+compaudit | xargs chmod go-w
+
 # Dotfiles export
 DOTFILES_DIR=$HOME/.dotfiles
 export DOTFILES_DIR
@@ -14,8 +16,6 @@ if [ "$(uname -s)" = "Darwin" ]; then
   OS="OSX"
   # Set thread limit
   ulimit -n 4096
-  # Enable iTerm2 shell integration on MacOS
-  test -e "$HOME/.iterm2_shell_integration.zsh" && source "$HOME/.iterm2_shell_integration.zsh"
 else
   # Assume Linux platforms if not MacOS
   OS=$(uname -s)
@@ -28,9 +28,6 @@ else
 fi
 export OS
 
-# Import runtimecore config
-source $DOTFILES_DIR/zsh/esri_rtc_config.sh
-
 # Import aliases config
 source $DOTFILES_DIR/zsh/aliases.sh
 
@@ -42,6 +39,5 @@ source $DOTFILES_DIR/zsh/environment.sh
 
 # Start tmux on startup
 if [ "$TMUX" = "" ]; then tmux; fi
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

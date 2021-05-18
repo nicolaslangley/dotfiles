@@ -5,20 +5,6 @@ function prepend-path() { [ -d $1 ] && PATH="$1:$PATH" }
 # Platform specific path setup
 ########################
 
-if [ "$(uname -s)" = "Darwin" ]; then
-  prepend-path "/usr/local/opt/llvm/bin"
-  prepend-path "$HOME/Library/Python/2.7/lib/python/site-packages"
-  prepend-path "/usr/local/share/git-core/contrib/diff-highlight/diff-highlight"
-  # Add Python3 to path'
-  prepend-path "$HOME/Library/Python/3.7/bin"
-  # Add Vulkan SDK to path
-  prepend-path "$VULKAN_SDK/bin"
-  # GLSL tools
-  prepend-path "$HOME/Development/Tools/spirv_cross_rtc/bin"
-  # Intel ISPC compiler
-  prepend-path "$HOME/Development/Tools/ispc-v1.13.0-macOS/bin"
-fi
-
 ########################
 # Common path setup
 ########################

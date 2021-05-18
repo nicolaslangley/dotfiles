@@ -10,9 +10,6 @@ if [ "$(uname -s)" = "Darwin" ]; then
   alias export-coverage="$DOTFILES_DIR/scripts/export-coverage.sh"
   alias show-coverage="$DOTFILES_DIR/scripts/show-coverage.sh"
   alias llvm-cov="xcrun llvm-cov"
-  # Switch between clang command line tools OS X
-  alias clang-command-line="sudo xcode-select --switch /Library/Developer/CommandLineTools/"
-  alias clang-xcode="sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer/"
   alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 fi
 
@@ -23,10 +20,6 @@ fi
 # Custom aliases
 alias Dev="cd ~/Development"
 alias mux="tmuxinator"
-
-# API trace
-alias apitrace="~/Development/Tools/apitrace-trace/build/apitrace"
-alias qapitrace="~/Development/Tools/apitrace-replay/build/qapitrace"
 
 # Shortcuts
 alias g="git"

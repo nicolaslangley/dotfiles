@@ -3,10 +3,8 @@ brew update
 brew upgrade
 
 core=(
-cmake
-ctags
-git
-neovim
+fzf
+nvim
 reattach-to-user-namespace
 ripgrep
 tig
