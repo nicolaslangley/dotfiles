@@ -40,4 +40,7 @@ source $DOTFILES_DIR/zsh/environment.sh
 # Start tmux on startup
 if [ "$TMUX" = "" ]; then tmux; fi
 
+# Speed up prompt with large repos 
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

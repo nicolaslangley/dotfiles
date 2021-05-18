@@ -10,6 +10,7 @@ reattach-to-user-namespace
 ripgrep
 tig
 git-revise
+git-lfs
 tmux
 )
 
