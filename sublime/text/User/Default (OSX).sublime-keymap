@@ -9,11 +9,8 @@
 			{ "key": "popup_visible", "operator": "equal", "operand": true }
 		]
 	},
-	{"keys": ["ctrl+["], "command": "_nv_feed_key", "args": {"key": "<esc>"}, "context":
-	 [
-	 	{"key": "vi_insert_mode_aware"}
-	 ]
-	},
+	{"keys": ["ctrl+p"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+	{"keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
   {"keys": ["alt+o"], "command": "switch_file_deluxe", "args": {
         "extensions": [".cpp", ".cxx", ".cc", ".c", ".hpp", ".hxx", ".h", "_p.h", "_p_p.h", ".ipp", ".inl", ".m", ".mm"],
         "paths": ["../impl", "../include"]
