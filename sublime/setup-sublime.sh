@@ -2,13 +2,11 @@
 
 if [ "$(uname -s)" = "Darwin" ]; then
   # Copy settings for Sublime Text
-  cd ~/Library/Application\ Support/Sublime\ Text/Packages/
-  rm -r User
-  ln -sfhv ~/.dotfiles/sublime/text/User
+  rm -r ~/Library/Application\ Support/Sublime\ Text/Packages/User
+  ln -sfhv ~/.dotfiles/sublime/text/User ~/Library/Application\ Support/Sublime\ Text/Packages/User
   # Copy settings for Sublime Merge
-  cd ~/Library/Application\ Support/Sublime\ Merge/Packages/
-  rm -r User
-  ln -sfhv ~/.dotfiles/sublime/merge/User
+  rm -r ~/Library/Application\ Support/Sublime\ Merge/Packages/User
+  ln -sfhv ~/.dotfiles/sublime/merge/User ~/Library/Application\ Support/Sublime\ Merge/Packages/User
   ln -sfv /Applications/Sublime\ Merge.app/Contents/SharedSupport/bin/smerge /usr/local/bin/smerge
 else
   # Assume Linux platforms if not MacOS

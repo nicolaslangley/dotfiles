@@ -36,9 +36,8 @@ nvim +PlugInstall +qall
 # Setup Brew and install core libraries
 source brew/setup-brew.sh
 
-# Copy themes
-source themes/setup-themes.sh
-
 # Copy Sublime Text and Sublime Merge configurations
 source sublime/setup-sublime.sh
 
+# Copy themes
+source themes/setup-themes.sh
