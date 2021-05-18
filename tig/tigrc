@@ -16,6 +16,3 @@ bind main = !git revise %(commit)
 
 # Open external Sublime Merge to view commit
 bind main M >smerge search commit:%(commit)
-
-# Enable diff-highlight
-set diff-highlight = true

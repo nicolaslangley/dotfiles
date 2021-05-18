@@ -5,6 +5,7 @@ brew upgrade
 core=(
 fzf
 nvim
+python
 reattach-to-user-namespace
 ripgrep
 tig
