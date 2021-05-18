@@ -10,4 +10,5 @@
 	"theme": "Merge Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"side_bar_layout": "locations_as_column",
+	"font_size": 13,
 }

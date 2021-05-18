@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
 
-# Python 2
-pip install voltron
-pip install neovim
+sudo easy_install diff-highlight
 
-# Python 3
-pip3 install neovim
