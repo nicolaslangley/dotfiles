@@ -3,6 +3,10 @@ brew update
 brew upgrade
 
 core=(
+autoconf
+automake
+cmake
+diff-so-fancy
 fzf
 nvim
 python
