@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "RemedyBG: Set Location",
+        "command": "set_remedy_location"
+    }
+]
