@@ -18,7 +18,7 @@ fi
 ########################
 
 # Custom aliases
-alias Dev="cd ~/Development"
+alias Dev="cd ~/Developer"
 alias mux="tmuxinator"
 
 # Shortcuts

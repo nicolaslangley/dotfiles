@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DOTFILES_DIR=~/Development/dotfiles
+DOTFILES_DIR=~/Developer/dotfiles
 export DOTFILES_DIR
 
 # Create symlink for ~/.dotfiles
