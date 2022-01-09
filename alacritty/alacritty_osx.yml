@@ -13,16 +13,16 @@ scrolling:
 
 font:
   normal:
-    family: Fira Code
+    family: FiraCode Nerd Font
     style: Retina
   bold:
-    family: Fira Code
+    family: FiraCode Nerd Font
     style: Bold
   italic:
-    family: Fira Code
+    family: FiraCode Nerd Font
     style: Italic
   bold_italic:
-    family: Fira Code
+    family: FiraCode Nerd Font
     style: Bold Italic
   size: 13.0
   offset:
@@ -58,8 +58,6 @@ colors:
     magenta: '#FFEE99'
     cyan: '#95E6CB'
     white: '#FFFFFF'
-
-background_opacity: 1.0
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
