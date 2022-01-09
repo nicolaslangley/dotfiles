@@ -27,6 +27,11 @@ alias nv="nvim"
 alias vim="nvim"
 alias rr="rm -rf"
 
+# Remappings
+alias cat="bat" # https://github.com/sharkdp/bat
+alias grep="rg" # https://github.com/BurntSushi/ripgrep
+alias ls="lsd" # https://github.com/Peltoche/lsd
+
 # List declared aliases and functions
 alias listaliases="alias | sed 's/=.*//'"
 alias listfunctions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'" # show non _prefixed functions

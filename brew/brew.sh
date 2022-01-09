@@ -5,9 +5,11 @@ brew upgrade
 core=(
 autoconf
 automake
+bat
 cmake
 diff-so-fancy
 fzf
+lsd
 nvim
 python
 reattach-to-user-namespace
@@ -22,3 +24,6 @@ if [ "$1" = "core" ]; then
   brew install "${core[@]}"
 fi
 
+# Install fonts
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code-nerd-font
