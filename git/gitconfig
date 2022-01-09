@@ -1,5 +1,5 @@
 [user]
-	email = nicolas.langley@unity3d.com
+	email = nicolaslangley@hey.com
 	name = Nicolas Langley
 [core]
 	excludesfile = /Users/nicolaslangley/.gitignore_global
@@ -58,3 +58,5 @@
 	trustExitCode = true
 [merge]
 	tool = smerge
+[init]
+	defaultBranch = main
