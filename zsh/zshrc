@@ -44,3 +44,4 @@ if [ "$TMUX" = "" ]; then tmux; fi
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/qt@5/bin:$PATH"
