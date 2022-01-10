@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "Xcode Sync: Set File",
+        "command": "set_xcode_file"
+    }
+]
