@@ -3,5 +3,6 @@
 	[
 		"shader",
 		"compute",
+		"cginc",
 	],
 }
