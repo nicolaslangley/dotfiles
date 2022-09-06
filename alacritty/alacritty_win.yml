@@ -24,7 +24,7 @@ font:
   bold_italic:
     family: Fira Code
     style: Bold Italic
-  size: 13.0
+  size: 10.0
   offset:
     x: 1
     y: 0
@@ -59,8 +59,6 @@ colors:
     cyan: '#95E6CB'
     white: '#FFFFFF'
 
-background_opacity: 1.0
-
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: true
@@ -69,11 +67,6 @@ cursor:
   unfocused_hollow: true
 
 live_config_reload: true
-
-shell:
-  program: /bin/zsh
-  args:
-    - --login
 
 debug:
   render_timer: false
