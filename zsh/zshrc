@@ -1,7 +1,6 @@
-# Autoload Zsh completion
+# Initialize Zsh completion system and harden permissions
 autoload -Uz compinit && compinit
-
-compaudit | xargs chmod go-w
+compaudit | xargs chmod go-w  # Remove group/other write perms to prevent injection
 
 # Dotfiles export
 DOTFILES_DIR=$HOME/.dotfiles
@@ -10,38 +9,16 @@ export DOTFILES_DIR
 # Antigen plugin manager config
 source $DOTFILES_DIR/zsh/antigen_config.sh
 
-# Platform specific misc setup
-if [ "$(uname -s)" = "Darwin" ]; then
-  # MacOS platform setup
-  OS="OSX"
-  # Set thread limit
-  ulimit -n 4096
-else
-  # Assume Linux platforms if not MacOS
-  OS=$(uname -s)
-  # Set dircolors drive
-  eval `dircolors ~/.dir_colors/`
-  # Swap left alt and windows key
-  setxkbmap -option altwin:swap_lalt_lwin
-  # Make caps_lock behave like ctrl
-  dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:ctrl_modifier']"
+# Detect platform and load platform-specific configs
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # macOS
+  source $DOTFILES_DIR/zsh/path-macos.sh
+  source $DOTFILES_DIR/zsh/environment-macos.sh
+elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" ]]; then
+  # Windows (Git Bash)
+  source $DOTFILES_DIR/zsh/path-windows.sh
+  source $DOTFILES_DIR/zsh/environment-windows.sh
 fi
-export OS
 
-# Import aliases config
-source $DOTFILES_DIR/zsh/aliases.sh
-
-# Import path config
-source $DOTFILES_DIR/zsh/path.sh
-
-# Import environment config
-source $DOTFILES_DIR/zsh/environment.sh
-
-# Start tmux on startup
-if [ "$TMUX" = "" ]; then tmux; fi
-
-# Speed up prompt with large repos 
+# Speed up prompt with large repos
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/opt/qt@5/bin:$PATH"

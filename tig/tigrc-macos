@@ -1,0 +1,12 @@
+# Copy commit ID to clipboard
+bind generic 9 !@sh -c "echo %(commit) | pbcopy"
+
+# Invoke interactive rebase
+bind main B !git rebase -i %(commit)^
+bind diff B !git rebase -i %(commit)^
+
+# Easy use of git revise
+bind main = !git revise %(commit)
+
+# Open external Sublime Merge to view commit
+bind main M >smerge search commit:%(commit)

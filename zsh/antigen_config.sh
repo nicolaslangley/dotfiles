@@ -7,18 +7,14 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle pip
-antigen bundle lein
 antigen bundle command-not-found
 antigen bundle fzf
-
-# Add shortcuts for opening in sublime text: 'st', 'stt'
-antigen bundle valentinocossar/sublime
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme
-THEME=agnoster 
+THEME=arrow
 # Check if theme is already applied to avoid re-applying
 antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
 

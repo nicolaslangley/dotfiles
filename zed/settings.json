@@ -1,0 +1,56 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "show_edit_predictions": false,
+  "inlay_hints": {
+    "enabled": true
+  },
+  "features": {
+    "edit_prediction_provider": "none"
+  },
+  "agent_servers": {
+    "claude": {
+      "default_model": "haiku",
+      "default_mode": "alwaysAsk"
+    }
+  },
+  "project_panel": {
+    "hide_hidden": true
+  },
+  "autosave": "on_focus_change",
+  "restore_on_startup": "last_workspace",
+  "buffer_font_family": "Fira Code",
+  "base_keymap": "SublimeText",
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Ayu Mirage"
+  },
+  "languages": {
+    "Swift": {
+      "enable_language_server": true,
+      "language_servers": ["sourcekit-lsp"],
+      "formatter": "language_server",
+      "format_on_save": "on"
+    }
+  },
+  "file_types": {
+    "C++": ["metal"]
+  },
+  "lsp": {
+    "clangd": {
+      "binary": {
+        "arguments": ["--header-insertion=never"]
+      }
+    }
+  }
+}
