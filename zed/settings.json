@@ -7,6 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "windows": {
+    "terminal": {
+      "shell": {
+        "program": "bash.exe"
+      }
+    }
+  },
   "show_edit_predictions": false,
   "inlay_hints": {
     "enabled": true
@@ -17,11 +24,12 @@
   "agent_servers": {
     "claude": {
       "default_model": "haiku",
-      "default_mode": "alwaysAsk"
+      "default_mode": "default"
     }
   },
   "project_panel": {
-    "hide_hidden": true
+    "hide_hidden": true,
+    "show_diagnostics": "off"
   },
   "autosave": "on_focus_change",
   "restore_on_startup": "last_workspace",
@@ -44,7 +52,7 @@
     }
   },
   "file_types": {
-    "C++": ["metal"]
+    "C++": ["metal", "mm"]
   },
   "lsp": {
     "clangd": {
@@ -52,5 +60,27 @@
         "arguments": ["--header-insertion=never"]
       }
     }
+  },
+  "tabs": {
+    "show_diagnostics": "off"
+  },
+  "scrollbar": {
+    "diagnostics": "none"
+  },
+  "diagnostics_max_severity": "off",
+  "diagnostics": {
+    // Whether to show the project diagnostics button in the status bar.
+    "button": false
+  },
+  "title_bar": {
+    "show_onboarding_banner": false,
+    "show_user_picture": false,
+    "show_sign_in": false
+  },
+  "collaboration_panel": {
+    "button": false // Show/hide status bar icon
+  },
+  "notification_panel": {
+    "button": false
   }
 }
