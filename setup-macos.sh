@@ -23,7 +23,7 @@ brew install diff-so-fancy
 # Symlink User settings directory to dotfiles
 # Location: https://www.sublimemerge.com/docs/command_line
 rm -r ~/Library/Application\ Support/Sublime\ Merge/Packages/User
-ln -sfhv ~/.dotfiles/themes/sublime/merge/User ~/Library/Application\ Support/Sublime\ Merge/Packages/User
+ln -sfhv $DOTFILES_DIR/themes/sublime/merge/User ~/Library/Application\ Support/Sublime\ Merge/Packages/User
 
 # Create symlink for smerge CLI command
 if [[ -L /usr/local/bin/smerge ]]; then
