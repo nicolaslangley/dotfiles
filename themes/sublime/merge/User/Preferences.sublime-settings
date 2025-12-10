@@ -1,18 +1,10 @@
 {
-	"font_face": "Fira Code Retina",
-	"font_options":
-	[
-		"gray_antialias",
-		"subpixel_antialias"
-	],
 	"git_binary": "system",
 	"tab_size": 4,
 	"theme": "Merge Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"side_bar_layout": "locations_as_column",
-	"font_size": 13,
 	"update_check": false,
 	"editor_argument_format": "${file}:${line}:${col}",
-	"editor_path": "/usr/local/bin/zed",
-	"editor_wait_args": "--wait",
+	"editor_wait_args": "--wait"
 }

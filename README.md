@@ -35,3 +35,13 @@ https://gitforwindows.org/
 
 Then install Zsh in Git Bash by following these steps:
 https://dominikrys.com/posts/zsh-in-git-bash-on-windows/#installing-zsh-in-git-bash
+
+Create a `.bashrc` with the following contents:
+
+```sh
+/c/Windows/System32/chcp.com 65001 > /dev/null 2>&1
+
+if [ -t 1 ]; then
+  exec zsh
+fi
+```

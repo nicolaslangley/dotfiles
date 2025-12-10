@@ -19,28 +19,51 @@ fi
 ALACRITTY_CONFIG="$APPDATA/alacritty/alacritty.toml"
 echo "Setting up Alacritty config at: $ALACRITTY_CONFIG"
 mkdir -p "$(dirname "$ALACRITTY_CONFIG")"
-cp $DOTFILES_DIR/alacritty/alacritty-windows.toml "$ALACRITTY_CONFIG"
-echo "  Alacritty config copied"
+if [ -e "$ALACRITTY_CONFIG" ]; then
+  echo "  Path exists, removing..."
+  rm -f "$ALACRITTY_CONFIG"
+fi
+ln -s $DOTFILES_DIR/alacritty/alacritty-windows.toml "$ALACRITTY_CONFIG"
+echo "  Symlink created"
 
-# Setup Sublime Merge theme
-# Symlink User settings directory to dotfiles
+# Setup Sublime Merge
 # Location: https://www.sublimemerge.com/docs/command_line (Windows config location)
 SUBLIME_MERGE_USER="$APPDATA/Sublime Merge/Packages/User"
 echo "Setting up Sublime Merge at: $SUBLIME_MERGE_USER"
-if [ -e "$SUBLIME_MERGE_USER" ]; then
-  echo "  Path exists, removing..."
-  rm -rf "$SUBLIME_MERGE_USER"
-else
-  echo "  Path does not exist"
+mkdir -p "$SUBLIME_MERGE_USER"
+
+# Copy color scheme and .sublime-settings files
+echo "  Copying color scheme and settings files..."
+cp $DOTFILES_DIR/themes/sublime/merge/User/ayu-mirage.sublime-color-scheme "$SUBLIME_MERGE_USER/"
+cp $DOTFILES_DIR/themes/sublime/merge/User/*.sublime-settings "$SUBLIME_MERGE_USER/"
+echo "  Files copied"
+
+# Symlink preferences files
+echo "  Symlinking preference files..."
+for prefs_file in Preferences.sublime-settings Preferences-Windows.sublime-settings Preferences-macOS.sublime-settings; do
+  PREFS_PATH="$SUBLIME_MERGE_USER/$prefs_file"
+  if [ -e "$PREFS_PATH" ]; then
+    rm -f "$PREFS_PATH"
+  fi
+  ln -s $DOTFILES_DIR/themes/sublime/merge/User/$prefs_file "$PREFS_PATH"
+done
+
+# Symlink keymap
+echo "  Symlinking keymap..."
+KEYMAP_PATH="$SUBLIME_MERGE_USER/Default.sublime-keymap"
+if [ -e "$KEYMAP_PATH" ]; then
+  rm -f "$KEYMAP_PATH"
 fi
-ln -s $DOTFILES_DIR/themes/sublime/merge/User "$SUBLIME_MERGE_USER"
-echo "  Symlink created"
+ln -s $DOTFILES_DIR/themes/sublime/merge/User/Default.sublime-keymap "$KEYMAP_PATH"
+echo "  Sublime Merge setup complete"
 
 # Setup Zed settings
-# Copy settings.json to Zed config directory
 ZED_SETTINGS="$APPDATA/Zed/settings.json"
 echo "Setting up Zed settings at: $ZED_SETTINGS"
 mkdir -p "$(dirname "$ZED_SETTINGS")"
-echo "  Directory created"
-cp $DOTFILES_DIR/zed/settings.json "$ZED_SETTINGS"
-echo "  Settings file copied"
+if [ -e "$ZED_SETTINGS" ]; then
+  echo "  Path exists, removing..."
+  rm -f "$ZED_SETTINGS"
+fi
+ln -s $DOTFILES_DIR/zed/settings.json "$ZED_SETTINGS"
+echo "  Symlink created"
