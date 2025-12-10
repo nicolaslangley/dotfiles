@@ -1,0 +1,82 @@
+[window]
+dimensions = { columns = 0, lines = 0 }
+padding = { x = 0, y = 0 }
+decorations = "full"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Retina"
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "FiraCode Nerd Font"
+style = "Bold Italic"
+
+[font.offset]
+x = 1
+y = 0
+
+[font]
+use_thin_strokes = true
+
+# Colors (Ayu Mirage)
+[colors]
+
+[colors.primary]
+background = "#202734"
+foreground = "#CBCCC6"
+
+# Normal colors
+[colors.normal]
+black = "#191E2A"
+red = "#F28779"
+green = "#BAE67E"
+yellow = "#FFD580"
+blue = "#73D0FF"
+magenta = "#FFD580"
+cyan = "#95E6CB"
+white = "#C7C7C7"
+
+# Bright colors
+[colors.bright]
+black = "#686868"
+red = "#F28779"
+green = "#A6CC70"
+yellow = "#FFD580"
+blue = "#5CCFE6"
+magenta = "#FFEE99"
+cyan = "#95E6CB"
+white = "#FFFFFF"
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = true
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+live_config_reload = true
+
+[shell]
+program = "/bin/zsh"
+args = ["--login"]
+
+[debug]
+render_timer = false
+log_level = "Warn"
+print_events = true

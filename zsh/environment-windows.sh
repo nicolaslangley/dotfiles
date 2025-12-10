@@ -1,3 +1,3 @@
 # Windows (Git Bash) specific environment
-export EDITOR='zed'
-export GIT_EDITOR='zed'
+export EDITOR='vim'
+export GIT_EDITOR='vim'

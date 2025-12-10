@@ -1,0 +1,83 @@
+
+[colors.bright]
+black = "#686868"
+blue = "#5CCFE6"
+cyan = "#95E6CB"
+green = "#A6CC70"
+magenta = "#FFEE99"
+red = "#F28779"
+white = "#FFFFFF"
+yellow = "#FFCC66"
+
+[colors.normal]
+black = "#191E2A"
+blue = "#73D0FF"
+cyan = "#95E6CB"
+green = "#BAE67E"
+magenta = "#FFD580"
+red = "#F28779"
+white = "#C7C7C7"
+yellow = "#FFA759"
+
+[colors.primary]
+background = "#202734"
+foreground = "#CBCCC6"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[debug]
+log_level = "Warn"
+print_events = true
+render_timer = false
+
+[font]
+size = 10.0
+
+[font.bold]
+family = "Fira Code"
+style = "Bold"
+
+[font.bold_italic]
+family = "Fira Code"
+style = "Bold Italic"
+
+[font.italic]
+family = "Fira Code"
+style = "Italic"
+
+[font.normal]
+family = "Fira Code"
+style = "Medium"
+
+[font.offset]
+x = 1
+y = 0
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ''',│`|:"' ()[]{}<>	'''
+
+[window]
+decorations = "full"
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 10
+y = 10
+
+[general]
+live_config_reload = true
+
+[terminal]
+
+[terminal.shell]
+program = "C:/Program Files/Git/bin/bash.exe"

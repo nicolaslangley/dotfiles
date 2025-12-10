@@ -1,13 +1,18 @@
 # Initialize Zsh completion system and harden permissions
 autoload -Uz compinit && compinit
-compaudit | xargs chmod go-w  # Remove group/other write perms to prevent injection
+# Harden permissions - skip chmod on Windows as it doesn't support symbolic permissions
+if [[ "$OSTYPE" != "msys" && "$OSTYPE" != "cygwin" ]]; then
+  compaudit | xargs chmod go-w 2>/dev/null  # Remove group/other write perms to prevent injection
+fi
 
 # Dotfiles export
-DOTFILES_DIR=$HOME/.dotfiles
+DOTFILES_DIR=$HOME/Developer/dotfiles
 export DOTFILES_DIR
 
-# Antigen plugin manager config
-source $DOTFILES_DIR/zsh/antigen_config.sh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="arrow"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
 
 # Detect platform and load platform-specific configs
 if [[ "$OSTYPE" == "darwin"* ]]; then

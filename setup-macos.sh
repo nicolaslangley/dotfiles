@@ -36,3 +36,11 @@ fi
 # Copy Ayu mirage theme to Xcode
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes
 cp -f $DOTFILES_DIR/themes/xcode/Ayu\ Mirage.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
+
+# Alacritty (macOS-specific config)
+mkdir -p ~/.config/alacritty
+ln -sfv $DOTFILES_DIR/alacritty/alacritty-macos.toml ~/.config/alacritty/alacritty.toml
+
+# Zed
+mkdir -p ~/.config/zed
+ln -sfv $DOTFILES_DIR/zed/settings.json ~/.config/zed/settings.json

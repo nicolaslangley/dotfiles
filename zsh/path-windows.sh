@@ -4,11 +4,10 @@ function prepend-path() { [ -d $1 ] && PATH="$1:$PATH" }
 prepend-path "/bin"
 prepend-path "/usr/bin"
 prepend-path "/usr/local/bin"
-prepend-path "/sbin"
-prepend-path "/usr/sbin"
-prepend-path "/usr/local/sbin"
 prepend-path "$HOME/bin"
 prepend-path "$DOTFILES_DIR/bin"
+prepend-path "$(dirname "$DOTFILES_DIR")/diff-so-fancy"
+prepend-path "/c/Strawberry/perl/bin"
 
 # Remove duplicates (preserving prepended items)
 # Source: http://unix.stackexchange.com/a/40755
