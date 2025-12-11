@@ -6,7 +6,7 @@ echo "Setting up macOS configuration..."
 # Check if brew is already installed
 if [[ $(command -v brew) == "" ]]; then
   # Install brew if not found
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 brew update
