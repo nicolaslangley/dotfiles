@@ -27,3 +27,6 @@ ehthumbs.db
 
 # Git local config (user-specific)
 .gitconfig.local
+
+# Zsh local config (user-specific)
+.zshrc.local

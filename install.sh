@@ -24,6 +24,11 @@ export DOTFILES_DIR
 
 # Zsh
 ln -sfv $DOTFILES_DIR/zsh/zshrc ~/.zshrc
+echo ""
+echo "Note: Create ~/.zshrc.local for machine-specific aliases and local config."
+echo "Add this to your ~/.zshrc.local:"
+echo "  # Local configuration (not tracked)"
+echo ""
 # Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://install.ohmyz.sh)"
 

@@ -8,6 +8,7 @@ prepend-path "$HOME/bin"
 prepend-path "$DOTFILES_DIR/bin"
 prepend-path "$(dirname "$DOTFILES_DIR")/diff-so-fancy"
 prepend-path "/c/Strawberry/perl/bin"
+prepend-path "$HOME/Developer/raddbg"
 
 # Remove duplicates (preserving prepended items)
 # Source: http://unix.stackexchange.com/a/40755

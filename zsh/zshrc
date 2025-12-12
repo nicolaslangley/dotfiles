@@ -27,3 +27,6 @@ fi
 
 # Speed up prompt with large repos
 DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Load local configuration
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
