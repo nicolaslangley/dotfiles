@@ -2,6 +2,7 @@
 {
     "installed_packages": [
         "ayu",
+        "BetterFindBuffer",
         "LSP",
         "LSP-clangd",
         "NeoVintageous",
