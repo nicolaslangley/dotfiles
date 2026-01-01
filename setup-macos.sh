@@ -35,6 +35,14 @@ else
   sudo ln -sfv /Applications/Sublime\ Merge.app/Contents/SharedSupport/bin/smerge /usr/local/bin/smerge
 fi
 
+# Setup Sublime Text configuration
+echo "Setting up Sublime Text configuration..."
+SUBLIME_TEXT_USER=~/Library/Application\ Support/Sublime\ Text/Packages/User
+mkdir -p "$SUBLIME_TEXT_USER"
+ln -sfv "$DOTFILES_DIR/sublime/text/User/Preferences.sublime-settings" "$SUBLIME_TEXT_USER/Preferences.sublime-settings"
+ln -sfv "$DOTFILES_DIR/sublime/text/User/Package Control.sublime-settings" "$SUBLIME_TEXT_USER/Package Control.sublime-settings"
+ln -sfv "$DOTFILES_DIR/sublime/text/User/Default (OSX).sublime-keymap" "$SUBLIME_TEXT_USER/Default (OSX).sublime-keymap"
+
 # Copy Ayu mirage theme to Xcode
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes
 cp -f $DOTFILES_DIR/themes/xcode/Ayu\ Mirage.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/

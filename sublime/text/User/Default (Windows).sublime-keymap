@@ -1,0 +1,46 @@
+[
+	{
+      "keys": ["f12"],
+      "command": "lsp_symbol_definition",
+      "args": { "fallback": true },
+      "context": [
+         { "key": "lsp.session_with_capability", "operator": "equal", "operand": "definitionProvider" } 
+      ]
+   },
+   {
+      "keys": ["ctrl+]"],
+      "command": "lsp_symbol_definition",
+      "args": { "fallback": true },
+      "context": [
+         { "key": "lsp.session_with_capability", "operator": "equal", "operand": "definitionProvider" } 
+      ]
+   },
+   { 
+      "keys": ["ctrl+["],
+      "command": "hide_overlay",
+      "context": [
+         { "key": "overlay_visible", "operator": "equal", "operand": true }
+      ]
+   },
+   { 
+      "keys": ["ctrl+["],
+      "command": "hide_popup",
+      "context": [
+         { "key": "popup_visible", "operator": "equal", "operand": true }
+      ]
+   },
+   { 
+      "keys": ["alt+o"],
+      "command": "switch_file_deluxe",
+      "args": {
+        "extensions": [".cpp", ".cxx", ".cc", ".c", ".hpp", ".hxx", ".h", "_p.h", "_p_p.h", ".ipp", ".inl", ".m", ".mm"],
+      }
+   },
+   {
+      "keys": ["ctrl+shift+r"], 
+      "command": "lsp_workspace_symbols",
+      "context": [
+          { "key": "lsp.session_with_capability", "operator": "equal", "operand": "workspaceSymbolProvider" }
+      ]
+    },
+]

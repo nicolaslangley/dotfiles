@@ -28,5 +28,8 @@ fi
 # Speed up prompt with large repos
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # Load local configuration
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

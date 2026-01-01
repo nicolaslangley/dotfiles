@@ -1,0 +1,14 @@
+// See the left pane for the list of settings and valid values
+{
+    "installed_packages": [
+        "ayu",
+        "LSP",
+        "LSP-clangd",
+        "NeoVintageous",
+        "Package Control",
+        "Switch File Deluxe",
+    ],
+    "in_process_packages":
+    [
+    ],
+}
