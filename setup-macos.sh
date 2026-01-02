@@ -39,6 +39,7 @@ fi
 echo "Setting up Sublime Text configuration..."
 rm -r ~/Library/Application\ Support/Sublime\ Text/Packages/User
 ln -sfhv $DOTFILES_DIR/sublime/text/User ~/Library/Application\ Support/Sublime\ Text/Packages/User
+cp -r $DOTFILES_DIR/sublime/text/BetterFindBuffer ~/Library/Application\ Support/Sublime\ Text/Packages/BetterFindBuffer
 
 # Copy Ayu mirage theme to Xcode
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes
