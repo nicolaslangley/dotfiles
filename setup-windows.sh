@@ -58,24 +58,29 @@ ln -s $DOTFILES_DIR/sublime/merge/User/Default.sublime-keymap "$KEYMAP_PATH"
 echo "  Sublime Merge setup complete"
 
 # Setup Sublime Text
-SUBLIME_TEXT_USER="$APPDATA/Sublime Text/Packages/User"
-echo "Setting up Sublime Text at: $SUBLIME_TEXT_USER"
-mkdir -p "$SUBLIME_TEXT_USER"
+SUBLIME_TEXT_PACKAGES="$APPDATA/Sublime Text/Packages"
+echo "Setting up Sublime Text at: $SUBLIME_TEXT_PACKAGES"
+mkdir -p "$SUBLIME_TEXT_PACKAGES/User"
 
 # Symlink settings
 echo "  Symlinking Sublime Text settings..."
 for file in "Preferences.sublime-settings" "Package Control.sublime-settings"; do
-  TARGET="$SUBLIME_TEXT_USER/$file"
+  TARGET="$SUBLIME_TEXT_PACKAGES/User/$file"
   if [ -e "$TARGET" ]; then rm -f "$TARGET"; fi
   ln -s "$DOTFILES_DIR/sublime/text/User/$file" "$TARGET"
 done
 
 # Symlink keymap (Windows version)
 echo "  Symlinking Sublime Text keymap..."
-TARGET_KEYMAP="$SUBLIME_TEXT_USER/Default (Windows).sublime-keymap"
+TARGET_KEYMAP="$SUBLIME_TEXT_PACKAGES/User/Default (Windows).sublime-keymap"
 if [ -e "$TARGET_KEYMAP" ]; then rm -f "$TARGET_KEYMAP"; fi
 ln -s "$DOTFILES_DIR/sublime/text/User/Default (Windows).sublime-keymap" "$TARGET_KEYMAP"
 echo "  Sublime Text setup complete"
+
+# Copy BetterFindBuffer
+echo "  Copying BetterFindBuffer..."
+rm -rf "$SUBLIME_TEXT_PACKAGES/BetterFindBuffer"
+cp -r "$DOTFILES_DIR/sublime/text/BetterFindBuffer" "$SUBLIME_TEXT_PACKAGES/BetterFindBuffer"
 
 # Setup Zed settings
 ZED_SETTINGS="$APPDATA/Zed/settings.json"
