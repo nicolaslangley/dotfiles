@@ -11,6 +11,7 @@ prepend-path "$HOME/bin"
 prepend-path "$DOTFILES_DIR/bin"
 prepend-path "$HOME/Library/Python/3.8/bin"
 prepend-path /opt/homebrew/bin
+prepend-path "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 
 # Remove duplicates (preserving prepended items)
 # Source: http://unix.stackexchange.com/a/40755
