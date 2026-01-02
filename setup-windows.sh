@@ -34,19 +34,22 @@ mkdir -p "$SUBLIME_MERGE_USER"
 
 # Copy color scheme and .sublime-settings files
 echo "  Copying color scheme and settings files..."
-cp $DOTFILES_DIR/sublime/merge/User/ayu-mirage.sublime-color-scheme "$SUBLIME_MERGE_USER/"
-cp $DOTFILES_DIR/sublime/merge/User/*.sublime-settings "$SUBLIME_MERGE_USER/"
+cp "$DOTFILES_DIR/sublime/merge/User/ayu-mirage.sublime-color-scheme" "$SUBLIME_MERGE_USER/"
+
+# Copy other settings files, excluding platform-specific preferences
+find "$DOTFILES_DIR/sublime/merge/User" -name "*.sublime-settings" \
+  ! -name "Preferences-macOS.sublime-settings" \
+  ! -name "Preferences-Windows.sublime-settings" \
+  -exec cp {} "$SUBLIME_MERGE_USER/" \;
 echo "  Files copied"
 
-# Symlink preferences files
-echo "  Symlinking preference files..."
-for prefs_file in Preferences.sublime-settings Preferences-Windows.sublime-settings Preferences-macOS.sublime-settings; do
-  PREFS_PATH="$SUBLIME_MERGE_USER/$prefs_file"
-  if [ -e "$PREFS_PATH" ]; then
-    rm -f "$PREFS_PATH"
-  fi
-  ln -s $DOTFILES_DIR/sublime/merge/User/$prefs_file "$PREFS_PATH"
-done
+# Symlink Windows specific preferences as Preferences.sublime-settings
+echo "  Symlinking preference file..."
+PREFS_TARGET="$SUBLIME_MERGE_USER/Preferences.sublime-settings"
+if [ -e "$PREFS_TARGET" ]; then
+  rm -f "$PREFS_TARGET"
+fi
+ln -s "$DOTFILES_DIR/sublime/merge/User/Preferences-Windows.sublime-settings" "$PREFS_TARGET"
 
 # Symlink keymap
 echo "  Symlinking keymap..."

@@ -24,8 +24,20 @@ brew install diff-so-fancy
 # Setup Sublime Merge themes
 # Symlink User settings directory to dotfiles
 # Location: https://www.sublimemerge.com/docs/command_line
-rm -r ~/Library/Application\ Support/Sublime\ Merge/Packages/User
-ln -sfhv $DOTFILES_DIR/sublime/merge/User ~/Library/Application\ Support/Sublime\ Merge/Packages/User
+SMERGE_USER_DIR=~/Library/Application\ Support/Sublime\ Merge/Packages/User
+rm -rf "$SMERGE_USER_DIR"
+mkdir -p "$SMERGE_USER_DIR"
+
+# Symlink all files from sublime/merge/User/ except the platform specific ones
+for file in "$DOTFILES_DIR/sublime/merge/User/"*; do
+  filename=$(basename "$file")
+  if [[ "$filename" != "Preferences-macOS.sublime-settings" && "$filename" != "Preferences-Windows.sublime-settings" ]]; then
+    ln -sfv "$file" "$SMERGE_USER_DIR/$filename"
+  fi
+done
+
+# Symlink macOS specific preferences as Preferences.sublime-settings
+ln -sfv "$DOTFILES_DIR/sublime/merge/User/Preferences-macOS.sublime-settings" "$SMERGE_USER_DIR/Preferences.sublime-settings"
 
 # Create symlink for smerge CLI command
 if [[ -L /usr/local/bin/smerge ]]; then

@@ -1,6 +1,17 @@
 {
+	"git_binary": "system",
+	"tab_size": 4,
+	"theme": "Merge Dark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"side_bar_layout": "locations_as_column",
+	"update_check": false,
+	"editor_argument_format": "${file}:${line}:${col}",
+	"editor_wait_args": "--wait",
 	"font_face": "Fira Code",
 	"font_size": 10,
-	"font_options": ["gray_antialias", "subpixel_antialias"],
+	"font_options": [
+		"gray_antialias",
+		"subpixel_antialias"
+	],
 	"editor_path": "zed"
 }
