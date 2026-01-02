@@ -42,5 +42,9 @@
       "context": [
           { "key": "lsp.session_with_capability", "operator": "equal", "operand": "workspaceSymbolProvider" }
       ]
-    },
+   },
+   {
+      "keys": ["super+d"], 
+      "command": "open_in_xcode"
+   },
 ]
