@@ -1,6 +1,7 @@
 // See the left pane for the list of settings and valid values
 {
     "installed_packages": [
+        "A File Icon",
         "ayu",
         "LSP",
         "LSP-clangd",
