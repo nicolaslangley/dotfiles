@@ -1,5 +1,5 @@
 [
-	{
+   {
       "keys": ["f12"],
       "command": "lsp_symbol_definition",
       "args": { "fallback": true },
@@ -36,11 +36,26 @@
         "extensions": [".cpp", ".cxx", ".cc", ".c", ".hpp", ".hxx", ".h", "_p.h", "_p_p.h", ".ipp", ".inl", ".m", ".mm"],
       }
    },
+   { 
+      "keys": ["alt+shift+]"],
+      "command": "next_view" 
+   },
+   { 
+      "keys": ["alt+shift+["],
+      "command": "prev_view" 
+   },
+   {
+      "keys": ["ctrl+r"],
+      "command": "show_overlay",
+      "args": {
+         "overlay": "goto", "text": "@"
+      }
+   },
    {
       "keys": ["ctrl+shift+r"], 
       "command": "lsp_workspace_symbols",
       "context": [
           { "key": "lsp.session_with_capability", "operator": "equal", "operand": "workspaceSymbolProvider" }
       ]
-    },
+   },
 ]
