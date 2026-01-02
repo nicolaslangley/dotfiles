@@ -1,0 +1,4 @@
+[
+    { "caption": "-", "id": "openinraddebugger" },
+    { "command": "open_in_rad_debugger", "caption": "Open In RAD Debugger" }
+]
