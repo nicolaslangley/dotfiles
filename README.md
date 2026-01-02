@@ -8,12 +8,9 @@ Before using these dotfiles, manually install the following tools:
 Install FiraCode fonts from the official installation guide:
 https://github.com/tonsky/FiraCode/wiki/Installing
 
-### 2. Zed Editor
-Install Zed Editor from:
-https://zed.dev
-
-After installing Zed Editor, install the CLI:
-https://zed.dev/docs/command-line-interface
+### 2. Sublime Text
+Install Sublime Text from:
+https://www.sublimetext.com/
 
 ### 3. Sublime Merge
 Install Sublime Merge from:
@@ -22,6 +19,13 @@ https://www.sublimemerge.com/dev
 ### 4. Alacritty
 Install Alacritty terminal emulator from:
 https://alacritty.org/
+
+### 5. Zed Editor
+Install Zed Editor from:
+https://zed.dev
+
+After installing Zed Editor, install the CLI:
+https://zed.dev/docs/command-line-interface
 
 ## Windows-Specific Setup
 
