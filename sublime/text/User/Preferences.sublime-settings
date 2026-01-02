@@ -4,7 +4,6 @@
 	"color_scheme": "Packages/ayu/ayu-mirage.sublime-color-scheme",
 	"theme": "ayu-mirage.sublime-theme",
 	"font_face": "Fira Code",
-	"font_size": 14,
 	"translate_tabs_to_spaces": true,
 	"ignored_packages":
 	[
@@ -14,4 +13,12 @@
 	"vintageous_use_ctrl_keys": true,
 	"vintageous_use_super_keys": false,
 	"neovintageous_build_version": 13200,
+	"osx":
+	{
+	    "font_size": 13.0,
+	},
+	"windows":
+	{
+	    "font_size": 10.0,
+	},
 }
