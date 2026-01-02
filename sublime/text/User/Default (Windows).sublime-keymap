@@ -58,4 +58,12 @@
           { "key": "lsp.session_with_capability", "operator": "equal", "operand": "workspaceSymbolProvider" }
       ]
    },
+   {
+      "keys": ["alt+b"], 
+      "command": "build"
+   },
+   {
+      "keys": ["alt+d"], 
+      "command": "open_in_rad_debugger"
+   },
 ]
