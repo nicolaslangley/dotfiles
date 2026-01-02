@@ -38,6 +38,7 @@ done
 
 # Symlink macOS specific preferences as Preferences.sublime-settings
 ln -sfv "$DOTFILES_DIR/sublime/merge/User/Preferences-macOS.sublime-settings" "$SMERGE_USER_DIR/Preferences.sublime-settings"
+cp -r $DOTFILES_DIR/sublime/merge/ayu-mirage-theme ~/Library/Application\ Support/Sublime\ Merge/Packages/ayu-mirage-theme
 
 # Create symlink for smerge CLI command
 if [[ -L /usr/local/bin/smerge ]]; then

@@ -28,24 +28,20 @@ echo "  Symlink created"
 
 # Setup Sublime Merge
 # Location: https://www.sublimemerge.com/docs/command_line (Windows config location)
-SUBLIME_MERGE_USER="$APPDATA/Sublime Merge/Packages/User"
-echo "Setting up Sublime Merge at: $SUBLIME_MERGE_USER"
-mkdir -p "$SUBLIME_MERGE_USER"
-
-# Copy color scheme and .sublime-settings files
-echo "  Copying color scheme and settings files..."
-cp "$DOTFILES_DIR/sublime/merge/User/ayu-mirage.sublime-color-scheme" "$SUBLIME_MERGE_USER/"
+SUBLIME_MERGE_PACKAGES="$APPDATA/Sublime Merge/Packages"
+echo "Setting up Sublime Merge at: $SUBLIME_MERGE_PACKAGES"
+mkdir -p "$SUBLIME_MERGE_PACKAGES/User"
 
 # Copy other settings files, excluding platform-specific preferences
 find "$DOTFILES_DIR/sublime/merge/User" -name "*.sublime-settings" \
   ! -name "Preferences-macOS.sublime-settings" \
   ! -name "Preferences-Windows.sublime-settings" \
-  -exec cp {} "$SUBLIME_MERGE_USER/" \;
+  -exec cp {} "$SUBLIME_MERGE_PACKAGES/User/" \;
 echo "  Files copied"
 
 # Symlink Windows specific preferences as Preferences.sublime-settings
 echo "  Symlinking preference file..."
-PREFS_TARGET="$SUBLIME_MERGE_USER/Preferences.sublime-settings"
+PREFS_TARGET="$SUBLIME_MERGE_PACKAGES/User/Preferences.sublime-settings"
 if [ -e "$PREFS_TARGET" ]; then
   rm -f "$PREFS_TARGET"
 fi
@@ -53,11 +49,17 @@ ln -s "$DOTFILES_DIR/sublime/merge/User/Preferences-Windows.sublime-settings" "$
 
 # Symlink keymap
 echo "  Symlinking keymap..."
-KEYMAP_PATH="$SUBLIME_MERGE_USER/Default.sublime-keymap"
+KEYMAP_PATH="$SUBLIME_MERGE_PACKAGES/User/Default.sublime-keymap"
 if [ -e "$KEYMAP_PATH" ]; then
   rm -f "$KEYMAP_PATH"
 fi
 ln -s $DOTFILES_DIR/sublime/merge/User/Default.sublime-keymap "$KEYMAP_PATH"
+
+# Copy BetterFindBuffer
+echo "  Copying Ayu Mirage Theme..."
+rm -rf "$SUBLIME_MERGE_PACKAGES/ayu-mirage-theme"
+cp -r "$DOTFILES_DIR/sublime/merge/ayu-mirage-theme" "$SUBLIME_MERGE_PACKAGES/ayu-mirage-theme"
+
 echo "  Sublime Merge setup complete"
 
 # Setup Sublime Text

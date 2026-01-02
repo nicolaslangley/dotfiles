@@ -1,7 +1,8 @@
 {
 	"git_binary": "system",
 	"tab_size": 4,
-	"theme": "Merge Dark.sublime-theme",
+    "theme": "Ayu Mirage.sublime-theme",
+    "color_scheme": "Ayu Mirage.sublime-color-scheme",
 	"translate_tabs_to_spaces": true,
 	"side_bar_layout": "locations_as_column",
 	"update_check": false,
@@ -11,6 +12,5 @@
 	"font_size": 13,
 	"font_options": [
 		"gray_antialias"
-	],
-	"editor_path": "/usr/local/bin/zed"
+	]
 }
