@@ -34,8 +34,8 @@ mkdir -p "$SUBLIME_MERGE_USER"
 
 # Copy color scheme and .sublime-settings files
 echo "  Copying color scheme and settings files..."
-cp $DOTFILES_DIR/themes/sublime/merge/User/ayu-mirage.sublime-color-scheme "$SUBLIME_MERGE_USER/"
-cp $DOTFILES_DIR/themes/sublime/merge/User/*.sublime-settings "$SUBLIME_MERGE_USER/"
+cp $DOTFILES_DIR/sublime/merge/User/ayu-mirage.sublime-color-scheme "$SUBLIME_MERGE_USER/"
+cp $DOTFILES_DIR/sublime/merge/User/*.sublime-settings "$SUBLIME_MERGE_USER/"
 echo "  Files copied"
 
 # Symlink preferences files
@@ -45,7 +45,7 @@ for prefs_file in Preferences.sublime-settings Preferences-Windows.sublime-setti
   if [ -e "$PREFS_PATH" ]; then
     rm -f "$PREFS_PATH"
   fi
-  ln -s $DOTFILES_DIR/themes/sublime/merge/User/$prefs_file "$PREFS_PATH"
+  ln -s $DOTFILES_DIR/sublime/merge/User/$prefs_file "$PREFS_PATH"
 done
 
 # Symlink keymap
@@ -54,7 +54,7 @@ KEYMAP_PATH="$SUBLIME_MERGE_USER/Default.sublime-keymap"
 if [ -e "$KEYMAP_PATH" ]; then
   rm -f "$KEYMAP_PATH"
 fi
-ln -s $DOTFILES_DIR/themes/sublime/merge/User/Default.sublime-keymap "$KEYMAP_PATH"
+ln -s $DOTFILES_DIR/sublime/merge/User/Default.sublime-keymap "$KEYMAP_PATH"
 echo "  Sublime Merge setup complete"
 
 # Setup Sublime Text
