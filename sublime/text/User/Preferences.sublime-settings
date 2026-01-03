@@ -5,6 +5,9 @@
 	"theme": "ayu-mirage.sublime-theme",
 	"font_face": "Fira Code",
 	"translate_tabs_to_spaces": true,
+	"save_focus_on_lost": true,
+	"trim_trailing_white_space_on_save": "all",
+	"hardware_acceleration": "opengl",
 	"ignored_packages":
 	[
 		"Vintage",

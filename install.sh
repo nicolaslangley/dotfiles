@@ -17,22 +17,32 @@ elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" ]]; then
   PLATFORM="windows"
 fi
 
+echo ""
 echo "Installing dotfiles for $PLATFORM platform..."
 
 DOTFILES_DIR=~/Developer/dotfiles
 export DOTFILES_DIR
 
 # Zsh
+echo ""
+echo "Setting up .zshrc..."
 ln -sfv $DOTFILES_DIR/zsh/zshrc ~/.zshrc
 echo ""
 echo "Note: Create ~/.zshrc.local for machine-specific aliases and local config."
-echo "Add this to your ~/.zshrc.local:"
-echo "  # Local configuration (not tracked)"
-echo ""
+
 # Install Oh-My-Zsh
-sh -c "$(curl -fsSL https://install.ohmyz.sh)"
+echo ""
+echo "Setting up oh-my-zsh..."
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  echo "Installing Oh My Zsh..."
+  sh -c "$(curl -fsSL https://install.ohmyz.sh)" 
+else
+  echo "Oh My Zsh is already installed. Skipping..."
+fi
 
 # Git (use platform-specific config or fall back to universal gitconfig)
+echo ""
+echo "Setting up gitconfig..."
 if [[ -f "$DOTFILES_DIR/git/gitconfig-$PLATFORM" ]]; then
   ln -sfv $DOTFILES_DIR/git/gitconfig-$PLATFORM ~/.gitconfig
 else
@@ -62,6 +72,8 @@ fi
 git config --global include.path '~/.gitconfig.local'
 
 # Tig (platform-specific config)
+echo ""
+echo "Setting up tigrc..."
 ln -sfv $DOTFILES_DIR/tig/tigrc-$PLATFORM ~/.tigrc
 
 # Setup scripts (platform-specific)

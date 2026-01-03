@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
 # Windows-specific setup
+echo ""
 echo "Setting up Windows configuration..."
 
 # Add Windows-specific setup here
+echo ""
+echo "Setting up git-revise..."
 pip install --user git-revise
 
 # Clone diff-so-fancy to parent directory if not already present
+echo ""
+echo "Setting up diff-so-fancy..."
 DIFF_SO_FANCY_DIR="$(dirname "$DOTFILES_DIR")/diff-so-fancy"
 if [ ! -d "$DIFF_SO_FANCY_DIR" ]; then
   echo "Cloning diff-so-fancy to $DIFF_SO_FANCY_DIR..."
@@ -16,6 +21,7 @@ else
 fi
 
 # Setup Alacritty config
+echo ""
 ALACRITTY_CONFIG="$APPDATA/alacritty/alacritty.toml"
 echo "Setting up Alacritty config at: $ALACRITTY_CONFIG"
 mkdir -p "$(dirname "$ALACRITTY_CONFIG")"
@@ -28,6 +34,7 @@ echo "  Symlink created"
 
 # Setup Sublime Merge
 # Location: https://www.sublimemerge.com/docs/command_line (Windows config location)
+echo ""
 SUBLIME_MERGE_PACKAGES="$APPDATA/Sublime Merge/Packages"
 echo "Setting up Sublime Merge at: $SUBLIME_MERGE_PACKAGES"
 mkdir -p "$SUBLIME_MERGE_PACKAGES/User"
@@ -63,6 +70,7 @@ cp -r "$DOTFILES_DIR/sublime/merge/ayu-mirage-theme" "$SUBLIME_MERGE_PACKAGES/ay
 echo "  Sublime Merge setup complete"
 
 # Setup Sublime Text
+echo ""
 SUBLIME_TEXT_PACKAGES="$APPDATA/Sublime Text/Packages"
 echo "Setting up Sublime Text at: $SUBLIME_TEXT_PACKAGES"
 mkdir -p "$SUBLIME_TEXT_PACKAGES/User"

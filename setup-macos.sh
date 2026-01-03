@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # macOS-specific setup
+echo ""
 echo "Setting up macOS configuration..."
 
 # Check if brew is already installed
@@ -11,15 +12,16 @@ fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-brew update
-brew upgrade
-
-brew install fzf
-brew install tig
-brew install python
-brew install git-revise
-brew install git-lfs
-brew install diff-so-fancy
+# Setup Brew using Brewfile
+echo ""
+echo "Setting up brew packages..."
+BREWFILE_PATH="$DOTFILES_DIR/brew/Brewfile"
+if [ -f "$BREWFILE_PATH" ]; then
+    echo "Installing dependencies from $BREWFILE_PATH..."
+    brew bundle --file="$BREWFILE_PATH"
+else
+    echo "Error: Brewfile not found at $BREWFILE_PATH"
+fi
 
 # Setup Sublime Merge themes
 # Symlink User settings directory to dotfiles
@@ -28,6 +30,8 @@ SMERGE_USER_DIR=~/Library/Application\ Support/Sublime\ Merge/Packages/User
 rm -rf "$SMERGE_USER_DIR"
 mkdir -p "$SMERGE_USER_DIR"
 
+echo ""
+echo "Setting up Sublime Merge configuration..."
 # Symlink all files from sublime/merge/User/ except the platform specific ones
 for file in "$DOTFILES_DIR/sublime/merge/User/"*; do
   filename=$(basename "$file")
@@ -49,6 +53,7 @@ else
 fi
 
 # Setup Sublime Text configuration
+echo ""
 echo "Setting up Sublime Text configuration..."
 rm -r ~/Library/Application\ Support/Sublime\ Text/Packages/User
 ln -sfhv $DOTFILES_DIR/sublime/text/User ~/Library/Application\ Support/Sublime\ Text/Packages/User
@@ -56,10 +61,14 @@ cp -r $DOTFILES_DIR/sublime/text/BetterFindBuffer ~/Library/Application\ Support
 cp -r $DOTFILES_DIR/sublime/text/OpenInXcode ~/Library/Application\ Support/Sublime\ Text/Packages/OpenInXcode
 
 # Copy Ayu mirage theme to Xcode
+echo ""
+echo "Copying themes for Xcode..."
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes
 cp -f $DOTFILES_DIR/themes/xcode/Ayu\ Mirage.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
 
 # Alacritty (macOS-specific config)
+echo ""
+echo "Setting up Alacritty configuration..."
 mkdir -p ~/.config/alacritty
 ln -sfv $DOTFILES_DIR/alacritty/alacritty-macos.toml ~/.config/alacritty/alacritty.toml
 

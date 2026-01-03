@@ -1,0 +1,6 @@
+brew "fzf"
+brew "tig"
+brew "python"
+brew "git-revise"
+brew "git-lfs"
+brew "diff-so-fancy"
