@@ -71,7 +71,3 @@ echo ""
 echo "Setting up Alacritty configuration..."
 mkdir -p ~/.config/alacritty
 ln -sfv $DOTFILES_DIR/alacritty/alacritty-macos.toml ~/.config/alacritty/alacritty.toml
-
-# Zed
-mkdir -p ~/.config/zed
-ln -sfv $DOTFILES_DIR/zed/settings.json ~/.config/zed/settings.json

@@ -94,14 +94,3 @@ echo "  Sublime Text setup complete"
 echo "  Copying BetterFindBuffer..."
 rm -rf "$SUBLIME_TEXT_PACKAGES/BetterFindBuffer"
 cp -r "$DOTFILES_DIR/sublime/text/BetterFindBuffer" "$SUBLIME_TEXT_PACKAGES/BetterFindBuffer"
-
-# Setup Zed settings
-ZED_SETTINGS="$APPDATA/Zed/settings.json"
-echo "Setting up Zed settings at: $ZED_SETTINGS"
-mkdir -p "$(dirname "$ZED_SETTINGS")"
-if [ -e "$ZED_SETTINGS" ]; then
-  echo "  Path exists, removing..."
-  rm -f "$ZED_SETTINGS"
-fi
-ln -s $DOTFILES_DIR/zed/settings.json "$ZED_SETTINGS"
-echo "  Symlink created"

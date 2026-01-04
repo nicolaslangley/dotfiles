@@ -20,13 +20,6 @@ https://www.sublimemerge.com/dev
 Install Alacritty terminal emulator from:
 https://alacritty.org/
 
-### 5. Zed Editor
-Install Zed Editor from:
-https://zed.dev
-
-After installing Zed Editor, install the CLI:
-https://zed.dev/docs/command-line-interface
-
 ## Windows-Specific Setup
 
 ### Python
