@@ -6,8 +6,6 @@
 	"translate_tabs_to_spaces": true,
 	"side_bar_layout": "locations_as_column",
 	"update_check": false,
-	"editor_argument_format": "${file}:${line}:${col}",
-	"editor_wait_args": "--wait",
 	"font_face": "Fira Code Retina",
 	"font_size": 13,
 	"font_options": [

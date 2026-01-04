@@ -14,13 +14,13 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Setup Brew using Brewfile
 echo ""
-echo "Setting up brew packages..."
+echo "Setting up Homebrew..."
 BREWFILE_PATH="$DOTFILES_DIR/brew/Brewfile"
 if [ -f "$BREWFILE_PATH" ]; then
-    echo "Installing dependencies from $BREWFILE_PATH..."
+    echo "  Installing dependencies from $BREWFILE_PATH..."
     brew bundle --file="$BREWFILE_PATH"
 else
-    echo "Error: Brewfile not found at $BREWFILE_PATH"
+    echo "  Error: Brewfile not found at $BREWFILE_PATH"
 fi
 
 # Setup Sublime Merge themes
@@ -46,9 +46,9 @@ cp -r $DOTFILES_DIR/sublime/merge/ayu-mirage-theme ~/Library/Application\ Suppor
 
 # Create symlink for smerge CLI command
 if [[ -L /usr/local/bin/smerge ]]; then
-  echo "Sublime Merge CLI symlink already exists."
+  echo "  Sublime Merge CLI symlink already exists."
 else
-  echo "Setting up Sublime Merge CLI (requires sudo to write to /usr/local/bin)..."
+  echo "  Setting up Sublime Merge CLI (requires sudo to write to /usr/local/bin)..."
   sudo ln -sfv /Applications/Sublime\ Merge.app/Contents/SharedSupport/bin/smerge /usr/local/bin/smerge
 fi
 
