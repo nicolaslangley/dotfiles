@@ -51,9 +51,12 @@ find "$DOTFILES_DIR/sublime/merge/User" -name "*.sublime-settings" \
   -exec cp {} "$SUBLIME_MERGE_USER_DIR/" \;
 # Copy the platform specific settings
 cp "$DOTFILES_DIR/sublime/merge/User/Preferences-Windows.sublime-settings" "$SUBLIME_MERGE_USER_DIR/Preferences.sublime-settings"
+# Copy the keymap
+cp "$DOTFILES_DIR/sublime/merge/User/Default.sublime-keymap" "$SUBLIME_MERGE_USER_DIR/Default.sublime-keymap"
 
 # Copy Ayu Mirage Theme
 echo "  Copying Ayu Mirage Theme..."
+rm -rf "$SUBLIME_MERGE_PACKAGE_DIR/ayu-mirage-theme"
 cp -r "$DOTFILES_DIR/sublime/merge/ayu-mirage-theme" "$SUBLIME_MERGE_PACKAGE_DIR/ayu-mirage-theme"
 
 # Setup Sublime Text
@@ -65,15 +68,14 @@ SUBLIME_TEXT_USER_DIR="$SUBLIME_TEXT_PACKAGE_DIR/User"
 # Symlink settings
 echo "  Copying settings..."
 rm -rf "$SUBLIME_TEXT_USER_DIR"
-mkdir -p "$SUBLIME_TEXT_USER_DIR"
 cp -r "$DOTFILES_DIR/sublime/text/User" "$SUBLIME_TEXT_USER_DIR"
 
 # Copy BetterFindBuffer
 echo "  Copying BetterFindBuffer package..."
-rm -rf "$SUBLIME_TEXT_PACKAGES/BetterFindBuffer"
-cp -r "$DOTFILES_DIR/sublime/text/BetterFindBuffer" "$SUBLIME_TEXT_PACKAGES/BetterFindBuffer"
+rm -rf "$SUBLIME_TEXT_PACKAGE_DIR/BetterFindBuffer"
+cp -r "$DOTFILES_DIR/sublime/text/BetterFindBuffer" "$SUBLIME_TEXT_PACKAGE_DIR/BetterFindBuffer"
 
 # Copy OpenInRadDebugger
 echo "  Copying OpenInRadDebugger package..."
-rm -rf "$SUBLIME_TEXT_PACKAGES/OpenInRadDebugger"
-cp -r "$DOTFILES_DIR/sublime/text/OpenInRadDebugger" "$SUBLIME_TEXT_PACKAGES/OpenInRadDebugger"
+rm -rf "$SUBLIME_TEXT_PACKAGE_DIR/OpenInRadDebugger"
+cp -r "$DOTFILES_DIR/sublime/text/OpenInRadDebugger" "$SUBLIME_TEXT_PACKAGE_DIR/OpenInRadDebugger"

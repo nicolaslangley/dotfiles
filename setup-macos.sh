@@ -44,6 +44,7 @@ done
 ln -sf "$DOTFILES_DIR/sublime/merge/User/Preferences-macOS.sublime-settings" "$SUBLIME_MERGE_USER_DIR/Preferences.sublime-settings"
 
 echo "  Copying Ayu Mirage Theme..."
+rm -rf "$SUBLIME_MERGE_PACKAGE_DIR/ayu-mirage-theme"
 cp -r "$DOTFILES_DIR/sublime/merge/ayu-mirage-theme" "$SUBLIME_MERGE_PACKAGE_DIR/ayu-mirage-theme"
 
 # Create symlink for smerge CLI command
@@ -64,9 +65,11 @@ echo "  Symlinking settings..."
 rm -rf "$SUBLIME_TEXT_USER_DIR"
 ln -sfh $DOTFILES_DIR/sublime/text/User ~/Library/Application\ Support/Sublime\ Text/Packages/User
 echo "  Copying BetterFindBuffer package..."
-cp -r $DOTFILES_DIR/sublime/text/BetterFindBuffer ~/Library/Application\ Support/Sublime\ Text/Packages/BetterFindBuffer
+rm -rf "$SUBLIME_TEXT_PACKAGE_DIR/BetterFindBuffer"
+cp -r "$DOTFILES_DIR/sublime/text/BetterFindBuffer" "$SUBLIME_TEXT_PACKAGE_DIR/BetterFindBuffer"
 echo "  Copying OpenInXcode package..."
-cp -r $DOTFILES_DIR/sublime/text/OpenInXcode ~/Library/Application\ Support/Sublime\ Text/Packages/OpenInXcode
+rm -rf "$SUBLIME_TEXT_PACKAGE_DIR/OpenInXcode"
+cp -r "$DOTFILES_DIR/sublime/text/OpenInXcode" "$SUBLIME_TEXT_PACKAGE_DIR/OpenInXcode"
 
 # Copy Ayu mirage theme to Xcode
 echo ""
