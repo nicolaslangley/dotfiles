@@ -18,39 +18,42 @@ elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" ]]; then
 fi
 
 echo ""
-echo "Installing dotfiles for $PLATFORM platform..."
+echo "--------------------------------------------"
+echo "Setting up dotfiles..."
+echo "--------------------------------------------"
 
 DOTFILES_DIR=~/Developer/dotfiles
 export DOTFILES_DIR
 
 # Zsh
 echo ""
-echo "Setting up .zshrc..."
-ln -sfv $DOTFILES_DIR/zsh/zshrc ~/.zshrc
+echo "Setting up Zsh..."
+echo "  Symlinking zshrc..."
+ln -sf $DOTFILES_DIR/zsh/zshrc ~/.zshrc
 echo ""
+echo "----"
 echo "Note: Create ~/.zshrc.local for machine-specific aliases and local config."
+echo "----"
 
 # Install Oh-My-Zsh
 echo ""
 echo "Setting up oh-my-zsh..."
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  echo "Installing Oh My Zsh..."
+  echo "  Installing Oh My Zsh..."
   sh -c "$(curl -fsSL https://install.ohmyz.sh)" 
 else
-  echo "Oh My Zsh is already installed. Skipping..."
+  echo "  Oh My Zsh is already installed. Skipping..."
 fi
 
 # Git (use platform-specific config or fall back to universal gitconfig)
 echo ""
-echo "Setting up gitconfig..."
-if [[ -f "$DOTFILES_DIR/git/gitconfig-$PLATFORM" ]]; then
-  ln -sfv $DOTFILES_DIR/git/gitconfig-$PLATFORM ~/.gitconfig
-else
-  ln -sfv $DOTFILES_DIR/git/gitconfig ~/.gitconfig
-fi
+echo "Setting up Git..."
+echo "  Symlinking gitconfig..."
+ln -sf $DOTFILES_DIR/git/gitconfig ~/.gitconfig
 
 # Git global gitignore
-ln -sfv $DOTFILES_DIR/git/gitignore_global ~/.gitignore_global
+echo "  Symlinking gitignore_global..."
+ln -sf $DOTFILES_DIR/git/gitignore_global ~/.gitignore_global
 
 # Git local config (user-specific)
 if [[ ! -f ~/.gitconfig.local ]]; then
@@ -65,16 +68,14 @@ if [[ ! -f ~/.gitconfig.local ]]; then
 	name = $GIT_USER
 EOF
 else
-  echo "Git local config already exists at ~/.gitconfig.local"
+  echo "  Git local config already exists at ~/.gitconfig.local"
 fi
-
-# Include local config in main gitconfig
-git config --global include.path '~/.gitconfig.local'
 
 # Tig (platform-specific config)
 echo ""
-echo "Setting up tigrc..."
-ln -sfv $DOTFILES_DIR/tig/tigrc-$PLATFORM ~/.tigrc
+echo "Setting up Tig..."
+echo "  Symlinking tigrc..."
+ln -sf $DOTFILES_DIR/tig/tigrc-$PLATFORM ~/.tigrc
 
 # Setup scripts (platform-specific)
 source $DOTFILES_DIR/setup-$PLATFORM.sh

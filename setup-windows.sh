@@ -2,11 +2,14 @@
 
 # Windows-specific setup
 echo ""
-echo "Setting up Windows configuration..."
+echo "--------------------------------------------"
+echo "Setting up Windows-specific configuration..."
+echo "--------------------------------------------"
 
 # Add Windows-specific setup here
 echo ""
 echo "Setting up git-revise..."
+echo "  Install git-revise..."
 pip install --user git-revise
 
 # Clone diff-so-fancy to parent directory if not already present
@@ -14,83 +17,63 @@ echo ""
 echo "Setting up diff-so-fancy..."
 DIFF_SO_FANCY_DIR="$(dirname "$DOTFILES_DIR")/diff-so-fancy"
 if [ ! -d "$DIFF_SO_FANCY_DIR" ]; then
-  echo "Cloning diff-so-fancy to $DIFF_SO_FANCY_DIR..."
+  echo "  Cloning diff-so-fancy to $DIFF_SO_FANCY_DIR..."
   git clone https://github.com/so-fancy/diff-so-fancy "$DIFF_SO_FANCY_DIR"
 else
-  echo "diff-so-fancy already exists at $DIFF_SO_FANCY_DIR"
+  echo "  diff-so-fancy already exists at $DIFF_SO_FANCY_DIR. Skipping..."
 fi
 
 # Setup Alacritty config
 echo ""
+echo "Setting up Alacritty..."
 ALACRITTY_CONFIG="$APPDATA/alacritty/alacritty.toml"
-echo "Setting up Alacritty config at: $ALACRITTY_CONFIG"
 mkdir -p "$(dirname "$ALACRITTY_CONFIG")"
 if [ -e "$ALACRITTY_CONFIG" ]; then
-  echo "  Path exists, removing..."
   rm -f "$ALACRITTY_CONFIG"
 fi
+echo "  Symlinking configuration..."
 ln -s $DOTFILES_DIR/alacritty/alacritty-windows.toml "$ALACRITTY_CONFIG"
-echo "  Symlink created"
 
 # Setup Sublime Merge
 # Location: https://www.sublimemerge.com/docs/command_line (Windows config location)
 echo ""
-SUBLIME_MERGE_PACKAGES="$APPDATA/Sublime Merge/Packages"
-echo "Setting up Sublime Merge at: $SUBLIME_MERGE_PACKAGES"
-mkdir -p "$SUBLIME_MERGE_PACKAGES/User"
+echo "Setting up Sublime Merge..."
+SUBLIME_MERGE_PACKAGE_DIR="$APPDATA/Sublime Merge/Packages"
+SUBLIME_MERGE_USER_DIR="$SUBLIME_MERGE_PACKAGE_DIR/User"
+rm -rf "$SUBLIME_MERGE_USER_DIR"
+mkdir -p "$SUBLIME_MERGE_USER_DIR"
 
 # Copy other settings files, excluding platform-specific preferences
+echo "  Copying settings..."
 find "$DOTFILES_DIR/sublime/merge/User" -name "*.sublime-settings" \
   ! -name "Preferences-macOS.sublime-settings" \
   ! -name "Preferences-Windows.sublime-settings" \
-  -exec cp {} "$SUBLIME_MERGE_PACKAGES/User/" \;
-echo "  Files copied"
+  -exec cp {} "$SUBLIME_MERGE_USER_DIR/" \;
+# Copy the platform specific settings
+cp "$DOTFILES_DIR/sublime/merge/User/Preferences-Windows.sublime-settings" "$SUBLIME_MERGE_USER_DIR/Preferences.sublime-settings"
 
-# Symlink Windows specific preferences as Preferences.sublime-settings
-echo "  Symlinking preference file..."
-PREFS_TARGET="$SUBLIME_MERGE_PACKAGES/User/Preferences.sublime-settings"
-if [ -e "$PREFS_TARGET" ]; then
-  rm -f "$PREFS_TARGET"
-fi
-ln -s "$DOTFILES_DIR/sublime/merge/User/Preferences-Windows.sublime-settings" "$PREFS_TARGET"
-
-# Symlink keymap
-echo "  Symlinking keymap..."
-KEYMAP_PATH="$SUBLIME_MERGE_PACKAGES/User/Default.sublime-keymap"
-if [ -e "$KEYMAP_PATH" ]; then
-  rm -f "$KEYMAP_PATH"
-fi
-ln -s $DOTFILES_DIR/sublime/merge/User/Default.sublime-keymap "$KEYMAP_PATH"
-
-# Copy BetterFindBuffer
+# Copy Ayu Mirage Theme
 echo "  Copying Ayu Mirage Theme..."
-rm -rf "$SUBLIME_MERGE_PACKAGES/ayu-mirage-theme"
-cp -r "$DOTFILES_DIR/sublime/merge/ayu-mirage-theme" "$SUBLIME_MERGE_PACKAGES/ayu-mirage-theme"
-
-echo "  Sublime Merge setup complete"
+cp -r "$DOTFILES_DIR/sublime/merge/ayu-mirage-theme" "$SUBLIME_MERGE_PACKAGE_DIR/ayu-mirage-theme"
 
 # Setup Sublime Text
 echo ""
-SUBLIME_TEXT_PACKAGES="$APPDATA/Sublime Text/Packages"
-echo "Setting up Sublime Text at: $SUBLIME_TEXT_PACKAGES"
-mkdir -p "$SUBLIME_TEXT_PACKAGES/User"
+echo "Setting up Sublime Text..."
+SUBLIME_TEXT_PACKAGE_DIR="$APPDATA/Sublime Text/Packages"
+SUBLIME_TEXT_USER_DIR="$SUBLIME_TEXT_PACKAGE_DIR/User"
 
 # Symlink settings
-echo "  Symlinking Sublime Text settings..."
-for file in "Preferences.sublime-settings" "Package Control.sublime-settings"; do
-  TARGET="$SUBLIME_TEXT_PACKAGES/User/$file"
-  if [ -e "$TARGET" ]; then rm -f "$TARGET"; fi
-  ln -s "$DOTFILES_DIR/sublime/text/User/$file" "$TARGET"
-done
-
-# Symlink keymap (Windows version)
-echo "  Symlinking Sublime Text keymap..."
-TARGET_KEYMAP="$SUBLIME_TEXT_PACKAGES/User/Default (Windows).sublime-keymap"
-if [ -e "$TARGET_KEYMAP" ]; then rm -f "$TARGET_KEYMAP"; fi
-ln -s "$DOTFILES_DIR/sublime/text/User/Default (Windows).sublime-keymap" "$TARGET_KEYMAP"
-echo "  Sublime Text setup complete"
+echo "  Copying settings..."
+rm -rf "$SUBLIME_TEXT_USER_DIR"
+mkdir -p "$SUBLIME_TEXT_USER_DIR"
+cp -r "$DOTFILES_DIR/sublime/text/User" "$SUBLIME_TEXT_USER_DIR"
 
 # Copy BetterFindBuffer
-echo "  Copying BetterFindBuffer..."
+echo "  Copying BetterFindBuffer package..."
 rm -rf "$SUBLIME_TEXT_PACKAGES/BetterFindBuffer"
 cp -r "$DOTFILES_DIR/sublime/text/BetterFindBuffer" "$SUBLIME_TEXT_PACKAGES/BetterFindBuffer"
+
+# Copy OpenInRadDebugger
+echo "  Copying OpenInRadDebugger package..."
+rm -rf "$SUBLIME_TEXT_PACKAGES/OpenInRadDebugger"
+cp -r "$DOTFILES_DIR/sublime/text/OpenInRadDebugger" "$SUBLIME_TEXT_PACKAGES/OpenInRadDebugger"

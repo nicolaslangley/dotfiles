@@ -46,3 +46,5 @@ fi
 Install fzf to `~/.fzf` by following these steps:
 https://github.com/junegunn/fzf?tab=readme-ov-file#using-git
 
+Install The RAD Debugger from:
+https://github.com/EpicGamesExt/raddebugger/releases
