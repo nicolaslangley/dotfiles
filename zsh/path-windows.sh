@@ -10,6 +10,7 @@ prepend-path "$(dirname "$DOTFILES_DIR")/diff-so-fancy"
 prepend-path "/c/Strawberry/perl/bin"
 prepend-path "$HOME/Developer/raddbg"
 prepend-path "/c/Program Files/Sublime Text/"
+prepend-path "$HOME/.fzf/bin"
 
 # Remove duplicates (preserving prepended items)
 # Source: http://unix.stackexchange.com/a/40755
