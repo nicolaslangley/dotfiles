@@ -16,6 +16,8 @@ ehthumbs.db
 .idea/
 *.iml
 .zed/
+.cursor/
+.claude/
 
 # Zsh
 .zsh_history
