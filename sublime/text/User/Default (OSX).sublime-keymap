@@ -37,7 +37,7 @@
       }
    },
    {
-      "keys": ["super+shift+r"], 
+      "keys": ["super+alt+r"],
       "command": "lsp_workspace_symbols",
       "context": [
           { "key": "lsp.session_with_capability", "operator": "equal", "operand": "workspaceSymbolProvider" }

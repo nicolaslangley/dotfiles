@@ -52,7 +52,11 @@
       }
    },
    {
-      "keys": ["ctrl+shift+r"], 
+      "keys": ["ctrl+shift+r"],
+      "command": "goto_symbol_in_project"
+   },
+   {
+      "keys": ["ctrl+alt+r"],
       "command": "lsp_workspace_symbols",
       "context": [
           { "key": "lsp.session_with_capability", "operator": "equal", "operand": "workspaceSymbolProvider" }
