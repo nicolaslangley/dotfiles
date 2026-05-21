@@ -5,12 +5,14 @@
         "ayu",
         "LSP",
         "LSP-clangd",
+        "MarkdownPreview",
         "NeoVintageous",
         "Origami",
         "Package Control",
         "PlatformSettings",
         "SideBarEnhancements",
         "Switch File Deluxe",
+        "Visual Studio Dark",
     ],
     "in_process_packages":
     [

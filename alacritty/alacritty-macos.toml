@@ -48,7 +48,7 @@ style = "Italic"
 
 [font.normal]
 family = "Fira Code"
-style = "Medium"
+style = "Retina"
 
 [font.offset]
 x = 1

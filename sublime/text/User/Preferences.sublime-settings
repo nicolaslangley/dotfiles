@@ -1,10 +1,11 @@
 // Settings in here override those in "Default/Preferences.sublime-settings",
 // and are overridden in turn by syntax-specific settings.
 {
-	"color_scheme": "Packages/ayu/ayu-mirage.sublime-color-scheme",
+	"color_scheme": "ayu-mirage.sublime-color-scheme",
 	"theme": "ayu-mirage.sublime-theme",
 	"font_face": "Fira Code",
 	"translate_tabs_to_spaces": true,
+	"find_selected_text": true,
 	"save_on_focus_lost": true,
 	"trim_trailing_white_space_on_save": "all",
 	"hardware_acceleration": "opengl",
