@@ -3,7 +3,7 @@
 {
 	"color_scheme": "ayu-mirage.sublime-color-scheme",
 	"theme": "ayu-mirage.sublime-theme",
-	"font_face": "Fira Code",
+	"font_face": "Fira Code Retina",
 	"translate_tabs_to_spaces": true,
 	"find_selected_text": true,
 	"save_on_focus_lost": true,
@@ -21,6 +21,10 @@
 	"osx":
 	{
 	    "font_size": 13.0,
+		"font_options": [
+			"gray_antialias",
+			"no_bold"
+		],
 	},
 	"windows":
 	{
