@@ -3,6 +3,8 @@
 {
 	"color_scheme": "ayu-mirage.sublime-color-scheme",
 	"theme": "ayu-mirage.sublime-theme",
+	"ui_separator": true,
+	"ui_wide_scrollbars": true,
 	"font_face": "Fira Code Retina",
 	"translate_tabs_to_spaces": true,
 	"find_selected_text": true,
@@ -22,8 +24,7 @@
 	{
 	    "font_size": 13.0,
 		"font_options": [
-			"gray_antialias",
-			"no_bold"
+			"gray_antialias"
 		],
 	},
 	"windows":
