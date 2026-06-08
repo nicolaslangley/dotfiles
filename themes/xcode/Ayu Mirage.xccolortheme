@@ -23,13 +23,11 @@
 	<key>DVTConsoleExectuableOutputTextFont</key>
 	<string>FiraCode-Retina - 14.0</string>
 	<key>DVTConsoleTextBackgroundColor</key>
-	<string>0.0924936 0.105039 0.141229 1</string>
+	<string>0.152941 0.180392 0.239216 1</string>
 	<key>DVTConsoleTextInsertionPointColor</key>
 	<string>0.83825 0.833007 0.763218 1</string>
 	<key>DVTConsoleTextSelectionColor</key>
 	<string>0.203922 0.270588 0.352941 1</string>
-	<key>DVTDebuggerInstructionPointerColor</key>
-	<string>1 0.8 0.4 1</string>
 	<key>DVTFontAndColorVersion</key>
 	<integer>1</integer>
 	<key>DVTLineSpacing</key>
@@ -85,7 +83,7 @@
 	<key>DVTScrollbarMarkerWarningColor</key>
 	<string>0.937255 0.717647 0.34902 1</string>
 	<key>DVTSourceTextBackground</key>
-	<string>0.0924936 0.105039 0.141229 1</string>
+	<string>0.110175 0.134688 0.18644 1</string>
 	<key>DVTSourceTextBlockDimBackgroundColor</key>
 	<string>0.424672 0.424672 0.424672 1</string>
 	<key>DVTSourceTextCurrentLineHighlightColor</key>
@@ -148,6 +146,16 @@
 		<string>0.796078 0.8 0.776471 1</string>
 		<key>xcode.syntax.preprocessor</key>
 		<string>1 0.901961 0.701961 1</string>
+		<key>xcode.syntax.regex</key>
+		<string>0.729412 0.901961 0.494118 1</string>
+		<key>xcode.syntax.regex.capturename</key>
+		<string>0.831373 0.74902 1 1</string>
+		<key>xcode.syntax.regex.charname</key>
+		<string>1 0.654902 0.34902 1</string>
+		<key>xcode.syntax.regex.number</key>
+		<string>0.831373 0.74902 1 1</string>
+		<key>xcode.syntax.regex.other</key>
+		<string>0.796078 0.8 0.776471 1</string>
 		<key>xcode.syntax.string</key>
 		<string>0.729412 0.901961 0.494118 1</string>
 		<key>xcode.syntax.url</key>
@@ -204,6 +212,16 @@
 		<key>xcode.syntax.plain</key>
 		<string>FiraCode-Retina - 13.0</string>
 		<key>xcode.syntax.preprocessor</key>
+		<string>FiraCode-Retina - 13.0</string>
+		<key>xcode.syntax.regex</key>
+		<string>FiraCode-Retina - 13.0</string>
+		<key>xcode.syntax.regex.capturename</key>
+		<string>FiraCode-Retina - 13.0</string>
+		<key>xcode.syntax.regex.charname</key>
+		<string>FiraCode-Retina - 13.0</string>
+		<key>xcode.syntax.regex.number</key>
+		<string>FiraCode-Retina - 13.0</string>
+		<key>xcode.syntax.regex.other</key>
 		<string>FiraCode-Retina - 13.0</string>
 		<key>xcode.syntax.string</key>
 		<string>FiraCode-Retina - 13.0</string>
