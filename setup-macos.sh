@@ -84,3 +84,10 @@ echo "Setting up Alacritty..."
 mkdir -p ~/.config/alacritty
 echo "  Symlinking configuration..."
 ln -sf $DOTFILES_DIR/alacritty/alacritty-macos.toml ~/.config/alacritty/alacritty.toml
+
+# Ghostty
+echo ""
+echo "Setting up Ghostty..."
+mkdir -p ~/.config/ghostty
+echo "  Symlinking configuration..."
+ln -sf $DOTFILES_DIR/ghostty/config ~/.config/ghostty/config
