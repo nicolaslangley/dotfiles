@@ -16,11 +16,17 @@ https://www.sublimetext.com/
 Install Sublime Merge from:
 https://www.sublimemerge.com/dev
 
-### 4. Alacritty
-Install Alacritty terminal emulator from:
-https://alacritty.org/
+## MacOS-Specific Setup
+
+### Ghostty
+Install Ghostty from:
+https://ghostty.org/download
 
 ## Windows-Specific Setup
+
+### Alacritty
+Install Alacritty terminal emulator from:
+https://alacritty.org/
 
 ### Python
 Install Python from the official Python website:
