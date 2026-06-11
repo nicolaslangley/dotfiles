@@ -1,0 +1,21 @@
+# ~/.lldbinit — managed by dotfiles (lldb/lldbinit)
+
+# Source machine-local LLDB config if present.
+script import os
+script _local = os.path.expanduser('~/.lldbinit.local')
+script if os.path.exists(_local): lldb.debugger.HandleCommand('command source "%s"' % _local)
+
+# Make sure the breakpoints directory exists (for the save step below).
+script os.makedirs(os.path.expanduser('~/.lldb'), exist_ok=True)
+
+# Persist breakpoints across LLDB sessions, and keep them in sync with the
+# Sublime Text "LLDBBreakpoints" plugin, by sharing one file:
+#
+#   ~/.lldb/breakpoints.json   (LLDB's native `breakpoint write`/`read` format)
+
+# Restore saved breakpoints on startup, when the file is present.
+script if os.path.exists(os.path.expanduser('~/.lldb/breakpoints.json')): lldb.debugger.HandleCommand('breakpoint read -f ~/.lldb/breakpoints.json')
+
+# Save breakpoints back to the file on every stop. LLDB has no on-exit hook, so
+# a stop-hook is what keeps the file current across sessions.
+target stop-hook add -o 'breakpoint write -f ~/.lldb/breakpoints.json'
