@@ -70,6 +70,9 @@ cp -r "$DOTFILES_DIR/sublime/text/BetterFindBuffer" "$SUBLIME_TEXT_PACKAGE_DIR/B
 echo "  Copying OpenInXcode package..."
 rm -rf "$SUBLIME_TEXT_PACKAGE_DIR/OpenInXcode"
 cp -r "$DOTFILES_DIR/sublime/text/OpenInXcode" "$SUBLIME_TEXT_PACKAGE_DIR/OpenInXcode"
+echo "  Copying LLDBBreakpoints package..."
+rm -rf "$SUBLIME_TEXT_PACKAGE_DIR/LLDBBreakpoints"
+cp -r "$DOTFILES_DIR/sublime/text/LLDBBreakpoints" "$SUBLIME_TEXT_PACKAGE_DIR/LLDBBreakpoints"
 
 # Copy Ayu mirage theme to Xcode
 echo ""
