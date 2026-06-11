@@ -3,6 +3,7 @@
     "installed_packages": [
         "A File Icon",
         "ayu",
+        "Copy Filepath With Line Numbers",
         "LSP",
         "LSP-clangd",
         "MarkdownPreview",
