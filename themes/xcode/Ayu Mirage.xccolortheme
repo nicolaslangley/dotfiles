@@ -5,25 +5,25 @@
 	<key>DVTConsoleDebuggerInputTextColor</key>
 	<string>1 0.8 0.4 1</string>
 	<key>DVTConsoleDebuggerInputTextFont</key>
-	<string>FiraCode-Retina - 14.0</string>
+	<string>FiraCode-Retina - 13.0</string>
 	<key>DVTConsoleDebuggerOutputTextColor</key>
 	<string>0.796078 0.8 0.776471 1</string>
 	<key>DVTConsoleDebuggerOutputTextFont</key>
-	<string>FiraCode-Retina - 14.0</string>
+	<string>FiraCode-Retina - 13.0</string>
 	<key>DVTConsoleDebuggerPromptTextColor</key>
 	<string>0.360784 0.811765 0.901961 1</string>
 	<key>DVTConsoleDebuggerPromptTextFont</key>
-	<string>FiraCode-Retina - 14.0</string>
+	<string>FiraCode-Retina - 13.0</string>
 	<key>DVTConsoleExectuableInputTextColor</key>
 	<string>1 0.8 0.4 1</string>
 	<key>DVTConsoleExectuableInputTextFont</key>
-	<string>FiraCode-Retina - 14.0</string>
+	<string>FiraCode-Retina - 13.0</string>
 	<key>DVTConsoleExectuableOutputTextColor</key>
 	<string>0.796078 0.8 0.776471 1</string>
 	<key>DVTConsoleExectuableOutputTextFont</key>
-	<string>FiraCode-Retina - 14.0</string>
+	<string>FiraCode-Retina - 13.0</string>
 	<key>DVTConsoleTextBackgroundColor</key>
-	<string>0.152941 0.180392 0.239216 1</string>
+	<string>0.110175 0.134688 0.18644 1</string>
 	<key>DVTConsoleTextInsertionPointColor</key>
 	<string>0.83825 0.833007 0.763218 1</string>
 	<key>DVTConsoleTextSelectionColor</key>
