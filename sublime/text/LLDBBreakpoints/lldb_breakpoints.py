@@ -11,6 +11,21 @@ REGION_KEY = "lldb_breakpoints"
 REGION_KEY_DISABLED = "lldb_breakpoints_disabled"
 PANEL_NAME = "lldb_breakpoints"
 
+# Base syntax scopes for the languages LLDB resolves file/line breakpoints in.
+# These are the compiled languages that emit DWARF/debug info LLDB understands;
+# setting a breakpoint anywhere else (Python, JSON, Markdown, ...) would never
+# bind, so we only offer the gutter/menu/keybinding actions in these. Overridable
+# via the "lldb_scopes" setting. Matched as Sublime selectors, so a base scope
+# like "source.c++" also covers its embedded/derived scopes.
+DEFAULT_SCOPES = [
+    "source.c",
+    "source.c++",
+    "source.objc",
+    "source.objc++",
+    "source.swift",
+    "source.rust",
+]
+
 # The breakpoints file uses LLDB's native serialization format, i.e. the
 # output of `breakpoint write -f <file>` and the input to `breakpoint read`.
 # It is a JSON array of { "Breakpoint": {...} } entries. This plugin only
@@ -21,6 +36,24 @@ PANEL_NAME = "lldb_breakpoints"
 def breakpoints_path():
     path = sublime.load_settings(SETTINGS_FILE).get("breakpoints_file", "")
     return os.path.expanduser(path) if path else None
+
+
+def is_lldb_view(view):
+    """True if this view's language is one LLDB can set file/line breakpoints in.
+
+    Gates every "add breakpoint" path (gutter click, F9, command palette, context
+    menu) so breakpoints can only be placed in LLDB-debuggable source. A view with
+    no syntax, or one whose base scope isn't in DEFAULT_SCOPES / the "lldb_scopes"
+    setting, returns False. Unsaved views also fail -- a breakpoint needs a path.
+    """
+    if view is None or view.file_name() is None:
+        return False
+    scopes = sublime.load_settings(SETTINGS_FILE).get("lldb_scopes", DEFAULT_SCOPES)
+    if not scopes:
+        return False
+    # Comma-joined scopes form a Sublime selector where "," means OR; match_selector
+    # at point 0 tests the base syntax scope (and its hierarchy) against that set.
+    return view.match_selector(0, ", ".join(scopes))
 
 
 # load_breakpoints() sits on hot paths: render() runs it on every view activation,
@@ -270,6 +303,8 @@ class LldbBreakpointsGutterListener(sublime_plugin.EventListener):
         # the caret (returning a command replaces the default behaviour).
         if command_name != "drag_select" or not isinstance(args, dict):
             return None
+        if not is_lldb_view(view):
+            return None  # let the click move the caret as usual
         event = args.get("event")
         if not event:
             return None
@@ -317,6 +352,14 @@ def _breakpoint_on_line(view, line=None):
 
 
 class LldbBreakpointsToggleCommand(sublime_plugin.TextCommand):
+    # Hide/disable everywhere (context menu, command palette, F9) outside the
+    # languages LLDB can debug, so breakpoints are only ever placed where they bind.
+    def is_visible(self, line=None):
+        return is_lldb_view(self.view)
+
+    def is_enabled(self, line=None):
+        return is_lldb_view(self.view)
+
     # Relabel the menu item based on whether a breakpoint already exists here.
     def description(self, line=None):
         return "Remove Breakpoint" if _breakpoint_on_line(self.view, line) else "Add Breakpoint"
@@ -326,6 +369,10 @@ class LldbBreakpointsToggleCommand(sublime_plugin.TextCommand):
         path = view.file_name()
         if not path:
             sublime.status_message("Breakpoints: save the file first")
+            return
+        # Keybindings fire regardless of is_enabled(), so guard the action too.
+        if not is_lldb_view(view):
+            sublime.status_message("Breakpoints: not an LLDB-supported language")
             return
         if line is None:
             line = view.rowcol(view.sel()[0].begin())[0] + 1
@@ -351,10 +398,13 @@ class LldbBreakpointsToggleCommand(sublime_plugin.TextCommand):
 class LldbBreakpointsToggleEnabledCommand(sublime_plugin.TextCommand):
     """Enable/disable the breakpoint on the current line (keeps it in the file)."""
 
-    # Only show this item when a breakpoint exists on the line, and label it
-    # with the action that will happen.
+    # Only show this item in an LLDB-supported view when a breakpoint exists on
+    # the line, and label it with the action that will happen.
     def is_visible(self, line=None):
-        return _breakpoint_on_line(self.view, line) is not None
+        return is_lldb_view(self.view) and _breakpoint_on_line(self.view, line) is not None
+
+    def is_enabled(self, line=None):
+        return self.is_visible(line)
 
     def description(self, line=None):
         entry = _breakpoint_on_line(self.view, line)

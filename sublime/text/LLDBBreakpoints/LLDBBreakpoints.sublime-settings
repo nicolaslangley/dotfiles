@@ -2,5 +2,19 @@
     // Path to the LLDB breakpoints file (the format produced by
     // `breakpoint write -f <file>` and read by `breakpoint read -f <file>`).
     // "~" is expanded to the home directory.
-    "breakpoints_file": "~/.lldb/breakpoints.json"
+    "breakpoints_file": "~/.lldb/breakpoints.json",
+
+    // Base syntax scopes of the languages breakpoints may be set in. Breakpoints
+    // are only offered in files matching one of these, since LLDB only resolves
+    // file/line breakpoints in compiled languages with debug info. Each entry is
+    // a Sublime selector, so a base scope (e.g. "source.c++") also covers its
+    // embedded/derived scopes. Omit this key to use the built-in default below.
+    "lldb_scopes": [
+        "source.c",
+        "source.c++",
+        "source.objc",
+        "source.objc++",
+        "source.swift",
+        "source.rust"
+    ]
 }
