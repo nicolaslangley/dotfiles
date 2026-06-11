@@ -1,0 +1,6 @@
+[
+    // F9: add or remove a breakpoint on the current line.
+    { "keys": ["f9"], "command": "lldb_breakpoints_toggle" },
+    // Shift+F9: enable or disable the breakpoint on the current line.
+    { "keys": ["shift+f9"], "command": "lldb_breakpoints_toggle_enabled" }
+]

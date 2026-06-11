@@ -1,0 +1,6 @@
+[
+    { "caption": "-", "id": "lldb_breakpoints" },
+    { "command": "lldb_breakpoints_toggle" },
+    { "command": "lldb_breakpoints_toggle_enabled" },
+    { "command": "lldb_breakpoints_panel", "caption": "Show Breakpoints Panel" }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "id": "edit",
+        "children": [
+            { "caption": "-", "id": "lldb_breakpoints" },
+            { "command": "lldb_breakpoints_toggle" },
+            { "command": "lldb_breakpoints_toggle_enabled" },
+            { "caption": "Show Breakpoints Panel", "command": "lldb_breakpoints_panel" }
+        ]
+    },
+    {
+        "caption": "Preferences",
+        "mnemonic": "n",
+        "id": "preferences",
+        "children": [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children": [
+                    {
+                        "caption": "LLDB Breakpoints",
+                        "children": [
+                            {
+                                "caption": "Settings",
+                                "command": "edit_settings",
+                                "args": {
+                                    "base_file": "${packages}/LLDBBreakpoints/LLDBBreakpoints.sublime-settings",
+                                    "default": "{\n\t$0\n}\n"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

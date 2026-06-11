@@ -1,0 +1,26 @@
+[
+    {
+        "caption": "LLDB Breakpoints: Add/Remove on Current Line",
+        "command": "lldb_breakpoints_toggle"
+    },
+    {
+        "caption": "LLDB Breakpoints: Enable/Disable on Current Line",
+        "command": "lldb_breakpoints_toggle_enabled"
+    },
+    {
+        "caption": "LLDB Breakpoints: Show Breakpoints Panel",
+        "command": "lldb_breakpoints_panel"
+    },
+    {
+        "caption": "LLDB Breakpoints: Remove All Breakpoints",
+        "command": "lldb_breakpoints_remove_all"
+    },
+    {
+        "caption": "Preferences: LLDB Breakpoints Settings",
+        "command": "edit_settings",
+        "args": {
+            "base_file": "${packages}/LLDBBreakpoints/LLDBBreakpoints.sublime-settings",
+            "default": "{\n\t$0\n}\n"
+        }
+    }
+]

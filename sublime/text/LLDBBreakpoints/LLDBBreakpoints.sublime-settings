@@ -1,0 +1,6 @@
+{
+    // Path to the LLDB breakpoints file (the format produced by
+    // `breakpoint write -f <file>` and read by `breakpoint read -f <file>`).
+    // "~" is expanded to the home directory.
+    "breakpoints_file": "~/.lldb/breakpoints.json"
+}
