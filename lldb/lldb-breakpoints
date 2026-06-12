@@ -1,0 +1,13 @@
+# ~/.lldb-breakpoints — managed by dotfiles (lldb/lldb-breakpoints)
+#
+# Opt-in breakpoint persistence via ~/.lldb/breakpoints.json.
+# Use when running LLDB via -S ~/.lldb-breakpoints
+
+script import os
+script os.makedirs(os.path.expanduser('~/.lldb'), exist_ok=True)
+
+# Restore on startup if present. 
+script if os.path.exists(os.path.expanduser('~/.lldb/breakpoints.json')): lldb.debugger.HandleCommand('breakpoint read -f ~/.lldb/breakpoints.json')
+
+# Save on every stop — lldb has no on-exit hook, so a stop-hook keeps the file current.
+target stop-hook add -o 'breakpoint write -f ~/.lldb/breakpoints.json'

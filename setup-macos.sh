@@ -74,17 +74,13 @@ echo "  Copying LLDBBreakpoints package..."
 rm -rf "$SUBLIME_TEXT_PACKAGE_DIR/LLDBBreakpoints"
 cp -r "$DOTFILES_DIR/sublime/text/LLDBBreakpoints" "$SUBLIME_TEXT_PACKAGE_DIR/LLDBBreakpoints"
 
-# LLDB (persists breakpoints, shared with the Sublime LLDBBreakpoints plugin)
+# LLDB. We don't manage ~/.lldbinit — it's generated externally, with the type
+# formatter imports written there directly. We only provide opt-in breakpoint
+# persistence, sourced on demand (see lldb/lldb-breakpoints).
 echo ""
 echo "Setting up LLDB..."
-# Preserve any existing ~/.lldbinit (e.g. Unity's generated one) as the
-# machine-local include before replacing it with the dotfiles symlink.
-if [ -f ~/.lldbinit ] && [ ! -L ~/.lldbinit ] && [ ! -f ~/.lldbinit.local ]; then
-  echo "  Moving existing ~/.lldbinit to ~/.lldbinit.local..."
-  mv ~/.lldbinit ~/.lldbinit.local
-fi
-echo "  Symlinking lldbinit..."
-ln -sf "$DOTFILES_DIR/lldb/lldbinit" ~/.lldbinit
+echo "  Symlinking lldb-breakpoints..."
+ln -sf "$DOTFILES_DIR/lldb/lldb-breakpoints" ~/.lldb-breakpoints
 
 # Copy Ayu mirage theme to Xcode
 echo ""
